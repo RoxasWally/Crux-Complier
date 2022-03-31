@@ -18,11 +18,12 @@ variableDeclaration
  : type Identifier ';'
  ;
 
-arrayDeclaration
- : type Identifier '[' Integer ']' ';'
- ;
 type
  : Identifier
+ ;
+
+arrayDeclaration
+ : type Identifier '[' Integer ']' ';'
  ;
 
 
