@@ -26,7 +26,9 @@ arrayDeclaration
  : type Identifier '[' Integer ']' ';'
  ;
 
-
+functionDeclaration
+ : type Identifier '(' parameterType ')' statements
+ ;
 
 literal
  : Integer
