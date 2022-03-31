@@ -26,7 +26,7 @@ arrayDeclaration
  : type Identifier '[' Integer ']' ';'
  ;
 
-functionDeclaration
+functionDefinition
  : type Identifier '(' parameterType ')' statements
  ;
 
@@ -58,3 +58,11 @@ WhiteSpaces
 Comment
  : '//' ~[\r\n]* -> skip
  ;
+
+parameter
+: type Identifier
+;
+
+parameterType
+: (parameter (',' parameter)*)?
+;
