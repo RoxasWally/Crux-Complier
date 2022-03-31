@@ -7,25 +7,32 @@ declarationList
  : declaration*
  ;
 
+
 declaration
  : variableDeclaration
-// | arrayDeclaration
-// | functionDefinition
+| arrayDeclaration
+| functionDefinition
  ;
 
 variableDeclaration
  : type Identifier ';'
  ;
 
+arrayDeclaration
+ : type Identifier '[' Integer ']' ';'
+ ;
 type
  : Identifier
  ;
+
+
 
 literal
  : Integer
  | True
  | False
  ;
+
 
 SemiColon: ';';
 
