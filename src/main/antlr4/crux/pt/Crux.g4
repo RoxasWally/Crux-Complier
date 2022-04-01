@@ -83,6 +83,19 @@ GreaterThan: '>';
 LessThan: '<';
 Equal: '==';
 NotEqual: '!=';
+OpenParen: '(' ;
+ClosedParen: ')';
+OpenBrack: '[';
+ClosedBrack: ']';
+OpenBrace: '{';
+ClosedBrace: '}';
+Add: '+' ;
+Subtract: '-' ;
+Mult: '*';
+Div: '/';
+Comma: ',';
+Assignment: '=';
+
 
 comparisons
 : 'LessThan' | 'GreaterThan' | 'LessThanEqual' | 'GreaterThanEqual' | 'NotEqual' | 'Equal'
@@ -102,3 +115,7 @@ statement
 break
 : 'break' ';'
 ;
+
+designator:
+ Identifier ('[' expression0 ']' )?
+ ;
