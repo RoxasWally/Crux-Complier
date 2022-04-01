@@ -28,7 +28,7 @@ arrayDeclaration
  ;
 
 functionDefinition
- : type Identifier '(' parameterType ')' statements
+ : type Identifier '(' parameterType ')' statementBlocks
  ;
 
 literal
@@ -83,6 +83,19 @@ GreaterThan: '>';
 LessThan: '<';
 Equal: '==';
 NotEqual: '!=';
+OpenParen: '(' ;
+ClosedParen: ')';
+OpenBrack: '[';
+ClosedBrack: ']';
+OpenBrace: '{';
+ClosedBrace: '}';
+Add: '+' ;
+Subtract: '-' ;
+Mult: '*';
+Div: '/';
+Comma: ',';
+Assignment: '=';
+
 
 comparisons
 : 'LessThan' | 'GreaterThan' | 'LessThanEqual' | 'GreaterThanEqual' | 'NotEqual' | 'Equal'
@@ -129,3 +142,26 @@ statement
 break
 : 'break' ';'
 ;
+continue
+: 'continue' ';'
+;
+return
+: 'return' expression0  ';'
+;
+designator:
+ Identifier ('[' expression0 ']' )?
+ ;
+
+ statements
+ : statement*
+ ;
+ statementBlocks
+ : '{' statements '}'
+ ;
+ callExpression
+ :
+ Identifier '(' expressionList ')'
+ ;
+ expressionList
+ : (expression0 (',' expression0 )*)?
+ ;
