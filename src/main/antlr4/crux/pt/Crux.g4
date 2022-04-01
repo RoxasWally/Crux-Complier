@@ -129,6 +129,7 @@ expression3
 | literal
 ;
 
+//statements
 assignment
 : designator '=' expression0 ';'
 ;
