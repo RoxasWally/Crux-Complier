@@ -14,6 +14,7 @@ declaration
 | functionDefinition
  ;
 
+
 variableDeclaration
  : type Identifier ';'
  ;
@@ -67,9 +68,18 @@ parameterType
 : (parameter (',' parameter)*)?
 ;
 
+GreaterThanEqual: '>=';
+LessThanEqual: '<=';
+GreaterThan: '>';
+LessThan: '<';
+Equal: '==';
+NotEqual: '!=';
+
 comparisons
-: '<' | '>' | '<=' | '>=' | '!=' | '=='
+: 'LessThan' | 'GreaterThan' | 'LessThanEqual' | 'GreaterThanEqual' | 'NotEqual' | 'Equal'
 ;
+
+
 statement
 : variableDeclaration
 |return
