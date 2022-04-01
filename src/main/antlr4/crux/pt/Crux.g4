@@ -46,6 +46,15 @@ Integer
 
 True: 'true';
 False: 'false';
+AND: '&&';
+OR: '||';
+NOT: '!=';
+If: 'if';
+Else: 'else';
+Return: 'return';
+Break: 'break';
+Continue: 'continue';
+Loop: 'loop';
 
 Identifier
  : [a-zA-Z] [a-zA-Z0-9_]*
