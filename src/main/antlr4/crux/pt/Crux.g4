@@ -88,6 +88,11 @@ comparisons
 : 'LessThan' | 'GreaterThan' | 'LessThanEqual' | 'GreaterThanEqual' | 'NotEqual' | 'Equal'
 ;
 
+operationTwo
+: 'Add' | 'Subtract' | 'OR';
+
+operationThree
+: 'Mult' | 'Div' | 'AND';
 
 statement
 : variableDeclaration
