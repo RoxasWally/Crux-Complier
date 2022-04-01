@@ -94,6 +94,28 @@ operationTwo
 operationThree
 : 'Mult' | 'Div' | 'AND';
 
+//Expressions
+expression0
+: expression1 (comparisons expression1)?
+;
+
+expression1
+: expression2 operationTwo expression2
+;
+
+expression2
+: expression3
+| operationThree expression3
+;
+
+expression3
+: '!' expression3
+| '(' expression0 ')'
+| designator
+| callExpression
+| literal
+;
+
 statement
 : variableDeclaration
 |return
