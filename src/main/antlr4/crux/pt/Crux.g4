@@ -66,3 +66,16 @@ parameter
 parameterType
 : (parameter (',' parameter)*)?
 ;
+statement
+: variableDeclaration
+|return
+|call
+|assignment
+|break
+|if
+|continue
+|loop
+;
+break
+: 'break' ';'
+;
