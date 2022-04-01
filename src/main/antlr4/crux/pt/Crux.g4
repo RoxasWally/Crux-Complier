@@ -28,7 +28,7 @@ arrayDeclaration
  ;
 
 functionDefinition
- : type Identifier '(' parameterType ')' statements
+ : type Identifier '(' parameterType ')' statementBlocks
  ;
 
 literal
@@ -128,4 +128,18 @@ return
 ;
 designator:
  Identifier ('[' expression0 ']' )?
+ ;
+
+ statements
+ : statement*
+ ;
+ statementBlocks
+ : '{' statements '}'
+ ;
+ callExpression
+ :
+ Identifier '(' expressionList ')'
+ ;
+ expressionList
+ : (expression0 (',' expression0 )*)?
  ;
