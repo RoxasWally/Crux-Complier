@@ -49,7 +49,7 @@ True: 'true';
 False: 'false';
 AND: '&&';
 OR: '||';
-NOT: '!=';
+NOT: '!';
 If: 'if';
 Else: 'else';
 Return: 'return';
@@ -130,45 +130,45 @@ expression3
 ;
 
 //statements
-assignment
+assignmentStatement
 : designator '=' expression0 ';'
 ;
 
 assignmentNoSemi
 : designator '=' expression0;
 
-call
+callStatement
 : callExpression ';'
 ;
 
 statement
 : variableDeclaration
-|return
-|call
-|assignment
+|returnStatement
+|callStatement
+|assignmentStatement
 |assignmentNoSemi
-|break
-|if
-|continue
-|for
+|breakStatement
+|ifStatement
+|continueStatement
+|forStatement
 ;
 
-if:
+ifStatement:
  'if' expression0 statementBlocks ('else' statementBlocks)?
 ;
 
-for:
-'for' '(' assignment expression0 ';' assignmentNoSemi ')' statementBlocks
+forStatement:
+'for' '(' assignmentStatement expression0 ';' assignmentNoSemi ')' statementBlocks
 ;
 
 
-break
+breakStatement
 : 'break' ';'
 ;
-continue
+continueStatement
 : 'continue' ';'
 ;
-return
+returnStatement
 : 'return' expression0  ';'
 ;
 designator:
