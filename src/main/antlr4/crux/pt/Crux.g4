@@ -66,6 +66,10 @@ parameter
 parameterType
 : (parameter (',' parameter)*)?
 ;
+
+comparisons
+: '<' | '>' | '<=' | '>=' | '!=' | '=='
+;
 statement
 : variableDeclaration
 |return
