@@ -55,7 +55,7 @@ Else: 'else';
 Return: 'return';
 Break: 'break';
 Continue: 'continue';
-Loop: 'loop';
+For: 'for';
 
 Identifier
  : [a-zA-Z] [a-zA-Z0-9_]*
@@ -150,8 +150,18 @@ statement
 |break
 |if
 |continue
-|loop
+|for
 ;
+
+if:
+ 'if' expression0 statementBlocks ('else' statementBlocks)?
+;
+
+for:
+'for' '(' assignment expression0 ';' assignmentNoSemi ')' statementBlocks
+;
+
+
 break
 : 'break' ';'
 ;
