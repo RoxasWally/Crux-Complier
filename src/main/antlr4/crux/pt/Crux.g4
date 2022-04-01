@@ -120,7 +120,12 @@ statement
 break
 : 'break' ';'
 ;
-
+continue
+: 'continue' ';'
+;
+return
+: 'return' expression0  ';'
+;
 designator:
  Identifier ('[' expression0 ']' )?
  ;
