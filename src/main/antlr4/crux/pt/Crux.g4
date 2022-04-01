@@ -129,11 +129,23 @@ expression3
 | literal
 ;
 
+assignment
+: designator '=' expression0 ';'
+;
+
+assignmentNoSemi
+: designator '=' expression0;
+
+call
+: callExpression ';'
+;
+
 statement
 : variableDeclaration
 |return
 |call
 |assignment
+|assignmentNoSemi
 |break
 |if
 |continue
