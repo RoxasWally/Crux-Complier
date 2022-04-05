@@ -9,10 +9,10 @@ declarationList
 
 
 declaration
- : variableDeclaration
+: variableDeclaration
 | arrayDeclaration
 | functionDefinition
- ;
+;
 
 
 variableDeclaration
@@ -28,7 +28,7 @@ arrayDeclaration
  ;
 
 functionDefinition
- : type Identifier '(' parameterType ')' statementBlocks
+ : type Identifier '(' parameterType ')' statementBlock
  ;
 
 literal
@@ -74,7 +74,7 @@ parameter
 ;
 
 parameterType
-: (parameter (',' parameter)*)?
+: (parameter ( ',' parameter )* )?
 ;
 
 GreaterThanEqual: '>=';
@@ -97,28 +97,40 @@ Comma: ',';
 Assignment: '=';
 
 
-comparisons
-: 'LessThan' | 'GreaterThan' | 'LessThanEqual' | 'GreaterThanEqual' | 'NotEqual' | 'Equal'
+op0
+: 'LessThan'
+| 'GreaterThan'
+| 'LessThanEqual'
+| 'GreaterThanEqual'
+| 'NotEqual'
+| 'Equal'
 ;
 
-operationTwo
-: 'Add' | 'Subtract' | 'OR';
+op1
+: 'Add'
+|'Subtract'
+| 'OR'
+;
 
-operationThree
-: 'Mult' | 'Div' | 'AND';
+op2
+: 'Mult'
+| 'Div'
+| 'AND'
+;
 
 //Expressions
 expression0
-: expression1 (comparisons expression1)?
+: expression1 ( op0 expression1 )?
 ;
 
 expression1
-: expression2 operationTwo expression2
+: expression2
+| expression1 op1 expression2
 ;
 
 expression2
 : expression3
-| operationThree expression3
+| expression2 op2 expression3
 ;
 
 expression3
@@ -129,13 +141,13 @@ expression3
 | literal
 ;
 
-//statements
 assignmentStatement
 : designator '=' expression0 ';'
 ;
 
 assignmentNoSemi
-: designator '=' expression0;
+: designator '=' expression0
+;
 
 callStatement
 : callExpression ';'
@@ -146,21 +158,18 @@ statement
 |returnStatement
 |callStatement
 |assignmentStatement
-|assignmentNoSemi
 |breakStatement
 |ifStatement
-|continueStatement
 |forStatement
 ;
 
 ifStatement:
- 'if' expression0 statementBlocks ('else' statementBlocks)?
+ 'if' expression0 statementBlock ('else' statementBlock)?
 ;
 
 forStatement:
-'for' '(' assignmentStatement expression0 ';' assignmentNoSemi ')' statementBlocks
+'for' '(' assignmentStatement expression0 ';' assignmentNoSemi ')' statementBlock
 ;
-
 
 breakStatement
 : 'break' ';'
@@ -175,16 +184,16 @@ designator:
  Identifier ('[' expression0 ']' )?
  ;
 
- statements
+ statementList
  : statement*
  ;
- statementBlocks
- : '{' statements '}'
+ statementBlock
+ : '{' statementList '}'
  ;
  callExpression
  :
  Identifier '(' expressionList ')'
  ;
  expressionList
- : (expression0 (',' expression0 )*)?
+ : (expression0 ( ',' expression0 )* )?
  ;
