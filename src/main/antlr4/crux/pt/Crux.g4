@@ -28,7 +28,7 @@ arrayDeclaration
  ;
 
 functionDefinition
- : type Identifier '(' parameterType ')' statementBlock
+ : type Identifier '(' parameterList ')' statementBlock
  ;
 
 literal
@@ -54,7 +54,6 @@ If: 'if';
 Else: 'else';
 Return: 'return';
 Break: 'break';
-Continue: 'continue';
 For: 'for';
 
 Identifier
@@ -73,7 +72,7 @@ parameter
 : type Identifier
 ;
 
-parameterType
+parameterList
 : (parameter ( ',' parameter )* )?
 ;
 
@@ -98,24 +97,24 @@ Assignment: '=';
 
 
 op0
-: 'LessThan'
-| 'GreaterThan'
-| 'LessThanEqual'
-| 'GreaterThanEqual'
-| 'NotEqual'
-| 'Equal'
+: GreaterThanEqual
+| GreaterThan
+| LessThanEqual
+| GreaterThanEqual
+| NotEqual
+| Equal
 ;
 
 op1
-: 'Add'
-|'Subtract'
-| 'OR'
+: Add
+|Subtract
+| OR
 ;
 
 op2
-: 'Mult'
-| 'Div'
-| 'AND'
+: Mult
+| Div
+| AND
 ;
 
 //Expressions
@@ -174,9 +173,7 @@ forStatement:
 breakStatement
 : 'break' ';'
 ;
-continueStatement
-: 'continue' ';'
-;
+
 returnStatement
 : 'return' expression0  ';'
 ;
