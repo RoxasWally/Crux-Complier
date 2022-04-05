@@ -98,11 +98,11 @@ Assignment: '=';
 
 op0
 : GreaterThanEqual
-| GreaterThan
 | LessThanEqual
-| GreaterThanEqual
 | NotEqual
 | Equal
+| GreaterThan
+| LessThan
 ;
 
 op1
@@ -144,7 +144,7 @@ assignmentStatement
 : designator '=' expression0 ';'
 ;
 
-assignmentNoSemi
+assignmentStatementNoSemi
 : designator '=' expression0
 ;
 
@@ -160,6 +160,8 @@ statement
 |breakStatement
 |ifStatement
 |forStatement
+//
+|assignmentStatementNoSemi
 ;
 
 ifStatement:
@@ -167,7 +169,7 @@ ifStatement:
 ;
 
 forStatement:
-'for' '(' assignmentStatement expression0 ';' assignmentNoSemi ')' statementBlock
+'for' '(' assignmentStatement expression0 ';' assignmentStatementNoSemi ')' statementBlock
 ;
 
 breakStatement
