@@ -229,7 +229,7 @@ public final class ParseTreeLower {
      * grammer
      */
 
-     @Override
+    @Override
      public Expression visitExpression0(CruxParser.Expression0Context ctx) {
        Position position = makePosition(ctx);
        CruxParser.Expression1Context leftCtx = ctx.expression1(0);
@@ -238,14 +238,30 @@ public final class ParseTreeLower {
        CruxParser.Expression1Context rightCtx = ctx.expression1(1);
        //Expression rightExpression = rightCtx.accept(expressionVisitor);
        CruxParser.Op0Context op = ctx.op0();
-      if( op == null){
+       Operation operation = null;
+
+       if( op == null){
         return rightCtx.accept(expressionVisitor);
       } else {
-        Operation operation;
-        String textoper = op.getText();
-        switch (textoper){
+        String textOper = op.getText();
+        switch (textOper) {
           case ">":
-            operation = operation.GT;
+            operation = Operation.GT;
+            break;
+          case "<":
+            operation = Operation.LT;
+            break;
+          case "==":
+            operation = Operation.EQ;
+            break;
+          case "<=":
+            operation = Operation.LE;
+            break;
+          case ">=":
+            operation = Operation.GE;
+            break;
+        }
+        return new OpExpr(position,operation,leftCtx.accept(expressionVisitor), rightCtx.accept(expressionVisitor));
         }
       }
      }
