@@ -56,6 +56,7 @@ public final class ParseTreeLower {
   for (CruxParser.DeclarationContext ctx: program.declarationList().declaration()){
     tempList.add(ctx.accept(declarationVisitor));
   }
+
   return new DeclarationList(position, tempList)
   }
 
