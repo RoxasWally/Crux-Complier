@@ -1,0 +1,254 @@
+-------------------------------------------------------------------------------
+Test set: crux.CompilerStageTests
+-------------------------------------------------------------------------------
+Tests run: 50, Failures: 0, Errors: 50, Skipped: 0, Time elapsed: 0.551 s <<< FAILURE! - in crux.CompilerStageTests
+crux.CompilerStageTests.ast  Time elapsed: 0.252 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException
+	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
+Caused by: java.lang.NullPointerException
+
+crux.CompilerStageTests.ast  Time elapsed: 0 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException
+	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
+Caused by: java.lang.NullPointerException
+
+crux.CompilerStageTests.ast  Time elapsed: 0.016 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException
+	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
+Caused by: java.lang.NullPointerException
+
+crux.CompilerStageTests.ast  Time elapsed: 0 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException
+	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
+Caused by: java.lang.NullPointerException
+
+crux.CompilerStageTests.ast  Time elapsed: 0 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException
+	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
+Caused by: java.lang.NullPointerException
+
+crux.CompilerStageTests.ast  Time elapsed: 0 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException
+	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
+Caused by: java.lang.NullPointerException
+
+crux.CompilerStageTests.ast  Time elapsed: 0 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException
+	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
+Caused by: java.lang.NullPointerException
+
+crux.CompilerStageTests.ast  Time elapsed: 0 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException
+	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
+Caused by: java.lang.NullPointerException
+
+crux.CompilerStageTests.ast  Time elapsed: 0.015 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException
+	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
+Caused by: java.lang.NullPointerException
+
+crux.CompilerStageTests.ast  Time elapsed: 0 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException
+	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
+Caused by: java.lang.NullPointerException
+
+crux.CompilerStageTests.ast  Time elapsed: 0 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException
+	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
+Caused by: java.lang.NullPointerException
+
+crux.CompilerStageTests.ast  Time elapsed: 0.016 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException
+	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
+Caused by: java.lang.NullPointerException
+
+crux.CompilerStageTests.ast  Time elapsed: 0 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException
+	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
+Caused by: java.lang.NullPointerException
+
+crux.CompilerStageTests.ast  Time elapsed: 0 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException
+	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
+Caused by: java.lang.NullPointerException
+
+crux.CompilerStageTests.ast  Time elapsed: 0 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException
+	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
+Caused by: java.lang.NullPointerException
+
+crux.CompilerStageTests.ast  Time elapsed: 0.009 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException
+	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
+Caused by: java.lang.NullPointerException
+
+crux.CompilerStageTests.ast  Time elapsed: 0.006 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException
+	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
+Caused by: java.lang.NullPointerException
+
+crux.CompilerStageTests.ast  Time elapsed: 0 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException
+	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
+Caused by: java.lang.NullPointerException
+
+crux.CompilerStageTests.ast  Time elapsed: 0 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException
+	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
+Caused by: java.lang.NullPointerException
+
+crux.CompilerStageTests.ast  Time elapsed: 0 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException
+	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
+Caused by: java.lang.NullPointerException
+
+crux.CompilerStageTests.ast  Time elapsed: 0 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException
+	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
+Caused by: java.lang.NullPointerException
+
+crux.CompilerStageTests.ast  Time elapsed: 0 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException
+	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
+Caused by: java.lang.NullPointerException
+
+crux.CompilerStageTests.ast  Time elapsed: 0 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException
+	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
+Caused by: java.lang.NullPointerException
+
+crux.CompilerStageTests.ast  Time elapsed: 0 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException
+	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
+Caused by: java.lang.NullPointerException
+
+crux.CompilerStageTests.ast  Time elapsed: 0.015 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException
+	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
+Caused by: java.lang.NullPointerException
+
+crux.CompilerStageTests.ast  Time elapsed: 0 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException
+	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
+Caused by: java.lang.NullPointerException
+
+crux.CompilerStageTests.ast  Time elapsed: 0 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException
+	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
+Caused by: java.lang.NullPointerException
+
+crux.CompilerStageTests.ast  Time elapsed: 0 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException
+	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
+Caused by: java.lang.NullPointerException
+
+crux.CompilerStageTests.ast  Time elapsed: 0.016 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException
+	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
+Caused by: java.lang.NullPointerException
+
+crux.CompilerStageTests.ast  Time elapsed: 0 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException
+	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
+Caused by: java.lang.NullPointerException
+
+crux.CompilerStageTests.ast  Time elapsed: 0 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException
+	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
+Caused by: java.lang.NullPointerException
+
+crux.CompilerStageTests.ast  Time elapsed: 0 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException
+	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
+Caused by: java.lang.NullPointerException
+
+crux.CompilerStageTests.ast  Time elapsed: 0 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException
+	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
+Caused by: java.lang.NullPointerException
+
+crux.CompilerStageTests.ast  Time elapsed: 0.015 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException
+	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
+Caused by: java.lang.NullPointerException
+
+crux.CompilerStageTests.ast  Time elapsed: 0 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException
+	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
+Caused by: java.lang.NullPointerException
+
+crux.CompilerStageTests.ast  Time elapsed: 0 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException
+	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
+Caused by: java.lang.NullPointerException
+
+crux.CompilerStageTests.ast  Time elapsed: 0.016 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException
+	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
+Caused by: java.lang.NullPointerException
+
+crux.CompilerStageTests.ast  Time elapsed: 0.007 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException
+	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
+Caused by: java.lang.NullPointerException
+
+crux.CompilerStageTests.ast  Time elapsed: 0 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException
+	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
+Caused by: java.lang.NullPointerException
+
+crux.CompilerStageTests.ast  Time elapsed: 0 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException
+	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
+Caused by: java.lang.NullPointerException
+
+crux.CompilerStageTests.ast  Time elapsed: 0.009 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException
+	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
+Caused by: java.lang.NullPointerException
+
+crux.CompilerStageTests.ast  Time elapsed: 0 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException
+	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
+Caused by: java.lang.NullPointerException
+
+crux.CompilerStageTests.ast  Time elapsed: 0 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException
+	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
+Caused by: java.lang.NullPointerException
+
+crux.CompilerStageTests.ast  Time elapsed: 0 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException
+	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
+Caused by: java.lang.NullPointerException
+
+crux.CompilerStageTests.ast  Time elapsed: 0.016 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException
+	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
+Caused by: java.lang.NullPointerException
+
+crux.CompilerStageTests.ast  Time elapsed: 0 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException
+	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
+Caused by: java.lang.NullPointerException
+
+crux.CompilerStageTests.ast  Time elapsed: 0 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException
+	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
+Caused by: java.lang.NullPointerException
+
+crux.CompilerStageTests.ast  Time elapsed: 0.015 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException
+	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
+Caused by: java.lang.NullPointerException
+
+crux.CompilerStageTests.ast  Time elapsed: 0 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException
+	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
+Caused by: java.lang.NullPointerException
+
+crux.CompilerStageTests.ast  Time elapsed: 0 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException
+	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
+Caused by: java.lang.NullPointerException
+
