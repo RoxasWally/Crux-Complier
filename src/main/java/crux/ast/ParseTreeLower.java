@@ -318,8 +318,17 @@ public final class ParseTreeLower {
      * Create an Literal Node
      */
 
-    /* @Override
-     * public Expression visitLiteral(CruxParser.LiteralContext ctx) { }
-     */
+    @Override
+    public Expression visitLiteral(CruxParser.LiteralContext ctx) {
+      Position position = makePosition(ctx);
+      if (ctx.True() == null) {
+        return new LiteralBool(position, Boolean.parseBoolean(ctx.False().toString()));
+      }else{
+          return new LiteralBool(position, Boolean.parseBoolean(ctx.True().toString()));
+        }
+      if (ctx.Integer() != null) {
+        return new LiteralInt(position, Long.parseLong(ctx.Integer().toString()));
+      }
+    }
   }
 }
