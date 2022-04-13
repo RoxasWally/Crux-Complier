@@ -98,45 +98,45 @@ public interface CruxListener extends ParseTreeListener {
 	 */
 	void exitParameter(CruxParser.ParameterContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link CruxParser#parameterList}.
+	 * Enter a parse tree produced by {@link CruxParser#parameterType}.
 	 * @param ctx the parse tree
 	 */
-	void enterParameterList(CruxParser.ParameterListContext ctx);
+	void enterParameterType(CruxParser.ParameterTypeContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link CruxParser#parameterList}.
+	 * Exit a parse tree produced by {@link CruxParser#parameterType}.
 	 * @param ctx the parse tree
 	 */
-	void exitParameterList(CruxParser.ParameterListContext ctx);
+	void exitParameterType(CruxParser.ParameterTypeContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link CruxParser#op0}.
+	 * Enter a parse tree produced by {@link CruxParser#comparisons}.
 	 * @param ctx the parse tree
 	 */
-	void enterOp0(CruxParser.Op0Context ctx);
+	void enterComparisons(CruxParser.ComparisonsContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link CruxParser#op0}.
+	 * Exit a parse tree produced by {@link CruxParser#comparisons}.
 	 * @param ctx the parse tree
 	 */
-	void exitOp0(CruxParser.Op0Context ctx);
+	void exitComparisons(CruxParser.ComparisonsContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link CruxParser#op1}.
+	 * Enter a parse tree produced by {@link CruxParser#operationTwo}.
 	 * @param ctx the parse tree
 	 */
-	void enterOp1(CruxParser.Op1Context ctx);
+	void enterOperationTwo(CruxParser.OperationTwoContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link CruxParser#op1}.
+	 * Exit a parse tree produced by {@link CruxParser#operationTwo}.
 	 * @param ctx the parse tree
 	 */
-	void exitOp1(CruxParser.Op1Context ctx);
+	void exitOperationTwo(CruxParser.OperationTwoContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link CruxParser#op2}.
+	 * Enter a parse tree produced by {@link CruxParser#operationThree}.
 	 * @param ctx the parse tree
 	 */
-	void enterOp2(CruxParser.Op2Context ctx);
+	void enterOperationThree(CruxParser.OperationThreeContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link CruxParser#op2}.
+	 * Exit a parse tree produced by {@link CruxParser#operationThree}.
 	 * @param ctx the parse tree
 	 */
-	void exitOp2(CruxParser.Op2Context ctx);
+	void exitOperationThree(CruxParser.OperationThreeContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link CruxParser#expression0}.
 	 * @param ctx the parse tree
@@ -188,15 +188,15 @@ public interface CruxListener extends ParseTreeListener {
 	 */
 	void exitAssignmentStatement(CruxParser.AssignmentStatementContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link CruxParser#assignmentStatementNoSemi}.
+	 * Enter a parse tree produced by {@link CruxParser#assignmentNoSemi}.
 	 * @param ctx the parse tree
 	 */
-	void enterAssignmentStatementNoSemi(CruxParser.AssignmentStatementNoSemiContext ctx);
+	void enterAssignmentNoSemi(CruxParser.AssignmentNoSemiContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link CruxParser#assignmentStatementNoSemi}.
+	 * Exit a parse tree produced by {@link CruxParser#assignmentNoSemi}.
 	 * @param ctx the parse tree
 	 */
-	void exitAssignmentStatementNoSemi(CruxParser.AssignmentStatementNoSemiContext ctx);
+	void exitAssignmentNoSemi(CruxParser.AssignmentNoSemiContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link CruxParser#callStatement}.
 	 * @param ctx the parse tree
@@ -248,6 +248,16 @@ public interface CruxListener extends ParseTreeListener {
 	 */
 	void exitBreakStatement(CruxParser.BreakStatementContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link CruxParser#continueStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterContinueStatement(CruxParser.ContinueStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link CruxParser#continueStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitContinueStatement(CruxParser.ContinueStatementContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link CruxParser#returnStatement}.
 	 * @param ctx the parse tree
 	 */
@@ -268,25 +278,25 @@ public interface CruxListener extends ParseTreeListener {
 	 */
 	void exitDesignator(CruxParser.DesignatorContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link CruxParser#statementList}.
+	 * Enter a parse tree produced by {@link CruxParser#statements}.
 	 * @param ctx the parse tree
 	 */
-	void enterStatementList(CruxParser.StatementListContext ctx);
+	void enterStatements(CruxParser.StatementsContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link CruxParser#statementList}.
+	 * Exit a parse tree produced by {@link CruxParser#statements}.
 	 * @param ctx the parse tree
 	 */
-	void exitStatementList(CruxParser.StatementListContext ctx);
+	void exitStatements(CruxParser.StatementsContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link CruxParser#statementBlock}.
+	 * Enter a parse tree produced by {@link CruxParser#statementBlocks}.
 	 * @param ctx the parse tree
 	 */
-	void enterStatementBlock(CruxParser.StatementBlockContext ctx);
+	void enterStatementBlocks(CruxParser.StatementBlocksContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link CruxParser#statementBlock}.
+	 * Exit a parse tree produced by {@link CruxParser#statementBlocks}.
 	 * @param ctx the parse tree
 	 */
-	void exitStatementBlock(CruxParser.StatementBlockContext ctx);
+	void exitStatementBlocks(CruxParser.StatementBlocksContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link CruxParser#callExpression}.
 	 * @param ctx the parse tree

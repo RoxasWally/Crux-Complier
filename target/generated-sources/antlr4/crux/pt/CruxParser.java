@@ -17,50 +17,57 @@ public class CruxParser extends Parser {
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		SemiColon=1, Integer=2, True=3, False=4, AND=5, OR=6, NOT=7, If=8, Else=9, 
-		Return=10, Break=11, For=12, Identifier=13, WhiteSpaces=14, Comment=15, 
-		GreaterThanEqual=16, LessThanEqual=17, GreaterThan=18, LessThan=19, Equal=20, 
-		NotEqual=21, OpenParen=22, ClosedParen=23, OpenBrack=24, ClosedBrack=25, 
-		OpenBrace=26, ClosedBrace=27, Add=28, Subtract=29, Mult=30, Div=31, Comma=32, 
-		Assignment=33;
+		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, T__5=6, T__6=7, T__7=8, T__8=9, 
+		T__9=10, T__10=11, T__11=12, SemiColon=13, Integer=14, True=15, False=16, 
+		AND=17, OR=18, NOT=19, If=20, Else=21, Return=22, Break=23, Continue=24, 
+		For=25, Identifier=26, WhiteSpaces=27, Comment=28, GreaterThanEqual=29, 
+		LessThanEqual=30, GreaterThan=31, LessThan=32, Equal=33, NotEqual=34, 
+		OpenParen=35, ClosedParen=36, OpenBrack=37, ClosedBrack=38, OpenBrace=39, 
+		ClosedBrace=40, Add=41, Subtract=42, Mult=43, Div=44, Comma=45, Assignment=46;
 	public static final int
 		RULE_program = 0, RULE_declarationList = 1, RULE_declaration = 2, RULE_variableDeclaration = 3, 
 		RULE_type = 4, RULE_arrayDeclaration = 5, RULE_functionDefinition = 6, 
-		RULE_literal = 7, RULE_parameter = 8, RULE_parameterList = 9, RULE_op0 = 10, 
-		RULE_op1 = 11, RULE_op2 = 12, RULE_expression0 = 13, RULE_expression1 = 14, 
-		RULE_expression2 = 15, RULE_expression3 = 16, RULE_assignmentStatement = 17, 
-		RULE_assignmentStatementNoSemi = 18, RULE_callStatement = 19, RULE_statement = 20, 
+		RULE_literal = 7, RULE_parameter = 8, RULE_parameterType = 9, RULE_comparisons = 10, 
+		RULE_operationTwo = 11, RULE_operationThree = 12, RULE_expression0 = 13, 
+		RULE_expression1 = 14, RULE_expression2 = 15, RULE_expression3 = 16, RULE_assignmentStatement = 17, 
+		RULE_assignmentNoSemi = 18, RULE_callStatement = 19, RULE_statement = 20, 
 		RULE_ifStatement = 21, RULE_forStatement = 22, RULE_breakStatement = 23, 
-		RULE_returnStatement = 24, RULE_designator = 25, RULE_statementList = 26, 
-		RULE_statementBlock = 27, RULE_callExpression = 28, RULE_expressionList = 29;
+		RULE_continueStatement = 24, RULE_returnStatement = 25, RULE_designator = 26, 
+		RULE_statements = 27, RULE_statementBlocks = 28, RULE_callExpression = 29, 
+		RULE_expressionList = 30;
 	private static String[] makeRuleNames() {
 		return new String[] {
 			"program", "declarationList", "declaration", "variableDeclaration", "type", 
-			"arrayDeclaration", "functionDefinition", "literal", "parameter", "parameterList", 
-			"op0", "op1", "op2", "expression0", "expression1", "expression2", "expression3", 
-			"assignmentStatement", "assignmentStatementNoSemi", "callStatement", 
-			"statement", "ifStatement", "forStatement", "breakStatement", "returnStatement", 
-			"designator", "statementList", "statementBlock", "callExpression", "expressionList"
+			"arrayDeclaration", "functionDefinition", "literal", "parameter", "parameterType", 
+			"comparisons", "operationTwo", "operationThree", "expression0", "expression1", 
+			"expression2", "expression3", "assignmentStatement", "assignmentNoSemi", 
+			"callStatement", "statement", "ifStatement", "forStatement", "breakStatement", 
+			"continueStatement", "returnStatement", "designator", "statements", "statementBlocks", 
+			"callExpression", "expressionList"
 		};
 	}
 	public static final String[] ruleNames = makeRuleNames();
 
 	private static String[] makeLiteralNames() {
 		return new String[] {
-			null, "';'", null, "'true'", "'false'", "'&&'", "'||'", "'!'", "'if'", 
-			"'else'", "'return'", "'break'", "'for'", null, null, null, "'>='", "'<='", 
-			"'>'", "'<'", "'=='", "'!='", "'('", "')'", "'['", "']'", "'{'", "'}'", 
-			"'+'", "'-'", "'*'", "'/'", "','", "'='"
+			null, "'LessThan'", "'GreaterThan'", "'LessThanEqual'", "'GreaterThanEqual'", 
+			"'NotEqual'", "'Equal'", "'Add'", "'Subtract'", "'OR'", "'Mult'", "'Div'", 
+			"'AND'", "';'", null, "'true'", "'false'", "'&&'", "'||'", "'!'", "'if'", 
+			"'else'", "'return'", "'break'", "'continue'", "'for'", null, null, null, 
+			"'>='", "'<='", "'>'", "'<'", "'=='", "'!='", "'('", "')'", "'['", "']'", 
+			"'{'", "'}'", "'+'", "'-'", "'*'", "'/'", "','", "'='"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
 	private static String[] makeSymbolicNames() {
 		return new String[] {
+			null, null, null, null, null, null, null, null, null, null, null, null, 
 			null, "SemiColon", "Integer", "True", "False", "AND", "OR", "NOT", "If", 
-			"Else", "Return", "Break", "For", "Identifier", "WhiteSpaces", "Comment", 
-			"GreaterThanEqual", "LessThanEqual", "GreaterThan", "LessThan", "Equal", 
-			"NotEqual", "OpenParen", "ClosedParen", "OpenBrack", "ClosedBrack", "OpenBrace", 
-			"ClosedBrace", "Add", "Subtract", "Mult", "Div", "Comma", "Assignment"
+			"Else", "Return", "Break", "Continue", "For", "Identifier", "WhiteSpaces", 
+			"Comment", "GreaterThanEqual", "LessThanEqual", "GreaterThan", "LessThan", 
+			"Equal", "NotEqual", "OpenParen", "ClosedParen", "OpenBrack", "ClosedBrack", 
+			"OpenBrace", "ClosedBrace", "Add", "Subtract", "Mult", "Div", "Comma", 
+			"Assignment"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -144,9 +151,9 @@ public class CruxParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(60);
+			setState(62);
 			declarationList();
-			setState(61);
+			setState(63);
 			match(EOF);
 			}
 		}
@@ -194,17 +201,17 @@ public class CruxParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(66);
+			setState(68);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==Identifier) {
 				{
 				{
-				setState(63);
+				setState(65);
 				declaration();
 				}
 				}
-				setState(68);
+				setState(70);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
@@ -254,27 +261,27 @@ public class CruxParser extends Parser {
 		DeclarationContext _localctx = new DeclarationContext(_ctx, getState());
 		enterRule(_localctx, 4, RULE_declaration);
 		try {
-			setState(72);
+			setState(74);
 			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,1,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(69);
+				setState(71);
 				variableDeclaration();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(70);
+				setState(72);
 				arrayDeclaration();
 				}
 				break;
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(71);
+				setState(73);
 				functionDefinition();
 				}
 				break;
@@ -322,11 +329,11 @@ public class CruxParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(74);
-			type();
-			setState(75);
-			match(Identifier);
 			setState(76);
+			type();
+			setState(77);
+			match(Identifier);
+			setState(78);
 			match(SemiColon);
 			}
 		}
@@ -368,7 +375,7 @@ public class CruxParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(78);
+			setState(80);
 			match(Identifier);
 			}
 		}
@@ -417,17 +424,17 @@ public class CruxParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(80);
-			type();
-			setState(81);
-			match(Identifier);
 			setState(82);
-			match(OpenBrack);
+			type();
 			setState(83);
-			match(Integer);
+			match(Identifier);
 			setState(84);
-			match(ClosedBrack);
+			match(OpenBrack);
 			setState(85);
+			match(Integer);
+			setState(86);
+			match(ClosedBrack);
+			setState(87);
 			match(SemiColon);
 			}
 		}
@@ -448,12 +455,12 @@ public class CruxParser extends Parser {
 		}
 		public TerminalNode Identifier() { return getToken(CruxParser.Identifier, 0); }
 		public TerminalNode OpenParen() { return getToken(CruxParser.OpenParen, 0); }
-		public ParameterListContext parameterList() {
-			return getRuleContext(ParameterListContext.class,0);
+		public ParameterTypeContext parameterType() {
+			return getRuleContext(ParameterTypeContext.class,0);
 		}
 		public TerminalNode ClosedParen() { return getToken(CruxParser.ClosedParen, 0); }
-		public StatementBlockContext statementBlock() {
-			return getRuleContext(StatementBlockContext.class,0);
+		public StatementBlocksContext statementBlocks() {
+			return getRuleContext(StatementBlocksContext.class,0);
 		}
 		public FunctionDefinitionContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -480,18 +487,18 @@ public class CruxParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(87);
-			type();
-			setState(88);
-			match(Identifier);
 			setState(89);
-			match(OpenParen);
+			type();
 			setState(90);
-			parameterList();
+			match(Identifier);
 			setState(91);
-			match(ClosedParen);
+			match(OpenParen);
 			setState(92);
-			statementBlock();
+			parameterType();
+			setState(93);
+			match(ClosedParen);
+			setState(94);
+			statementBlocks();
 			}
 		}
 		catch (RecognitionException re) {
@@ -535,7 +542,7 @@ public class CruxParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(94);
+			setState(96);
 			_la = _input.LA(1);
 			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << Integer) | (1L << True) | (1L << False))) != 0)) ) {
 			_errHandler.recoverInline(this);
@@ -588,9 +595,9 @@ public class CruxParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(96);
+			setState(98);
 			type();
-			setState(97);
+			setState(99);
 			match(Identifier);
 			}
 		}
@@ -605,7 +612,7 @@ public class CruxParser extends Parser {
 		return _localctx;
 	}
 
-	public static class ParameterListContext extends ParserRuleContext {
+	public static class ParameterTypeContext extends ParserRuleContext {
 		public List<ParameterContext> parameter() {
 			return getRuleContexts(ParameterContext.class);
 		}
@@ -616,52 +623,52 @@ public class CruxParser extends Parser {
 		public TerminalNode Comma(int i) {
 			return getToken(CruxParser.Comma, i);
 		}
-		public ParameterListContext(ParserRuleContext parent, int invokingState) {
+		public ParameterTypeContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_parameterList; }
+		@Override public int getRuleIndex() { return RULE_parameterType; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CruxListener ) ((CruxListener)listener).enterParameterList(this);
+			if ( listener instanceof CruxListener ) ((CruxListener)listener).enterParameterType(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CruxListener ) ((CruxListener)listener).exitParameterList(this);
+			if ( listener instanceof CruxListener ) ((CruxListener)listener).exitParameterType(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof CruxVisitor ) return ((CruxVisitor<? extends T>)visitor).visitParameterList(this);
+			if ( visitor instanceof CruxVisitor ) return ((CruxVisitor<? extends T>)visitor).visitParameterType(this);
 			else return visitor.visitChildren(this);
 		}
 	}
 
-	public final ParameterListContext parameterList() throws RecognitionException {
-		ParameterListContext _localctx = new ParameterListContext(_ctx, getState());
-		enterRule(_localctx, 18, RULE_parameterList);
+	public final ParameterTypeContext parameterType() throws RecognitionException {
+		ParameterTypeContext _localctx = new ParameterTypeContext(_ctx, getState());
+		enterRule(_localctx, 18, RULE_parameterType);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(107);
+			setState(109);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==Identifier) {
 				{
-				setState(99);
+				setState(101);
 				parameter();
-				setState(104);
+				setState(106);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				while (_la==Comma) {
 					{
 					{
-					setState(100);
+					setState(102);
 					match(Comma);
-					setState(101);
+					setState(103);
 					parameter();
 					}
 					}
-					setState(106);
+					setState(108);
 					_errHandler.sync(this);
 					_la = _input.LA(1);
 				}
@@ -681,95 +688,36 @@ public class CruxParser extends Parser {
 		return _localctx;
 	}
 
-	public static class Op0Context extends ParserRuleContext {
-		public TerminalNode GreaterThanEqual() { return getToken(CruxParser.GreaterThanEqual, 0); }
-		public TerminalNode LessThanEqual() { return getToken(CruxParser.LessThanEqual, 0); }
-		public TerminalNode NotEqual() { return getToken(CruxParser.NotEqual, 0); }
-		public TerminalNode Equal() { return getToken(CruxParser.Equal, 0); }
-		public TerminalNode GreaterThan() { return getToken(CruxParser.GreaterThan, 0); }
-		public TerminalNode LessThan() { return getToken(CruxParser.LessThan, 0); }
-		public Op0Context(ParserRuleContext parent, int invokingState) {
+	public static class ComparisonsContext extends ParserRuleContext {
+		public ComparisonsContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_op0; }
+		@Override public int getRuleIndex() { return RULE_comparisons; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CruxListener ) ((CruxListener)listener).enterOp0(this);
+			if ( listener instanceof CruxListener ) ((CruxListener)listener).enterComparisons(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CruxListener ) ((CruxListener)listener).exitOp0(this);
+			if ( listener instanceof CruxListener ) ((CruxListener)listener).exitComparisons(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof CruxVisitor ) return ((CruxVisitor<? extends T>)visitor).visitOp0(this);
+			if ( visitor instanceof CruxVisitor ) return ((CruxVisitor<? extends T>)visitor).visitComparisons(this);
 			else return visitor.visitChildren(this);
 		}
 	}
 
-	public final Op0Context op0() throws RecognitionException {
-		Op0Context _localctx = new Op0Context(_ctx, getState());
-		enterRule(_localctx, 20, RULE_op0);
-		int _la;
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(109);
-			_la = _input.LA(1);
-			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << GreaterThanEqual) | (1L << LessThanEqual) | (1L << GreaterThan) | (1L << LessThan) | (1L << Equal) | (1L << NotEqual))) != 0)) ) {
-			_errHandler.recoverInline(this);
-			}
-			else {
-				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
-				_errHandler.reportMatch(this);
-				consume();
-			}
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class Op1Context extends ParserRuleContext {
-		public TerminalNode Add() { return getToken(CruxParser.Add, 0); }
-		public TerminalNode Subtract() { return getToken(CruxParser.Subtract, 0); }
-		public TerminalNode OR() { return getToken(CruxParser.OR, 0); }
-		public Op1Context(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_op1; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CruxListener ) ((CruxListener)listener).enterOp1(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CruxListener ) ((CruxListener)listener).exitOp1(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof CruxVisitor ) return ((CruxVisitor<? extends T>)visitor).visitOp1(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-
-	public final Op1Context op1() throws RecognitionException {
-		Op1Context _localctx = new Op1Context(_ctx, getState());
-		enterRule(_localctx, 22, RULE_op1);
+	public final ComparisonsContext comparisons() throws RecognitionException {
+		ComparisonsContext _localctx = new ComparisonsContext(_ctx, getState());
+		enterRule(_localctx, 20, RULE_comparisons);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(111);
 			_la = _input.LA(1);
-			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << OR) | (1L << Add) | (1L << Subtract))) != 0)) ) {
+			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << T__1) | (1L << T__2) | (1L << T__3) | (1L << T__4) | (1L << T__5))) != 0)) ) {
 			_errHandler.recoverInline(this);
 			}
 			else {
@@ -790,39 +738,86 @@ public class CruxParser extends Parser {
 		return _localctx;
 	}
 
-	public static class Op2Context extends ParserRuleContext {
-		public TerminalNode Mult() { return getToken(CruxParser.Mult, 0); }
-		public TerminalNode Div() { return getToken(CruxParser.Div, 0); }
-		public TerminalNode AND() { return getToken(CruxParser.AND, 0); }
-		public Op2Context(ParserRuleContext parent, int invokingState) {
+	public static class OperationTwoContext extends ParserRuleContext {
+		public OperationTwoContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_op2; }
+		@Override public int getRuleIndex() { return RULE_operationTwo; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CruxListener ) ((CruxListener)listener).enterOp2(this);
+			if ( listener instanceof CruxListener ) ((CruxListener)listener).enterOperationTwo(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CruxListener ) ((CruxListener)listener).exitOp2(this);
+			if ( listener instanceof CruxListener ) ((CruxListener)listener).exitOperationTwo(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof CruxVisitor ) return ((CruxVisitor<? extends T>)visitor).visitOp2(this);
+			if ( visitor instanceof CruxVisitor ) return ((CruxVisitor<? extends T>)visitor).visitOperationTwo(this);
 			else return visitor.visitChildren(this);
 		}
 	}
 
-	public final Op2Context op2() throws RecognitionException {
-		Op2Context _localctx = new Op2Context(_ctx, getState());
-		enterRule(_localctx, 24, RULE_op2);
+	public final OperationTwoContext operationTwo() throws RecognitionException {
+		OperationTwoContext _localctx = new OperationTwoContext(_ctx, getState());
+		enterRule(_localctx, 22, RULE_operationTwo);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(113);
 			_la = _input.LA(1);
-			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << AND) | (1L << Mult) | (1L << Div))) != 0)) ) {
+			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__6) | (1L << T__7) | (1L << T__8))) != 0)) ) {
+			_errHandler.recoverInline(this);
+			}
+			else {
+				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+				_errHandler.reportMatch(this);
+				consume();
+			}
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class OperationThreeContext extends ParserRuleContext {
+		public OperationThreeContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_operationThree; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof CruxListener ) ((CruxListener)listener).enterOperationThree(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof CruxListener ) ((CruxListener)listener).exitOperationThree(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof CruxVisitor ) return ((CruxVisitor<? extends T>)visitor).visitOperationThree(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final OperationThreeContext operationThree() throws RecognitionException {
+		OperationThreeContext _localctx = new OperationThreeContext(_ctx, getState());
+		enterRule(_localctx, 24, RULE_operationThree);
+		int _la;
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(115);
+			_la = _input.LA(1);
+			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__9) | (1L << T__10) | (1L << T__11))) != 0)) ) {
 			_errHandler.recoverInline(this);
 			}
 			else {
@@ -850,8 +845,8 @@ public class CruxParser extends Parser {
 		public Expression1Context expression1(int i) {
 			return getRuleContext(Expression1Context.class,i);
 		}
-		public Op0Context op0() {
-			return getRuleContext(Op0Context.class,0);
+		public ComparisonsContext comparisons() {
+			return getRuleContext(ComparisonsContext.class,0);
 		}
 		public Expression0Context(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -879,17 +874,17 @@ public class CruxParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(115);
-			expression1(0);
-			setState(119);
+			setState(117);
+			expression1();
+			setState(121);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << GreaterThanEqual) | (1L << LessThanEqual) | (1L << GreaterThan) | (1L << LessThan) | (1L << Equal) | (1L << NotEqual))) != 0)) {
+			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << T__1) | (1L << T__2) | (1L << T__3) | (1L << T__4) | (1L << T__5))) != 0)) {
 				{
-				setState(116);
-				op0();
-				setState(117);
-				expression1(0);
+				setState(118);
+				comparisons();
+				setState(119);
+				expression1();
 				}
 			}
 
@@ -907,14 +902,14 @@ public class CruxParser extends Parser {
 	}
 
 	public static class Expression1Context extends ParserRuleContext {
-		public Expression2Context expression2() {
-			return getRuleContext(Expression2Context.class,0);
+		public List<Expression2Context> expression2() {
+			return getRuleContexts(Expression2Context.class);
 		}
-		public Expression1Context expression1() {
-			return getRuleContext(Expression1Context.class,0);
+		public Expression2Context expression2(int i) {
+			return getRuleContext(Expression2Context.class,i);
 		}
-		public Op1Context op1() {
-			return getRuleContext(Op1Context.class,0);
+		public OperationTwoContext operationTwo() {
+			return getRuleContext(OperationTwoContext.class,0);
 		}
 		public Expression1Context(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -936,49 +931,17 @@ public class CruxParser extends Parser {
 	}
 
 	public final Expression1Context expression1() throws RecognitionException {
-		return expression1(0);
-	}
-
-	private Expression1Context expression1(int _p) throws RecognitionException {
-		ParserRuleContext _parentctx = _ctx;
-		int _parentState = getState();
-		Expression1Context _localctx = new Expression1Context(_ctx, _parentState);
-		Expression1Context _prevctx = _localctx;
-		int _startState = 28;
-		enterRecursionRule(_localctx, 28, RULE_expression1, _p);
+		Expression1Context _localctx = new Expression1Context(_ctx, getState());
+		enterRule(_localctx, 28, RULE_expression1);
 		try {
-			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			{
-			setState(122);
-			expression2(0);
-			}
-			_ctx.stop = _input.LT(-1);
-			setState(130);
-			_errHandler.sync(this);
-			_alt = getInterpreter().adaptivePredict(_input,5,_ctx);
-			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
-				if ( _alt==1 ) {
-					if ( _parseListeners!=null ) triggerExitRuleEvent();
-					_prevctx = _localctx;
-					{
-					{
-					_localctx = new Expression1Context(_parentctx, _parentState);
-					pushNewRecursionContext(_localctx, _startState, RULE_expression1);
-					setState(124);
-					if (!(precpred(_ctx, 1))) throw new FailedPredicateException(this, "precpred(_ctx, 1)");
-					setState(125);
-					op1();
-					setState(126);
-					expression2(0);
-					}
-					} 
-				}
-				setState(132);
-				_errHandler.sync(this);
-				_alt = getInterpreter().adaptivePredict(_input,5,_ctx);
-			}
+			setState(123);
+			expression2();
+			setState(124);
+			operationTwo();
+			setState(125);
+			expression2();
 			}
 		}
 		catch (RecognitionException re) {
@@ -987,7 +950,7 @@ public class CruxParser extends Parser {
 			_errHandler.recover(this, re);
 		}
 		finally {
-			unrollRecursionContexts(_parentctx);
+			exitRule();
 		}
 		return _localctx;
 	}
@@ -996,11 +959,8 @@ public class CruxParser extends Parser {
 		public Expression3Context expression3() {
 			return getRuleContext(Expression3Context.class,0);
 		}
-		public Expression2Context expression2() {
-			return getRuleContext(Expression2Context.class,0);
-		}
-		public Op2Context op2() {
-			return getRuleContext(Op2Context.class,0);
+		public OperationThreeContext operationThree() {
+			return getRuleContext(OperationThreeContext.class,0);
 		}
 		public Expression2Context(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -1022,49 +982,37 @@ public class CruxParser extends Parser {
 	}
 
 	public final Expression2Context expression2() throws RecognitionException {
-		return expression2(0);
-	}
-
-	private Expression2Context expression2(int _p) throws RecognitionException {
-		ParserRuleContext _parentctx = _ctx;
-		int _parentState = getState();
-		Expression2Context _localctx = new Expression2Context(_ctx, _parentState);
-		Expression2Context _prevctx = _localctx;
-		int _startState = 30;
-		enterRecursionRule(_localctx, 30, RULE_expression2, _p);
+		Expression2Context _localctx = new Expression2Context(_ctx, getState());
+		enterRule(_localctx, 30, RULE_expression2);
 		try {
-			int _alt;
-			enterOuterAlt(_localctx, 1);
-			{
-			{
-			setState(134);
-			expression3();
-			}
-			_ctx.stop = _input.LT(-1);
-			setState(142);
+			setState(131);
 			_errHandler.sync(this);
-			_alt = getInterpreter().adaptivePredict(_input,6,_ctx);
-			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
-				if ( _alt==1 ) {
-					if ( _parseListeners!=null ) triggerExitRuleEvent();
-					_prevctx = _localctx;
-					{
-					{
-					_localctx = new Expression2Context(_parentctx, _parentState);
-					pushNewRecursionContext(_localctx, _startState, RULE_expression2);
-					setState(136);
-					if (!(precpred(_ctx, 1))) throw new FailedPredicateException(this, "precpred(_ctx, 1)");
-					setState(137);
-					op2();
-					setState(138);
-					expression3();
-					}
-					} 
+			switch (_input.LA(1)) {
+			case Integer:
+			case True:
+			case False:
+			case NOT:
+			case Identifier:
+			case OpenParen:
+				enterOuterAlt(_localctx, 1);
+				{
+				setState(127);
+				expression3();
 				}
-				setState(144);
-				_errHandler.sync(this);
-				_alt = getInterpreter().adaptivePredict(_input,6,_ctx);
-			}
+				break;
+			case T__9:
+			case T__10:
+			case T__11:
+				enterOuterAlt(_localctx, 2);
+				{
+				setState(128);
+				operationThree();
+				setState(129);
+				expression3();
+				}
+				break;
+			default:
+				throw new NoViableAltException(this);
 			}
 		}
 		catch (RecognitionException re) {
@@ -1073,7 +1021,7 @@ public class CruxParser extends Parser {
 			_errHandler.recover(this, re);
 		}
 		finally {
-			unrollRecursionContexts(_parentctx);
+			exitRule();
 		}
 		return _localctx;
 	}
@@ -1120,47 +1068,47 @@ public class CruxParser extends Parser {
 		Expression3Context _localctx = new Expression3Context(_ctx, getState());
 		enterRule(_localctx, 32, RULE_expression3);
 		try {
-			setState(154);
+			setState(142);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,7,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,6,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(145);
+				setState(133);
 				match(NOT);
-				setState(146);
+				setState(134);
 				expression3();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(147);
+				setState(135);
 				match(OpenParen);
-				setState(148);
+				setState(136);
 				expression0();
-				setState(149);
+				setState(137);
 				match(ClosedParen);
 				}
 				break;
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(151);
+				setState(139);
 				designator();
 				}
 				break;
 			case 4:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(152);
+				setState(140);
 				callExpression();
 				}
 				break;
 			case 5:
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(153);
+				setState(141);
 				literal();
 				}
 				break;
@@ -1211,13 +1159,13 @@ public class CruxParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(156);
+			setState(144);
 			designator();
-			setState(157);
+			setState(145);
 			match(Assignment);
-			setState(158);
+			setState(146);
 			expression0();
-			setState(159);
+			setState(147);
 			match(SemiColon);
 			}
 		}
@@ -1232,7 +1180,7 @@ public class CruxParser extends Parser {
 		return _localctx;
 	}
 
-	public static class AssignmentStatementNoSemiContext extends ParserRuleContext {
+	public static class AssignmentNoSemiContext extends ParserRuleContext {
 		public DesignatorContext designator() {
 			return getRuleContext(DesignatorContext.class,0);
 		}
@@ -1240,36 +1188,36 @@ public class CruxParser extends Parser {
 		public Expression0Context expression0() {
 			return getRuleContext(Expression0Context.class,0);
 		}
-		public AssignmentStatementNoSemiContext(ParserRuleContext parent, int invokingState) {
+		public AssignmentNoSemiContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_assignmentStatementNoSemi; }
+		@Override public int getRuleIndex() { return RULE_assignmentNoSemi; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CruxListener ) ((CruxListener)listener).enterAssignmentStatementNoSemi(this);
+			if ( listener instanceof CruxListener ) ((CruxListener)listener).enterAssignmentNoSemi(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CruxListener ) ((CruxListener)listener).exitAssignmentStatementNoSemi(this);
+			if ( listener instanceof CruxListener ) ((CruxListener)listener).exitAssignmentNoSemi(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof CruxVisitor ) return ((CruxVisitor<? extends T>)visitor).visitAssignmentStatementNoSemi(this);
+			if ( visitor instanceof CruxVisitor ) return ((CruxVisitor<? extends T>)visitor).visitAssignmentNoSemi(this);
 			else return visitor.visitChildren(this);
 		}
 	}
 
-	public final AssignmentStatementNoSemiContext assignmentStatementNoSemi() throws RecognitionException {
-		AssignmentStatementNoSemiContext _localctx = new AssignmentStatementNoSemiContext(_ctx, getState());
-		enterRule(_localctx, 36, RULE_assignmentStatementNoSemi);
+	public final AssignmentNoSemiContext assignmentNoSemi() throws RecognitionException {
+		AssignmentNoSemiContext _localctx = new AssignmentNoSemiContext(_ctx, getState());
+		enterRule(_localctx, 36, RULE_assignmentNoSemi);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(161);
+			setState(149);
 			designator();
-			setState(162);
+			setState(150);
 			match(Assignment);
-			setState(163);
+			setState(151);
 			expression0();
 			}
 		}
@@ -1314,9 +1262,9 @@ public class CruxParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(165);
+			setState(153);
 			callExpression();
-			setState(166);
+			setState(154);
 			match(SemiColon);
 			}
 		}
@@ -1344,17 +1292,20 @@ public class CruxParser extends Parser {
 		public AssignmentStatementContext assignmentStatement() {
 			return getRuleContext(AssignmentStatementContext.class,0);
 		}
+		public AssignmentNoSemiContext assignmentNoSemi() {
+			return getRuleContext(AssignmentNoSemiContext.class,0);
+		}
 		public BreakStatementContext breakStatement() {
 			return getRuleContext(BreakStatementContext.class,0);
 		}
 		public IfStatementContext ifStatement() {
 			return getRuleContext(IfStatementContext.class,0);
 		}
+		public ContinueStatementContext continueStatement() {
+			return getRuleContext(ContinueStatementContext.class,0);
+		}
 		public ForStatementContext forStatement() {
 			return getRuleContext(ForStatementContext.class,0);
-		}
-		public AssignmentStatementNoSemiContext assignmentStatementNoSemi() {
-			return getRuleContext(AssignmentStatementNoSemiContext.class,0);
 		}
 		public StatementContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -1379,63 +1330,70 @@ public class CruxParser extends Parser {
 		StatementContext _localctx = new StatementContext(_ctx, getState());
 		enterRule(_localctx, 40, RULE_statement);
 		try {
-			setState(176);
+			setState(165);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,8,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,7,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(168);
+				setState(156);
 				variableDeclaration();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(169);
+				setState(157);
 				returnStatement();
 				}
 				break;
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(170);
+				setState(158);
 				callStatement();
 				}
 				break;
 			case 4:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(171);
+				setState(159);
 				assignmentStatement();
 				}
 				break;
 			case 5:
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(172);
-				breakStatement();
+				setState(160);
+				assignmentNoSemi();
 				}
 				break;
 			case 6:
 				enterOuterAlt(_localctx, 6);
 				{
-				setState(173);
-				ifStatement();
+				setState(161);
+				breakStatement();
 				}
 				break;
 			case 7:
 				enterOuterAlt(_localctx, 7);
 				{
-				setState(174);
-				forStatement();
+				setState(162);
+				ifStatement();
 				}
 				break;
 			case 8:
 				enterOuterAlt(_localctx, 8);
 				{
-				setState(175);
-				assignmentStatementNoSemi();
+				setState(163);
+				continueStatement();
+				}
+				break;
+			case 9:
+				enterOuterAlt(_localctx, 9);
+				{
+				setState(164);
+				forStatement();
 				}
 				break;
 			}
@@ -1456,11 +1414,11 @@ public class CruxParser extends Parser {
 		public Expression0Context expression0() {
 			return getRuleContext(Expression0Context.class,0);
 		}
-		public List<StatementBlockContext> statementBlock() {
-			return getRuleContexts(StatementBlockContext.class);
+		public List<StatementBlocksContext> statementBlocks() {
+			return getRuleContexts(StatementBlocksContext.class);
 		}
-		public StatementBlockContext statementBlock(int i) {
-			return getRuleContext(StatementBlockContext.class,i);
+		public StatementBlocksContext statementBlocks(int i) {
+			return getRuleContext(StatementBlocksContext.class,i);
 		}
 		public TerminalNode Else() { return getToken(CruxParser.Else, 0); }
 		public IfStatementContext(ParserRuleContext parent, int invokingState) {
@@ -1489,21 +1447,21 @@ public class CruxParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(178);
+			setState(167);
 			match(If);
-			setState(179);
+			setState(168);
 			expression0();
-			setState(180);
-			statementBlock();
-			setState(183);
+			setState(169);
+			statementBlocks();
+			setState(172);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==Else) {
 				{
-				setState(181);
+				setState(170);
 				match(Else);
-				setState(182);
-				statementBlock();
+				setState(171);
+				statementBlocks();
 				}
 			}
 
@@ -1530,12 +1488,12 @@ public class CruxParser extends Parser {
 			return getRuleContext(Expression0Context.class,0);
 		}
 		public TerminalNode SemiColon() { return getToken(CruxParser.SemiColon, 0); }
-		public AssignmentStatementNoSemiContext assignmentStatementNoSemi() {
-			return getRuleContext(AssignmentStatementNoSemiContext.class,0);
+		public AssignmentNoSemiContext assignmentNoSemi() {
+			return getRuleContext(AssignmentNoSemiContext.class,0);
 		}
 		public TerminalNode ClosedParen() { return getToken(CruxParser.ClosedParen, 0); }
-		public StatementBlockContext statementBlock() {
-			return getRuleContext(StatementBlockContext.class,0);
+		public StatementBlocksContext statementBlocks() {
+			return getRuleContext(StatementBlocksContext.class,0);
 		}
 		public ForStatementContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -1562,22 +1520,22 @@ public class CruxParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(185);
+			setState(174);
 			match(For);
-			setState(186);
+			setState(175);
 			match(OpenParen);
-			setState(187);
+			setState(176);
 			assignmentStatement();
-			setState(188);
+			setState(177);
 			expression0();
-			setState(189);
+			setState(178);
 			match(SemiColon);
-			setState(190);
-			assignmentStatementNoSemi();
-			setState(191);
+			setState(179);
+			assignmentNoSemi();
+			setState(180);
 			match(ClosedParen);
-			setState(192);
-			statementBlock();
+			setState(181);
+			statementBlocks();
 			}
 		}
 		catch (RecognitionException re) {
@@ -1619,9 +1577,54 @@ public class CruxParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(194);
+			setState(183);
 			match(Break);
-			setState(195);
+			setState(184);
+			match(SemiColon);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class ContinueStatementContext extends ParserRuleContext {
+		public TerminalNode Continue() { return getToken(CruxParser.Continue, 0); }
+		public TerminalNode SemiColon() { return getToken(CruxParser.SemiColon, 0); }
+		public ContinueStatementContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_continueStatement; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof CruxListener ) ((CruxListener)listener).enterContinueStatement(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof CruxListener ) ((CruxListener)listener).exitContinueStatement(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof CruxVisitor ) return ((CruxVisitor<? extends T>)visitor).visitContinueStatement(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final ContinueStatementContext continueStatement() throws RecognitionException {
+		ContinueStatementContext _localctx = new ContinueStatementContext(_ctx, getState());
+		enterRule(_localctx, 48, RULE_continueStatement);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(186);
+			match(Continue);
+			setState(187);
 			match(SemiColon);
 			}
 		}
@@ -1663,15 +1666,15 @@ public class CruxParser extends Parser {
 
 	public final ReturnStatementContext returnStatement() throws RecognitionException {
 		ReturnStatementContext _localctx = new ReturnStatementContext(_ctx, getState());
-		enterRule(_localctx, 48, RULE_returnStatement);
+		enterRule(_localctx, 50, RULE_returnStatement);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(197);
+			setState(189);
 			match(Return);
-			setState(198);
+			setState(190);
 			expression0();
-			setState(199);
+			setState(191);
 			match(SemiColon);
 			}
 		}
@@ -1714,26 +1717,27 @@ public class CruxParser extends Parser {
 
 	public final DesignatorContext designator() throws RecognitionException {
 		DesignatorContext _localctx = new DesignatorContext(_ctx, getState());
-		enterRule(_localctx, 50, RULE_designator);
+		enterRule(_localctx, 52, RULE_designator);
+		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(201);
+			setState(193);
 			match(Identifier);
-			setState(206);
+			setState(198);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,10,_ctx) ) {
-			case 1:
+			_la = _input.LA(1);
+			if (_la==OpenBrack) {
 				{
-				setState(202);
+				setState(194);
 				match(OpenBrack);
-				setState(203);
+				setState(195);
 				expression0();
-				setState(204);
+				setState(196);
 				match(ClosedBrack);
 				}
-				break;
 			}
+
 			}
 		}
 		catch (RecognitionException re) {
@@ -1747,50 +1751,50 @@ public class CruxParser extends Parser {
 		return _localctx;
 	}
 
-	public static class StatementListContext extends ParserRuleContext {
+	public static class StatementsContext extends ParserRuleContext {
 		public List<StatementContext> statement() {
 			return getRuleContexts(StatementContext.class);
 		}
 		public StatementContext statement(int i) {
 			return getRuleContext(StatementContext.class,i);
 		}
-		public StatementListContext(ParserRuleContext parent, int invokingState) {
+		public StatementsContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_statementList; }
+		@Override public int getRuleIndex() { return RULE_statements; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CruxListener ) ((CruxListener)listener).enterStatementList(this);
+			if ( listener instanceof CruxListener ) ((CruxListener)listener).enterStatements(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CruxListener ) ((CruxListener)listener).exitStatementList(this);
+			if ( listener instanceof CruxListener ) ((CruxListener)listener).exitStatements(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof CruxVisitor ) return ((CruxVisitor<? extends T>)visitor).visitStatementList(this);
+			if ( visitor instanceof CruxVisitor ) return ((CruxVisitor<? extends T>)visitor).visitStatements(this);
 			else return visitor.visitChildren(this);
 		}
 	}
 
-	public final StatementListContext statementList() throws RecognitionException {
-		StatementListContext _localctx = new StatementListContext(_ctx, getState());
-		enterRule(_localctx, 52, RULE_statementList);
+	public final StatementsContext statements() throws RecognitionException {
+		StatementsContext _localctx = new StatementsContext(_ctx, getState());
+		enterRule(_localctx, 54, RULE_statements);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(211);
+			setState(203);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << If) | (1L << Return) | (1L << Break) | (1L << For) | (1L << Identifier))) != 0)) {
+			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << If) | (1L << Return) | (1L << Break) | (1L << Continue) | (1L << For) | (1L << Identifier))) != 0)) {
 				{
 				{
-				setState(208);
+				setState(200);
 				statement();
 				}
 				}
-				setState(213);
+				setState(205);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
@@ -1807,42 +1811,42 @@ public class CruxParser extends Parser {
 		return _localctx;
 	}
 
-	public static class StatementBlockContext extends ParserRuleContext {
+	public static class StatementBlocksContext extends ParserRuleContext {
 		public TerminalNode OpenBrace() { return getToken(CruxParser.OpenBrace, 0); }
-		public StatementListContext statementList() {
-			return getRuleContext(StatementListContext.class,0);
+		public StatementsContext statements() {
+			return getRuleContext(StatementsContext.class,0);
 		}
 		public TerminalNode ClosedBrace() { return getToken(CruxParser.ClosedBrace, 0); }
-		public StatementBlockContext(ParserRuleContext parent, int invokingState) {
+		public StatementBlocksContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_statementBlock; }
+		@Override public int getRuleIndex() { return RULE_statementBlocks; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CruxListener ) ((CruxListener)listener).enterStatementBlock(this);
+			if ( listener instanceof CruxListener ) ((CruxListener)listener).enterStatementBlocks(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CruxListener ) ((CruxListener)listener).exitStatementBlock(this);
+			if ( listener instanceof CruxListener ) ((CruxListener)listener).exitStatementBlocks(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof CruxVisitor ) return ((CruxVisitor<? extends T>)visitor).visitStatementBlock(this);
+			if ( visitor instanceof CruxVisitor ) return ((CruxVisitor<? extends T>)visitor).visitStatementBlocks(this);
 			else return visitor.visitChildren(this);
 		}
 	}
 
-	public final StatementBlockContext statementBlock() throws RecognitionException {
-		StatementBlockContext _localctx = new StatementBlockContext(_ctx, getState());
-		enterRule(_localctx, 54, RULE_statementBlock);
+	public final StatementBlocksContext statementBlocks() throws RecognitionException {
+		StatementBlocksContext _localctx = new StatementBlocksContext(_ctx, getState());
+		enterRule(_localctx, 56, RULE_statementBlocks);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(214);
+			setState(206);
 			match(OpenBrace);
-			setState(215);
-			statementList();
-			setState(216);
+			setState(207);
+			statements();
+			setState(208);
 			match(ClosedBrace);
 			}
 		}
@@ -1885,17 +1889,17 @@ public class CruxParser extends Parser {
 
 	public final CallExpressionContext callExpression() throws RecognitionException {
 		CallExpressionContext _localctx = new CallExpressionContext(_ctx, getState());
-		enterRule(_localctx, 56, RULE_callExpression);
+		enterRule(_localctx, 58, RULE_callExpression);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(218);
+			setState(210);
 			match(Identifier);
-			setState(219);
+			setState(211);
 			match(OpenParen);
-			setState(220);
+			setState(212);
 			expressionList();
-			setState(221);
+			setState(213);
 			match(ClosedParen);
 			}
 		}
@@ -1942,31 +1946,31 @@ public class CruxParser extends Parser {
 
 	public final ExpressionListContext expressionList() throws RecognitionException {
 		ExpressionListContext _localctx = new ExpressionListContext(_ctx, getState());
-		enterRule(_localctx, 58, RULE_expressionList);
+		enterRule(_localctx, 60, RULE_expressionList);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(231);
+			setState(223);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << Integer) | (1L << True) | (1L << False) | (1L << NOT) | (1L << Identifier) | (1L << OpenParen))) != 0)) {
+			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__9) | (1L << T__10) | (1L << T__11) | (1L << Integer) | (1L << True) | (1L << False) | (1L << NOT) | (1L << Identifier) | (1L << OpenParen))) != 0)) {
 				{
-				setState(223);
+				setState(215);
 				expression0();
-				setState(228);
+				setState(220);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				while (_la==Comma) {
 					{
 					{
-					setState(224);
+					setState(216);
 					match(Comma);
-					setState(225);
+					setState(217);
 					expression0();
 					}
 					}
-					setState(230);
+					setState(222);
 					_errHandler.sync(this);
 					_la = _input.LA(1);
 				}
@@ -1986,104 +1990,76 @@ public class CruxParser extends Parser {
 		return _localctx;
 	}
 
-	public boolean sempred(RuleContext _localctx, int ruleIndex, int predIndex) {
-		switch (ruleIndex) {
-		case 14:
-			return expression1_sempred((Expression1Context)_localctx, predIndex);
-		case 15:
-			return expression2_sempred((Expression2Context)_localctx, predIndex);
-		}
-		return true;
-	}
-	private boolean expression1_sempred(Expression1Context _localctx, int predIndex) {
-		switch (predIndex) {
-		case 0:
-			return precpred(_ctx, 1);
-		}
-		return true;
-	}
-	private boolean expression2_sempred(Expression2Context _localctx, int predIndex) {
-		switch (predIndex) {
-		case 1:
-			return precpred(_ctx, 1);
-		}
-		return true;
-	}
-
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3#\u00ec\4\2\t\2\4"+
-		"\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t"+
-		"\13\4\f\t\f\4\r\t\r\4\16\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22"+
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\60\u00e4\4\2\t\2"+
+		"\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13"+
+		"\t\13\4\f\t\f\4\r\t\r\4\16\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22"+
 		"\4\23\t\23\4\24\t\24\4\25\t\25\4\26\t\26\4\27\t\27\4\30\t\30\4\31\t\31"+
-		"\4\32\t\32\4\33\t\33\4\34\t\34\4\35\t\35\4\36\t\36\4\37\t\37\3\2\3\2\3"+
-		"\2\3\3\7\3C\n\3\f\3\16\3F\13\3\3\4\3\4\3\4\5\4K\n\4\3\5\3\5\3\5\3\5\3"+
-		"\6\3\6\3\7\3\7\3\7\3\7\3\7\3\7\3\7\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\t\3\t"+
-		"\3\n\3\n\3\n\3\13\3\13\3\13\7\13i\n\13\f\13\16\13l\13\13\5\13n\n\13\3"+
-		"\f\3\f\3\r\3\r\3\16\3\16\3\17\3\17\3\17\3\17\5\17z\n\17\3\20\3\20\3\20"+
-		"\3\20\3\20\3\20\3\20\7\20\u0083\n\20\f\20\16\20\u0086\13\20\3\21\3\21"+
-		"\3\21\3\21\3\21\3\21\3\21\7\21\u008f\n\21\f\21\16\21\u0092\13\21\3\22"+
-		"\3\22\3\22\3\22\3\22\3\22\3\22\3\22\3\22\5\22\u009d\n\22\3\23\3\23\3\23"+
-		"\3\23\3\23\3\24\3\24\3\24\3\24\3\25\3\25\3\25\3\26\3\26\3\26\3\26\3\26"+
-		"\3\26\3\26\3\26\5\26\u00b3\n\26\3\27\3\27\3\27\3\27\3\27\5\27\u00ba\n"+
-		"\27\3\30\3\30\3\30\3\30\3\30\3\30\3\30\3\30\3\30\3\31\3\31\3\31\3\32\3"+
-		"\32\3\32\3\32\3\33\3\33\3\33\3\33\3\33\5\33\u00d1\n\33\3\34\7\34\u00d4"+
-		"\n\34\f\34\16\34\u00d7\13\34\3\35\3\35\3\35\3\35\3\36\3\36\3\36\3\36\3"+
-		"\36\3\37\3\37\3\37\7\37\u00e5\n\37\f\37\16\37\u00e8\13\37\5\37\u00ea\n"+
-		"\37\3\37\2\4\36  \2\4\6\b\n\f\16\20\22\24\26\30\32\34\36 \"$&(*,.\60\62"+
-		"\64\668:<\2\6\3\2\4\6\3\2\22\27\4\2\b\b\36\37\4\2\7\7 !\2\u00e5\2>\3\2"+
-		"\2\2\4D\3\2\2\2\6J\3\2\2\2\bL\3\2\2\2\nP\3\2\2\2\fR\3\2\2\2\16Y\3\2\2"+
-		"\2\20`\3\2\2\2\22b\3\2\2\2\24m\3\2\2\2\26o\3\2\2\2\30q\3\2\2\2\32s\3\2"+
-		"\2\2\34u\3\2\2\2\36{\3\2\2\2 \u0087\3\2\2\2\"\u009c\3\2\2\2$\u009e\3\2"+
-		"\2\2&\u00a3\3\2\2\2(\u00a7\3\2\2\2*\u00b2\3\2\2\2,\u00b4\3\2\2\2.\u00bb"+
-		"\3\2\2\2\60\u00c4\3\2\2\2\62\u00c7\3\2\2\2\64\u00cb\3\2\2\2\66\u00d5\3"+
-		"\2\2\28\u00d8\3\2\2\2:\u00dc\3\2\2\2<\u00e9\3\2\2\2>?\5\4\3\2?@\7\2\2"+
-		"\3@\3\3\2\2\2AC\5\6\4\2BA\3\2\2\2CF\3\2\2\2DB\3\2\2\2DE\3\2\2\2E\5\3\2"+
-		"\2\2FD\3\2\2\2GK\5\b\5\2HK\5\f\7\2IK\5\16\b\2JG\3\2\2\2JH\3\2\2\2JI\3"+
-		"\2\2\2K\7\3\2\2\2LM\5\n\6\2MN\7\17\2\2NO\7\3\2\2O\t\3\2\2\2PQ\7\17\2\2"+
-		"Q\13\3\2\2\2RS\5\n\6\2ST\7\17\2\2TU\7\32\2\2UV\7\4\2\2VW\7\33\2\2WX\7"+
-		"\3\2\2X\r\3\2\2\2YZ\5\n\6\2Z[\7\17\2\2[\\\7\30\2\2\\]\5\24\13\2]^\7\31"+
-		"\2\2^_\58\35\2_\17\3\2\2\2`a\t\2\2\2a\21\3\2\2\2bc\5\n\6\2cd\7\17\2\2"+
-		"d\23\3\2\2\2ej\5\22\n\2fg\7\"\2\2gi\5\22\n\2hf\3\2\2\2il\3\2\2\2jh\3\2"+
-		"\2\2jk\3\2\2\2kn\3\2\2\2lj\3\2\2\2me\3\2\2\2mn\3\2\2\2n\25\3\2\2\2op\t"+
-		"\3\2\2p\27\3\2\2\2qr\t\4\2\2r\31\3\2\2\2st\t\5\2\2t\33\3\2\2\2uy\5\36"+
-		"\20\2vw\5\26\f\2wx\5\36\20\2xz\3\2\2\2yv\3\2\2\2yz\3\2\2\2z\35\3\2\2\2"+
-		"{|\b\20\1\2|}\5 \21\2}\u0084\3\2\2\2~\177\f\3\2\2\177\u0080\5\30\r\2\u0080"+
-		"\u0081\5 \21\2\u0081\u0083\3\2\2\2\u0082~\3\2\2\2\u0083\u0086\3\2\2\2"+
-		"\u0084\u0082\3\2\2\2\u0084\u0085\3\2\2\2\u0085\37\3\2\2\2\u0086\u0084"+
-		"\3\2\2\2\u0087\u0088\b\21\1\2\u0088\u0089\5\"\22\2\u0089\u0090\3\2\2\2"+
-		"\u008a\u008b\f\3\2\2\u008b\u008c\5\32\16\2\u008c\u008d\5\"\22\2\u008d"+
-		"\u008f\3\2\2\2\u008e\u008a\3\2\2\2\u008f\u0092\3\2\2\2\u0090\u008e\3\2"+
-		"\2\2\u0090\u0091\3\2\2\2\u0091!\3\2\2\2\u0092\u0090\3\2\2\2\u0093\u0094"+
-		"\7\t\2\2\u0094\u009d\5\"\22\2\u0095\u0096\7\30\2\2\u0096\u0097\5\34\17"+
-		"\2\u0097\u0098\7\31\2\2\u0098\u009d\3\2\2\2\u0099\u009d\5\64\33\2\u009a"+
-		"\u009d\5:\36\2\u009b\u009d\5\20\t\2\u009c\u0093\3\2\2\2\u009c\u0095\3"+
-		"\2\2\2\u009c\u0099\3\2\2\2\u009c\u009a\3\2\2\2\u009c\u009b\3\2\2\2\u009d"+
-		"#\3\2\2\2\u009e\u009f\5\64\33\2\u009f\u00a0\7#\2\2\u00a0\u00a1\5\34\17"+
-		"\2\u00a1\u00a2\7\3\2\2\u00a2%\3\2\2\2\u00a3\u00a4\5\64\33\2\u00a4\u00a5"+
-		"\7#\2\2\u00a5\u00a6\5\34\17\2\u00a6\'\3\2\2\2\u00a7\u00a8\5:\36\2\u00a8"+
-		"\u00a9\7\3\2\2\u00a9)\3\2\2\2\u00aa\u00b3\5\b\5\2\u00ab\u00b3\5\62\32"+
-		"\2\u00ac\u00b3\5(\25\2\u00ad\u00b3\5$\23\2\u00ae\u00b3\5\60\31\2\u00af"+
-		"\u00b3\5,\27\2\u00b0\u00b3\5.\30\2\u00b1\u00b3\5&\24\2\u00b2\u00aa\3\2"+
-		"\2\2\u00b2\u00ab\3\2\2\2\u00b2\u00ac\3\2\2\2\u00b2\u00ad\3\2\2\2\u00b2"+
-		"\u00ae\3\2\2\2\u00b2\u00af\3\2\2\2\u00b2\u00b0\3\2\2\2\u00b2\u00b1\3\2"+
-		"\2\2\u00b3+\3\2\2\2\u00b4\u00b5\7\n\2\2\u00b5\u00b6\5\34\17\2\u00b6\u00b9"+
-		"\58\35\2\u00b7\u00b8\7\13\2\2\u00b8\u00ba\58\35\2\u00b9\u00b7\3\2\2\2"+
-		"\u00b9\u00ba\3\2\2\2\u00ba-\3\2\2\2\u00bb\u00bc\7\16\2\2\u00bc\u00bd\7"+
-		"\30\2\2\u00bd\u00be\5$\23\2\u00be\u00bf\5\34\17\2\u00bf\u00c0\7\3\2\2"+
-		"\u00c0\u00c1\5&\24\2\u00c1\u00c2\7\31\2\2\u00c2\u00c3\58\35\2\u00c3/\3"+
-		"\2\2\2\u00c4\u00c5\7\r\2\2\u00c5\u00c6\7\3\2\2\u00c6\61\3\2\2\2\u00c7"+
-		"\u00c8\7\f\2\2\u00c8\u00c9\5\34\17\2\u00c9\u00ca\7\3\2\2\u00ca\63\3\2"+
-		"\2\2\u00cb\u00d0\7\17\2\2\u00cc\u00cd\7\32\2\2\u00cd\u00ce\5\34\17\2\u00ce"+
-		"\u00cf\7\33\2\2\u00cf\u00d1\3\2\2\2\u00d0\u00cc\3\2\2\2\u00d0\u00d1\3"+
-		"\2\2\2\u00d1\65\3\2\2\2\u00d2\u00d4\5*\26\2\u00d3\u00d2\3\2\2\2\u00d4"+
-		"\u00d7\3\2\2\2\u00d5\u00d3\3\2\2\2\u00d5\u00d6\3\2\2\2\u00d6\67\3\2\2"+
-		"\2\u00d7\u00d5\3\2\2\2\u00d8\u00d9\7\34\2\2\u00d9\u00da\5\66\34\2\u00da"+
-		"\u00db\7\35\2\2\u00db9\3\2\2\2\u00dc\u00dd\7\17\2\2\u00dd\u00de\7\30\2"+
-		"\2\u00de\u00df\5<\37\2\u00df\u00e0\7\31\2\2\u00e0;\3\2\2\2\u00e1\u00e6"+
-		"\5\34\17\2\u00e2\u00e3\7\"\2\2\u00e3\u00e5\5\34\17\2\u00e4\u00e2\3\2\2"+
-		"\2\u00e5\u00e8\3\2\2\2\u00e6\u00e4\3\2\2\2\u00e6\u00e7\3\2\2\2\u00e7\u00ea"+
-		"\3\2\2\2\u00e8\u00e6\3\2\2\2\u00e9\u00e1\3\2\2\2\u00e9\u00ea\3\2\2\2\u00ea"+
-		"=\3\2\2\2\20DJjmy\u0084\u0090\u009c\u00b2\u00b9\u00d0\u00d5\u00e6\u00e9";
+		"\4\32\t\32\4\33\t\33\4\34\t\34\4\35\t\35\4\36\t\36\4\37\t\37\4 \t \3\2"+
+		"\3\2\3\2\3\3\7\3E\n\3\f\3\16\3H\13\3\3\4\3\4\3\4\5\4M\n\4\3\5\3\5\3\5"+
+		"\3\5\3\6\3\6\3\7\3\7\3\7\3\7\3\7\3\7\3\7\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3"+
+		"\t\3\t\3\n\3\n\3\n\3\13\3\13\3\13\7\13k\n\13\f\13\16\13n\13\13\5\13p\n"+
+		"\13\3\f\3\f\3\r\3\r\3\16\3\16\3\17\3\17\3\17\3\17\5\17|\n\17\3\20\3\20"+
+		"\3\20\3\20\3\21\3\21\3\21\3\21\5\21\u0086\n\21\3\22\3\22\3\22\3\22\3\22"+
+		"\3\22\3\22\3\22\3\22\5\22\u0091\n\22\3\23\3\23\3\23\3\23\3\23\3\24\3\24"+
+		"\3\24\3\24\3\25\3\25\3\25\3\26\3\26\3\26\3\26\3\26\3\26\3\26\3\26\3\26"+
+		"\5\26\u00a8\n\26\3\27\3\27\3\27\3\27\3\27\5\27\u00af\n\27\3\30\3\30\3"+
+		"\30\3\30\3\30\3\30\3\30\3\30\3\30\3\31\3\31\3\31\3\32\3\32\3\32\3\33\3"+
+		"\33\3\33\3\33\3\34\3\34\3\34\3\34\3\34\5\34\u00c9\n\34\3\35\7\35\u00cc"+
+		"\n\35\f\35\16\35\u00cf\13\35\3\36\3\36\3\36\3\36\3\37\3\37\3\37\3\37\3"+
+		"\37\3 \3 \3 \7 \u00dd\n \f \16 \u00e0\13 \5 \u00e2\n \3 \2\2!\2\4\6\b"+
+		"\n\f\16\20\22\24\26\30\32\34\36 \"$&(*,.\60\62\64\668:<>\2\6\3\2\20\22"+
+		"\3\2\3\b\3\2\t\13\3\2\f\16\2\u00dc\2@\3\2\2\2\4F\3\2\2\2\6L\3\2\2\2\b"+
+		"N\3\2\2\2\nR\3\2\2\2\fT\3\2\2\2\16[\3\2\2\2\20b\3\2\2\2\22d\3\2\2\2\24"+
+		"o\3\2\2\2\26q\3\2\2\2\30s\3\2\2\2\32u\3\2\2\2\34w\3\2\2\2\36}\3\2\2\2"+
+		" \u0085\3\2\2\2\"\u0090\3\2\2\2$\u0092\3\2\2\2&\u0097\3\2\2\2(\u009b\3"+
+		"\2\2\2*\u00a7\3\2\2\2,\u00a9\3\2\2\2.\u00b0\3\2\2\2\60\u00b9\3\2\2\2\62"+
+		"\u00bc\3\2\2\2\64\u00bf\3\2\2\2\66\u00c3\3\2\2\28\u00cd\3\2\2\2:\u00d0"+
+		"\3\2\2\2<\u00d4\3\2\2\2>\u00e1\3\2\2\2@A\5\4\3\2AB\7\2\2\3B\3\3\2\2\2"+
+		"CE\5\6\4\2DC\3\2\2\2EH\3\2\2\2FD\3\2\2\2FG\3\2\2\2G\5\3\2\2\2HF\3\2\2"+
+		"\2IM\5\b\5\2JM\5\f\7\2KM\5\16\b\2LI\3\2\2\2LJ\3\2\2\2LK\3\2\2\2M\7\3\2"+
+		"\2\2NO\5\n\6\2OP\7\34\2\2PQ\7\17\2\2Q\t\3\2\2\2RS\7\34\2\2S\13\3\2\2\2"+
+		"TU\5\n\6\2UV\7\34\2\2VW\7\'\2\2WX\7\20\2\2XY\7(\2\2YZ\7\17\2\2Z\r\3\2"+
+		"\2\2[\\\5\n\6\2\\]\7\34\2\2]^\7%\2\2^_\5\24\13\2_`\7&\2\2`a\5:\36\2a\17"+
+		"\3\2\2\2bc\t\2\2\2c\21\3\2\2\2de\5\n\6\2ef\7\34\2\2f\23\3\2\2\2gl\5\22"+
+		"\n\2hi\7/\2\2ik\5\22\n\2jh\3\2\2\2kn\3\2\2\2lj\3\2\2\2lm\3\2\2\2mp\3\2"+
+		"\2\2nl\3\2\2\2og\3\2\2\2op\3\2\2\2p\25\3\2\2\2qr\t\3\2\2r\27\3\2\2\2s"+
+		"t\t\4\2\2t\31\3\2\2\2uv\t\5\2\2v\33\3\2\2\2w{\5\36\20\2xy\5\26\f\2yz\5"+
+		"\36\20\2z|\3\2\2\2{x\3\2\2\2{|\3\2\2\2|\35\3\2\2\2}~\5 \21\2~\177\5\30"+
+		"\r\2\177\u0080\5 \21\2\u0080\37\3\2\2\2\u0081\u0086\5\"\22\2\u0082\u0083"+
+		"\5\32\16\2\u0083\u0084\5\"\22\2\u0084\u0086\3\2\2\2\u0085\u0081\3\2\2"+
+		"\2\u0085\u0082\3\2\2\2\u0086!\3\2\2\2\u0087\u0088\7\25\2\2\u0088\u0091"+
+		"\5\"\22\2\u0089\u008a\7%\2\2\u008a\u008b\5\34\17\2\u008b\u008c\7&\2\2"+
+		"\u008c\u0091\3\2\2\2\u008d\u0091\5\66\34\2\u008e\u0091\5<\37\2\u008f\u0091"+
+		"\5\20\t\2\u0090\u0087\3\2\2\2\u0090\u0089\3\2\2\2\u0090\u008d\3\2\2\2"+
+		"\u0090\u008e\3\2\2\2\u0090\u008f\3\2\2\2\u0091#\3\2\2\2\u0092\u0093\5"+
+		"\66\34\2\u0093\u0094\7\60\2\2\u0094\u0095\5\34\17\2\u0095\u0096\7\17\2"+
+		"\2\u0096%\3\2\2\2\u0097\u0098\5\66\34\2\u0098\u0099\7\60\2\2\u0099\u009a"+
+		"\5\34\17\2\u009a\'\3\2\2\2\u009b\u009c\5<\37\2\u009c\u009d\7\17\2\2\u009d"+
+		")\3\2\2\2\u009e\u00a8\5\b\5\2\u009f\u00a8\5\64\33\2\u00a0\u00a8\5(\25"+
+		"\2\u00a1\u00a8\5$\23\2\u00a2\u00a8\5&\24\2\u00a3\u00a8\5\60\31\2\u00a4"+
+		"\u00a8\5,\27\2\u00a5\u00a8\5\62\32\2\u00a6\u00a8\5.\30\2\u00a7\u009e\3"+
+		"\2\2\2\u00a7\u009f\3\2\2\2\u00a7\u00a0\3\2\2\2\u00a7\u00a1\3\2\2\2\u00a7"+
+		"\u00a2\3\2\2\2\u00a7\u00a3\3\2\2\2\u00a7\u00a4\3\2\2\2\u00a7\u00a5\3\2"+
+		"\2\2\u00a7\u00a6\3\2\2\2\u00a8+\3\2\2\2\u00a9\u00aa\7\26\2\2\u00aa\u00ab"+
+		"\5\34\17\2\u00ab\u00ae\5:\36\2\u00ac\u00ad\7\27\2\2\u00ad\u00af\5:\36"+
+		"\2\u00ae\u00ac\3\2\2\2\u00ae\u00af\3\2\2\2\u00af-\3\2\2\2\u00b0\u00b1"+
+		"\7\33\2\2\u00b1\u00b2\7%\2\2\u00b2\u00b3\5$\23\2\u00b3\u00b4\5\34\17\2"+
+		"\u00b4\u00b5\7\17\2\2\u00b5\u00b6\5&\24\2\u00b6\u00b7\7&\2\2\u00b7\u00b8"+
+		"\5:\36\2\u00b8/\3\2\2\2\u00b9\u00ba\7\31\2\2\u00ba\u00bb\7\17\2\2\u00bb"+
+		"\61\3\2\2\2\u00bc\u00bd\7\32\2\2\u00bd\u00be\7\17\2\2\u00be\63\3\2\2\2"+
+		"\u00bf\u00c0\7\30\2\2\u00c0\u00c1\5\34\17\2\u00c1\u00c2\7\17\2\2\u00c2"+
+		"\65\3\2\2\2\u00c3\u00c8\7\34\2\2\u00c4\u00c5\7\'\2\2\u00c5\u00c6\5\34"+
+		"\17\2\u00c6\u00c7\7(\2\2\u00c7\u00c9\3\2\2\2\u00c8\u00c4\3\2\2\2\u00c8"+
+		"\u00c9\3\2\2\2\u00c9\67\3\2\2\2\u00ca\u00cc\5*\26\2\u00cb\u00ca\3\2\2"+
+		"\2\u00cc\u00cf\3\2\2\2\u00cd\u00cb\3\2\2\2\u00cd\u00ce\3\2\2\2\u00ce9"+
+		"\3\2\2\2\u00cf\u00cd\3\2\2\2\u00d0\u00d1\7)\2\2\u00d1\u00d2\58\35\2\u00d2"+
+		"\u00d3\7*\2\2\u00d3;\3\2\2\2\u00d4\u00d5\7\34\2\2\u00d5\u00d6\7%\2\2\u00d6"+
+		"\u00d7\5> \2\u00d7\u00d8\7&\2\2\u00d8=\3\2\2\2\u00d9\u00de\5\34\17\2\u00da"+
+		"\u00db\7/\2\2\u00db\u00dd\5\34\17\2\u00dc\u00da\3\2\2\2\u00dd\u00e0\3"+
+		"\2\2\2\u00de\u00dc\3\2\2\2\u00de\u00df\3\2\2\2\u00df\u00e2\3\2\2\2\u00e0"+
+		"\u00de\3\2\2\2\u00e1\u00d9\3\2\2\2\u00e1\u00e2\3\2\2\2\u00e2?\3\2\2\2"+
+		"\17FLlo{\u0085\u0090\u00a7\u00ae\u00c8\u00cd\u00de\u00e1";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

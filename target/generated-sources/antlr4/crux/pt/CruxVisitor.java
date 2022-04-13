@@ -65,29 +65,29 @@ public interface CruxVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitParameter(CruxParser.ParameterContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link CruxParser#parameterList}.
+	 * Visit a parse tree produced by {@link CruxParser#parameterType}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitParameterList(CruxParser.ParameterListContext ctx);
+	T visitParameterType(CruxParser.ParameterTypeContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link CruxParser#op0}.
+	 * Visit a parse tree produced by {@link CruxParser#comparisons}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitOp0(CruxParser.Op0Context ctx);
+	T visitComparisons(CruxParser.ComparisonsContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link CruxParser#op1}.
+	 * Visit a parse tree produced by {@link CruxParser#operationTwo}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitOp1(CruxParser.Op1Context ctx);
+	T visitOperationTwo(CruxParser.OperationTwoContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link CruxParser#op2}.
+	 * Visit a parse tree produced by {@link CruxParser#operationThree}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitOp2(CruxParser.Op2Context ctx);
+	T visitOperationThree(CruxParser.OperationThreeContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link CruxParser#expression0}.
 	 * @param ctx the parse tree
@@ -119,11 +119,11 @@ public interface CruxVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitAssignmentStatement(CruxParser.AssignmentStatementContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link CruxParser#assignmentStatementNoSemi}.
+	 * Visit a parse tree produced by {@link CruxParser#assignmentNoSemi}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitAssignmentStatementNoSemi(CruxParser.AssignmentStatementNoSemiContext ctx);
+	T visitAssignmentNoSemi(CruxParser.AssignmentNoSemiContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link CruxParser#callStatement}.
 	 * @param ctx the parse tree
@@ -155,6 +155,12 @@ public interface CruxVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitBreakStatement(CruxParser.BreakStatementContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link CruxParser#continueStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitContinueStatement(CruxParser.ContinueStatementContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link CruxParser#returnStatement}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -167,17 +173,17 @@ public interface CruxVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitDesignator(CruxParser.DesignatorContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link CruxParser#statementList}.
+	 * Visit a parse tree produced by {@link CruxParser#statements}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitStatementList(CruxParser.StatementListContext ctx);
+	T visitStatements(CruxParser.StatementsContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link CruxParser#statementBlock}.
+	 * Visit a parse tree produced by {@link CruxParser#statementBlocks}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitStatementBlock(CruxParser.StatementBlockContext ctx);
+	T visitStatementBlocks(CruxParser.StatementBlocksContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link CruxParser#callExpression}.
 	 * @param ctx the parse tree
