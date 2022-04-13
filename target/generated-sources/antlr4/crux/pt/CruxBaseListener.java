@@ -124,49 +124,49 @@ public class CruxBaseListener implements CruxListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterParameterType(CruxParser.ParameterTypeContext ctx) { }
+	@Override public void enterParameterList(CruxParser.ParameterListContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitParameterType(CruxParser.ParameterTypeContext ctx) { }
+	@Override public void exitParameterList(CruxParser.ParameterListContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterComparisons(CruxParser.ComparisonsContext ctx) { }
+	@Override public void enterOp0(CruxParser.Op0Context ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitComparisons(CruxParser.ComparisonsContext ctx) { }
+	@Override public void exitOp0(CruxParser.Op0Context ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterOperationTwo(CruxParser.OperationTwoContext ctx) { }
+	@Override public void enterOp1(CruxParser.Op1Context ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitOperationTwo(CruxParser.OperationTwoContext ctx) { }
+	@Override public void exitOp1(CruxParser.Op1Context ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterOperationThree(CruxParser.OperationThreeContext ctx) { }
+	@Override public void enterOp2(CruxParser.Op2Context ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitOperationThree(CruxParser.OperationThreeContext ctx) { }
+	@Override public void exitOp2(CruxParser.Op2Context ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -232,13 +232,13 @@ public class CruxBaseListener implements CruxListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAssignmentNoSemi(CruxParser.AssignmentNoSemiContext ctx) { }
+	@Override public void enterAssignmentStatementNoSemi(CruxParser.AssignmentStatementNoSemiContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAssignmentNoSemi(CruxParser.AssignmentNoSemiContext ctx) { }
+	@Override public void exitAssignmentStatementNoSemi(CruxParser.AssignmentStatementNoSemiContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -304,18 +304,6 @@ public class CruxBaseListener implements CruxListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterContinueStatement(CruxParser.ContinueStatementContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitContinueStatement(CruxParser.ContinueStatementContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterReturnStatement(CruxParser.ReturnStatementContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -340,25 +328,25 @@ public class CruxBaseListener implements CruxListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterStatements(CruxParser.StatementsContext ctx) { }
+	@Override public void enterStatementList(CruxParser.StatementListContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitStatements(CruxParser.StatementsContext ctx) { }
+	@Override public void exitStatementList(CruxParser.StatementListContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterStatementBlocks(CruxParser.StatementBlocksContext ctx) { }
+	@Override public void enterStatementBlock(CruxParser.StatementBlockContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitStatementBlocks(CruxParser.StatementBlocksContext ctx) { }
+	@Override public void exitStatementBlock(CruxParser.StatementBlockContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
