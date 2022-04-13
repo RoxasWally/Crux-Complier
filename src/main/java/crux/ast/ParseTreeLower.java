@@ -57,7 +57,7 @@ public final class ParseTreeLower {
     tempList.add(ctx.accept(declarationVisitor));
   }
 
-  return new DeclarationList(position, tempList)
+  return new DeclarationList(position, tempList);
   }
 
   /**
@@ -229,10 +229,27 @@ public final class ParseTreeLower {
      * grammer
      */
 
-    /*
-     * @Override
-     * public Expression visitExpression0(CruxParser.Expression0Context ctx) { }
-     */
+     @Override
+     public Expression visitExpression0(CruxParser.Expression0Context ctx) {
+       Position position = makePosition(ctx);
+       CruxParser.Expression1Context leftCtx = ctx.expression1(0);
+       //Expression leftExpression = leftCtx.accept(expressionVisitor);
+
+       CruxParser.Expression1Context rightCtx = ctx.expression1(1);
+       //Expression rightExpression = rightCtx.accept(expressionVisitor);
+       CruxParser.Op0Context op = ctx.op0();
+      if( op == null){
+        return rightCtx.accept(expressionVisitor);
+      } else {
+        Operation operation;
+        String textoper = op.getText();
+        switch (textoper){
+          case ">":
+            operation = operation.GT;
+        }
+      }
+     }
+
 
     /**
      * Parse Expression1 to OpExpr Node Parsing the expression should be exactly as described in the

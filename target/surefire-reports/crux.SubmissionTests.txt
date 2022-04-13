@@ -1,8 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: crux.SubmissionTests
 -------------------------------------------------------------------------------
-<<<<<<< HEAD
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in crux.SubmissionTests
-=======
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s - in crux.SubmissionTests
->>>>>>> origin/master
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s - in crux.SubmissionTests
