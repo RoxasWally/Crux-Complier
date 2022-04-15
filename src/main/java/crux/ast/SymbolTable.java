@@ -106,7 +106,7 @@ public final class SymbolTable {
    */
 
   void enter() {
-    //TODO
+    symbolScopes.add(new HashMap<>());
   }
 
   /**
@@ -114,7 +114,7 @@ public final class SymbolTable {
    */
 
   void exit() {
-    //TODO
+    symbolScopes.remove(symbolScopes.size()-1);
   }
 
   /**
