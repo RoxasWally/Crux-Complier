@@ -122,8 +122,16 @@ public final class SymbolTable {
    * current scope that's a declareation error.
    */
   Symbol add(Position pos, String name, Type type) {
-    //TODO
-    return null;
+    int ind = symbolScopes.size() - 1;
+    if(symbolScopes.get(ind).containsKey(name) == true){
+      err.printf("declaration error %s[%s already exists in the scope.]%n",pos,name);
+      encounteredError = true;
+      return new Symbol(name, "declaration error ");
+    }else{
+      enter();
+      symbolScopes.get(ind).put(name, new Symbol(name,type));
+      return new Symbol(name,type);
+    }
   }
 
   /**
