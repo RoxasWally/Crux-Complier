@@ -53,6 +53,7 @@ public final class ParseTreeLower {
   public DeclarationList lower(CruxParser.ProgramContext program) {
   Position position = makePosition(program);
   ArrayList<Declaration> tempList = new ArrayList<>();
+
   for (CruxParser.DeclarationContext ctx: program.declarationList().declaration()){
     tempList.add(ctx.accept(declarationVisitor));
   }
@@ -82,9 +83,13 @@ public final class ParseTreeLower {
    * @return a {@link StatementList} AST object.
    */
 
-  /*
-   * private StatementList lower(CruxParser.StatementBlockContext statementBlock) { }
-   */
+   private StatementList lower(CruxParser.StatementBlockContext statementBlock) {
+     symTab.enter();
+     StatementList listLower = lower(statementBlock.statementList());
+     symTab.exit();
+     return  listLower;
+   }
+
 
   /**
    * A parse tree visitor to create AST nodes derived from {@link Declaration}
