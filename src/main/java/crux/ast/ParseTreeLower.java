@@ -101,10 +101,19 @@ public final class ParseTreeLower {
      * @return an AST {@link VariableDeclaration}
      */
 
-    /*
-     * @Override 
-     * public VariableDeclaration visitVariableDeclaration(CruxParser.VariableDeclarationContext ctx) { }
-     */
+
+     @Override
+     public VariableDeclaration visitVariableDeclaration(CruxParser.VariableDeclarationContext ctx) {
+       Position position = makePosition(ctx);
+       String text = ctx.type().getText();
+       Type type = null;
+       if (text.equals("int")) {
+         type = new IntType();
+       }
+       Symbol sym = symTab.add(position,ctx.Identifier().getText(), type);
+       return new VariableDeclaration(position, sym);
+     }
+
 
     /**
      * Visit a parse tree array declaration and creates an AST {@link ArrayDeclaration}
@@ -112,10 +121,19 @@ public final class ParseTreeLower {
      * @return an AST {@link ArrayDeclaration}
      */
 
-    /*
-     * @Override
-     * public Declaration visitArrayDeclaration(CruxParser.ArrayDeclarationContext ctx) { }
-     */
+      @Override
+      public Declaration visitArrayDeclaration(CruxParser.ArrayDeclarationContext ctx) {
+        Position position = makePosition(ctx);
+        String text = ctx.type().getText();
+        Type type = null;
+        long elements = Long.parseLong(ctx.Integer().getText());
+        if (text.equals("int")) {
+          type = new IntType();
+        }
+        Symbol sym = symTab.add(position, ctx.Identifier().getText(), new ArrayType(elements, type));
+        return new ArrayDeclaration(position,sym);
+
+      }
 
     /**
      * Visit a parse tree function definition and create an AST {@link FunctionDefinition}
