@@ -17,16 +17,6 @@ import java.util.Map;
  * and names. The symbol table is an ArrayList of scops.
  */
 public final class SymbolTable {
-  /*private final PrintStream err;
-  private final ArrayList<Map<String, Symbol>> symbolScopes = new ArrayList<>();
-
-  private boolean encounteredError = false;
-  */
-
-  /*(SymbolTable(PrintStream err) {
-    this.err = err;
-  }
-  */
 
   /**
    * Symbol is used to record the name and type of names in the code. Names include function names,
