@@ -153,7 +153,13 @@ public final class SymbolTable {
    * Try to find a symbol in the table starting form the most recent scope.
    */
   private Symbol find(String name) {
-    //TODO
+    int ind = symbolScopes.size() - 1;
+    for(; ind > -1; --ind){
+      boolean find = symbolScopes.get(ind).containsKey(name);
+      if(find == true){
+        return symbolScopes.get(ind).get(name);
+      }
+    }
     return null;
   }
 }
