@@ -12,9 +12,9 @@ import java.util.Map;
 /**
  * Symbol table will map each symbol from Crux source code to its declaration or appearance in the
  * source. The symbol table is made up of scopes, Each scope is a map which maps an identifier to
- * it's symbol. Scopes are inserted to the table starting from the first scope (Global Scope). The
- * Global scope is the first scope in each Crux program and it contains all the built in functions
- * and names. The symbol table is an ArrayList of scops.
+ * its symbol. Scopes are inserted to the table starting from the first scope (Global Scope). The
+ * Global scope is the first scope in each Crux program, and it contains all the built-in functions
+ * and names. The symbol table is an ArrayList of scopes.
  */
 public final class SymbolTable {
 
@@ -109,7 +109,7 @@ public final class SymbolTable {
 
   /**
    * Insert a symbol to the table at the most recent scope. if the name already exists in the
-   * current scope that's a declareation error.
+   * current scope that's a declaration error.
    */
   Symbol add(Position pos, String name, Type type) {
     int ind = symbolScopes.size() - 1;
@@ -125,7 +125,7 @@ public final class SymbolTable {
   }
 
   /**
-   * lookup a name in the SymbolTable, if the name not found in the table it shouold encounter an
+   * lookup a name in the SymbolTable, if the name not found in the table it should encounter an
    * error and return a symbol with ResolveSymbolError error. if the symbol is found then return it.
    */
   Symbol lookup(Position pos, String name) {
@@ -146,7 +146,7 @@ public final class SymbolTable {
     int ind = symbolScopes.size() - 1;
     for(; ind > -1; --ind){
       boolean find = symbolScopes.get(ind).containsKey(name);
-      if(find == true){
+      if(find){
         return symbolScopes.get(ind).get(name);
       }
     }
