@@ -1,13 +1,12 @@
 package crux.ast;
 
+import com.sun.jdi.BooleanType;
 import crux.ast.Position;
 import crux.ast.types.*;
 
 
 import java.io.PrintStream;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Symbol table will map each symbol from Crux source code to its declaration or appearance in the
@@ -84,8 +83,13 @@ public final class SymbolTable {
 
   SymbolTable(PrintStream err) {
     this.err = err;
-    //TODO
-
+    enter();
+    add(null,"readInt", new FuncType(new TypeList(), new IntType()));
+    add(null,"readChar", new FuncType(new TypeList(), new IntType()));
+    add(null,"printBool",new FuncType(new TypeList(List.of(new BoolType())), new VoidType()));
+    add(null,"printInt",new FuncType(new TypeList(List.of(new IntType())), new VoidType()));
+    add(null,"printChar",new FuncType(new TypeList(List.of(new IntType())), new VoidType()));
+    add(null,"println",new FuncType(new TypeList(), new VoidType()));
   }
 
   boolean hasEncounteredError() {
@@ -115,9 +119,9 @@ public final class SymbolTable {
   Symbol add(Position pos, String name, Type type) {
     int ind = symbolScopes.size() - 1;
     if(symbolScopes.get(ind).containsKey(name) == true){
-      err.printf("declaration error %s[%s already exists in the scope.]%n",pos,name);
+      err.printf("DeclarationError%s[%s already exists within the scope.]%n",pos,name);
       encounteredError = true;
-      return new Symbol(name, "declaration error ");
+      return new Symbol(name, "Declaration error ");
     }else{
       enter();
       symbolScopes.get(ind).put(name, new Symbol(name,type));
