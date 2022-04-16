@@ -83,13 +83,29 @@ public final class SymbolTable {
 
   SymbolTable(PrintStream err) {
     this.err = err;
-    enter();
-    add(null,"readInt", new FuncType(new TypeList(), new IntType()));
-    add(null,"readChar", new FuncType(new TypeList(), new IntType()));
-    add(null,"printBool",new FuncType(new TypeList(List.of(new BoolType())), new VoidType()));
-    add(null,"printInt",new FuncType(new TypeList(List.of(new IntType())), new VoidType()));
-    add(null,"printChar",new FuncType(new TypeList(List.of(new IntType())), new VoidType()));
-    add(null,"println",new FuncType(new TypeList(), new VoidType()));
+//    enter();
+//    add(null,"readInt", new FuncType(new TypeList(), new IntType()));
+//    add(null,"readChar", new FuncType(new TypeList(), new IntType()));
+//    add(null,"printBool",new FuncType(new TypeList(List.of(new BoolType())), new VoidType()));
+//    add(null,"printInt",new FuncType(new TypeList(List.of(new IntType())), new VoidType()));
+//    add(null,"printChar",new FuncType(new TypeList(List.of(new IntType())), new VoidType()));
+//    add(null,"println",new FuncType(new TypeList(), new VoidType()));
+    //placing them in a list of does not work
+    //retry by declaring each scope from global all the way to local using hashmap
+    symbolScopes.add(new HashMap<>());
+    FuncType readInt = new FuncType(TypeList.of(), new IntType());
+    FuncType readChar = new FuncType(TypeList.of(), new IntType());
+    FuncType printBool = new FuncType(TypeList.of(new BoolType()), new VoidType());
+    FuncType printInt = new FuncType(TypeList.of(new IntType()), new VoidType());
+    FuncType printChar = new FuncType(TypeList.of(new IntType()), new VoidType());
+    FuncType println =  new FuncType(TypeList.of(), new VoidType());
+
+    symbolScopes.get(0).put("readInt", new Symbol("readInt",readInt));
+    symbolScopes.get(0).put("readChar", new Symbol("readChar", readChar));
+    symbolScopes.get(0).put("printBool", new Symbol("printBool", printBool));
+    symbolScopes.get(0).put("printInt", new Symbol("printInt", printInt));
+    symbolScopes.get(0).put("printChar", new Symbol("printChar", printChar));
+    symbolScopes.get(0).put("println", new Symbol("println", println));
   }
 
   boolean hasEncounteredError() {
@@ -118,7 +134,7 @@ public final class SymbolTable {
    */
   Symbol add(Position pos, String name, Type type) {
     int ind = symbolScopes.size() - 1;
-    if(symbolScopes.get(ind).containsKey(name) == true){
+    if(symbolScopes.get(ind).containsKey(name)){
       err.printf("DeclarationError%s[%s already exists within the scope.]%n",pos,name);
       encounteredError = true;
       return new Symbol(name, "Declaration error ");
