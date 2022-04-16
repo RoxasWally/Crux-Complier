@@ -278,10 +278,16 @@ public final class ParseTreeLower {
      * @return an AST {@link Loop}
      */
 
-    /*
-     * @Override
-     * public Statement visitForStatement(CruxParser.ForStatementContext ctx) { }
-     */
+
+//      @Override
+//     public Statement visitForStatement(CruxParser.ForStatementContext ctx) {
+//        Position position = makePosition(ctx);
+//        Expression condition = ctx.expression0().accept(expressionVisitor);
+//        StatementList body = lower(ctx.statementBlock());
+//        return new For(position,condition,body);
+//
+//      }
+
 
     /**
      * Visit a parse tree return statement and create an AST {@link Return}. Here we show a simple
@@ -320,38 +326,28 @@ public final class ParseTreeLower {
 
     @Override
     public Expression visitExpression0(CruxParser.Expression0Context ctx) {
+//      Position position = makePosition(ctx);
+//
+//          case ">=":
+//            operation = Operation.GE;
+//            break;
+//        }
+//        return new OpExpr(position, operation, leftExpression, rightExpression);
+//      }
       Position position = makePosition(ctx);
-      CruxParser.Expression1Context leftCtx = ctx.expression1(0);
-      //Expression leftExpression = leftCtx.accept(expressionVisitor);
-
-      CruxParser.Expression1Context rightCtx = ctx.expression1(1);
-      //Expression rightExpression = rightCtx.accept(expressionVisitor);
-      CruxParser.Op0Context op = ctx.op0();
-      Operation operation = null;
-
-      if (op == null) {
-        return rightCtx.accept(expressionVisitor);
-      } else {
-        String textOper = op.getText();
-        switch (textOper) {
-          case ">":
-            operation = Operation.GT;
-            break;
-          case "<":
-            operation = Operation.LT;
-            break;
-          case "==":
-            operation = Operation.EQ;
-            break;
-          case "<=":
-            operation = Operation.LE;
-            break;
-          case ">=":
-            operation = Operation.GE;
-            break;
-        }
-        return new OpExpr(position, operation, leftCtx.accept(expressionVisitor), rightCtx.accept(expressionVisitor));
-      }
+     if(ctx.expression1(1) != null || (ctx.op0()) != null){
+       OpExpr.Operation operation = null;
+       for (OpExpr.Operation op : OpExpr.Operation.values()){
+         if(ctx.op0().getText().equals(op.toString())){
+           operation = op;
+         }
+       }
+       Expression leftExpression = expressionVisitor.visitExpression1(ctx.expression1(0));
+       Expression rightExpression = expressionVisitor.visitExpression1(ctx.expression1(1));
+       return new OpExpr(position,operation,leftExpression,rightExpression);
+     }else {
+       return expressionVisitor.visitExpression1(ctx.expression1(0));
+     }
     }
 
 
@@ -433,10 +429,24 @@ public final class ParseTreeLower {
      * grammer
      */
 
-    /*
-     * @Override
-     * public Expression visitExpression3(CruxParser.Expression3Context ctx) { }
-     */
+
+     @Override
+     public Expression visitExpression3(CruxParser.Expression3Context ctx) {
+       if(ctx.expression3() != null){
+         Position position = makePosition(ctx);
+         Expression lhs = ctx.expression3().accept(expressionVisitor);
+         return new OpExpr(position, Operation.LOGIC_NOT,lhs,null);
+       }else if (ctx.expression0() != null){
+         return ctx.expression0().accept(expressionVisitor);
+       }else if (ctx.designator() != null){
+         return ctx.designator().accept(expressionVisitor);
+       }else if (ctx.callExpression() != null){
+         ctx.callExpression().accept(expressionVisitor);
+       }else{
+         return ctx.literal().accept(expressionVisitor);
+       }
+       return null;
+     }
 
     /**
      * Create an Call Node

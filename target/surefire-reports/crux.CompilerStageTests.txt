@@ -1,244 +1,136 @@
 -------------------------------------------------------------------------------
 Test set: crux.CompilerStageTests
 -------------------------------------------------------------------------------
-Tests run: 50, Failures: 0, Errors: 48, Skipped: 0, Time elapsed: 0.246 s <<< FAILURE! - in crux.CompilerStageTests
-crux.CompilerStageTests.ast  Time elapsed: 0.003 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
+Tests run: 50, Failures: 1, Errors: 19, Skipped: 0, Time elapsed: 0.215 s <<< FAILURE! - in crux.CompilerStageTests
+crux.CompilerStageTests.ast  Time elapsed: 0.002 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ast.Expression.accept(crux.ast.traversal.NodeVisitor)" because "e" is null
 	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ast.Expression.accept(crux.ast.traversal.NodeVisitor)" because "e" is null
+
+crux.CompilerStageTests.ast  Time elapsed: 0.001 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ast.Expression.accept(crux.ast.traversal.NodeVisitor)" because the return value of "crux.ast.Assignment.getValue()" is null
+	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ast.Expression.accept(crux.ast.traversal.NodeVisitor)" because the return value of "crux.ast.Assignment.getValue()" is null
 
 crux.CompilerStageTests.ast  Time elapsed: 0.002 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
+java.util.concurrent.ExecutionException: java.lang.NullPointerException
 	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
-
-crux.CompilerStageTests.ast  Time elapsed: 0.004 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
-	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
-
-crux.CompilerStageTests.ast  Time elapsed: 0.007 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
-	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
+Caused by: java.lang.NullPointerException
 
 crux.CompilerStageTests.ast  Time elapsed: 0.001 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
+java.util.concurrent.ExecutionException: java.lang.NullPointerException
 	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
+Caused by: java.lang.NullPointerException
 
 crux.CompilerStageTests.ast  Time elapsed: 0.001 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
+java.util.concurrent.ExecutionException: java.lang.NullPointerException
 	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
+Caused by: java.lang.NullPointerException
+
+crux.CompilerStageTests.ast  Time elapsed: 0.001 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ast.Expression.accept(crux.ast.traversal.NodeVisitor)" because the return value of "crux.ast.OpExpr.getLeft()" is null
+	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ast.Expression.accept(crux.ast.traversal.NodeVisitor)" because the return value of "crux.ast.OpExpr.getLeft()" is null
+
+crux.CompilerStageTests.ast  Time elapsed: 0.001 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ast.Expression.accept(crux.ast.traversal.NodeVisitor)" because "e" is null
+	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ast.Expression.accept(crux.ast.traversal.NodeVisitor)" because "e" is null
 
 crux.CompilerStageTests.ast  Time elapsed: 0 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ast.Expression.accept(crux.ast.traversal.NodeVisitor)" because the return value of "crux.ast.OpExpr.getLeft()" is null
 	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ast.Expression.accept(crux.ast.traversal.NodeVisitor)" because the return value of "crux.ast.OpExpr.getLeft()" is null
 
 crux.CompilerStageTests.ast  Time elapsed: 0.001 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ast.Expression.accept(crux.ast.traversal.NodeVisitor)" because the return value of "crux.ast.OpExpr.getLeft()" is null
 	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
-
-crux.CompilerStageTests.ast  Time elapsed: 0 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
-	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ast.Expression.accept(crux.ast.traversal.NodeVisitor)" because the return value of "crux.ast.OpExpr.getLeft()" is null
 
 crux.CompilerStageTests.ast  Time elapsed: 0.001 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
+java.util.concurrent.ExecutionException: java.lang.NullPointerException
 	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
+Caused by: java.lang.NullPointerException
 
 crux.CompilerStageTests.ast  Time elapsed: 0.001 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
+java.util.concurrent.ExecutionException: java.lang.NullPointerException
 	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
+Caused by: java.lang.NullPointerException
 
 crux.CompilerStageTests.ast  Time elapsed: 0.001 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
+java.util.concurrent.ExecutionException: java.lang.NullPointerException
 	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
-
-crux.CompilerStageTests.ast  Time elapsed: 0 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
-	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
-
-crux.CompilerStageTests.ast  Time elapsed: 0 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
-	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
-
-crux.CompilerStageTests.ast  Time elapsed: 0.001 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
-	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
-
-crux.CompilerStageTests.ast  Time elapsed: 0 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
-	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
-
-crux.CompilerStageTests.ast  Time elapsed: 0.001 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
-	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
-
-crux.CompilerStageTests.ast  Time elapsed: 0.001 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
-	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
-
-crux.CompilerStageTests.ast  Time elapsed: 0.001 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
-	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
-
-crux.CompilerStageTests.ast  Time elapsed: 0.001 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
-	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
-
-crux.CompilerStageTests.ast  Time elapsed: 0.001 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
-	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
-
-crux.CompilerStageTests.ast  Time elapsed: 0.001 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
-	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
-
-crux.CompilerStageTests.ast  Time elapsed: 0.001 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
-	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
-
-crux.CompilerStageTests.ast  Time elapsed: 0.001 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
-	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
-
-crux.CompilerStageTests.ast  Time elapsed: 0.001 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
-	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
-
-crux.CompilerStageTests.ast  Time elapsed: 0.001 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
-	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
-
-crux.CompilerStageTests.ast  Time elapsed: 0.004 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
-	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
-
-crux.CompilerStageTests.ast  Time elapsed: 0.001 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
-	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
-
-crux.CompilerStageTests.ast  Time elapsed: 0 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
-	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
-
-crux.CompilerStageTests.ast  Time elapsed: 0 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
-	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
-
-crux.CompilerStageTests.ast  Time elapsed: 0 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
-	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
-
-crux.CompilerStageTests.ast  Time elapsed: 0.001 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
-	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
-
-crux.CompilerStageTests.ast  Time elapsed: 0.001 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
-	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
-
-crux.CompilerStageTests.ast  Time elapsed: 0.001 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
-	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
-
-crux.CompilerStageTests.ast  Time elapsed: 0.001 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
-	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
-
-crux.CompilerStageTests.ast  Time elapsed: 0.001 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
-	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
-
-crux.CompilerStageTests.ast  Time elapsed: 0.001 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
-	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
-
-crux.CompilerStageTests.ast  Time elapsed: 0.001 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
-	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
+Caused by: java.lang.NullPointerException
 
 crux.CompilerStageTests.ast  Time elapsed: 0.002 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ast.Expression.accept(crux.ast.traversal.NodeVisitor)" because the return value of "crux.ast.OpExpr.getLeft()" is null
 	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ast.Expression.accept(crux.ast.traversal.NodeVisitor)" because the return value of "crux.ast.OpExpr.getLeft()" is null
+
+crux.CompilerStageTests.ast  Time elapsed: 0.001 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+AST for program crux/stages/ast/test42.crx differs from expected output. ==> expected: <a;
+test() {
+  a[1] = 0;
+  return 2;
+}
+main() {
+  a[0] = 1;
+  a[1] = 2;
+  a[2] = 3;
+  a[a[1]] = (a[1] + test());
+  printInt(a[0]);
+  println();
+  printInt(a[1]);
+  println();
+  printInt(a[2]);
+  println();
+}> but was: <a;
+test() {
+  a[1] = 0;
+  return 2;
+}
+main() {
+  a[0] = 1;
+  a[1] = 2;
+  a[2] = 3;
+  a[a[1]] = (+a[1]);
+  printInt(a[0]);
+  println();
+  printInt(a[1]);
+  println();
+  printInt(a[2]);
+  println();
+}>
+	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:131)
+
+crux.CompilerStageTests.ast  Time elapsed: 0 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException
+	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
+Caused by: java.lang.NullPointerException
+
+crux.CompilerStageTests.ast  Time elapsed: 0 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException
+	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
+Caused by: java.lang.NullPointerException
 
 crux.CompilerStageTests.ast  Time elapsed: 0.001 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
+java.util.concurrent.ExecutionException: java.lang.NullPointerException
 	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
+Caused by: java.lang.NullPointerException
 
 crux.CompilerStageTests.ast  Time elapsed: 0.001 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
+java.util.concurrent.ExecutionException: java.lang.NullPointerException
 	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
+Caused by: java.lang.NullPointerException
 
 crux.CompilerStageTests.ast  Time elapsed: 0.001 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
+java.util.concurrent.ExecutionException: java.lang.NullPointerException
 	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
+Caused by: java.lang.NullPointerException
 
 crux.CompilerStageTests.ast  Time elapsed: 0.001 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
+java.util.concurrent.ExecutionException: java.lang.NullPointerException
 	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
-
-crux.CompilerStageTests.ast  Time elapsed: 0.001 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
-	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
-
-crux.CompilerStageTests.ast  Time elapsed: 0.001 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
-	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
-
-crux.CompilerStageTests.ast  Time elapsed: 0.001 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
-	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
-
-crux.CompilerStageTests.ast  Time elapsed: 0.001 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
-	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
-
-crux.CompilerStageTests.ast  Time elapsed: 0.002 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
-	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.pt.CruxParser$Expression1Context.accept(org.antlr.v4.runtime.tree.ParseTreeVisitor)" because "rightCtx" is null
+Caused by: java.lang.NullPointerException
 
