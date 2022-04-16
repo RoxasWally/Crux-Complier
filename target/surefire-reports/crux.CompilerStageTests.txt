@@ -1,32 +1,17 @@
 -------------------------------------------------------------------------------
 Test set: crux.CompilerStageTests
 -------------------------------------------------------------------------------
-Tests run: 50, Failures: 1, Errors: 19, Skipped: 0, Time elapsed: 0.195 s <<< FAILURE! - in crux.CompilerStageTests
+Tests run: 50, Failures: 1, Errors: 10, Skipped: 0, Time elapsed: 0.247 s <<< FAILURE! - in crux.CompilerStageTests
 crux.CompilerStageTests.ast  Time elapsed: 0.002 s  <<< ERROR!
 java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ast.Expression.accept(crux.ast.traversal.NodeVisitor)" because "e" is null
 	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
 Caused by: java.lang.NullPointerException: Cannot invoke "crux.ast.Expression.accept(crux.ast.traversal.NodeVisitor)" because "e" is null
 
-crux.CompilerStageTests.ast  Time elapsed: 0.001 s  <<< ERROR!
+crux.CompilerStageTests.ast  Time elapsed: 0.002 s  <<< ERROR!
 java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ast.Expression.accept(crux.ast.traversal.NodeVisitor)" because the return value of "crux.ast.Assignment.getValue()" is null
 	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
 Caused by: java.lang.NullPointerException: Cannot invoke "crux.ast.Expression.accept(crux.ast.traversal.NodeVisitor)" because the return value of "crux.ast.Assignment.getValue()" is null
 
-crux.CompilerStageTests.ast  Time elapsed: 0.002 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException
-	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException
-
-crux.CompilerStageTests.ast  Time elapsed: 0.001 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException
-	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException
-
-crux.CompilerStageTests.ast  Time elapsed: 0.001 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException
-	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException
-
 crux.CompilerStageTests.ast  Time elapsed: 0.001 s  <<< ERROR!
 java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ast.Expression.accept(crux.ast.traversal.NodeVisitor)" because the return value of "crux.ast.OpExpr.getLeft()" is null
 	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
@@ -48,19 +33,9 @@ java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot 
 Caused by: java.lang.NullPointerException: Cannot invoke "crux.ast.Expression.accept(crux.ast.traversal.NodeVisitor)" because the return value of "crux.ast.OpExpr.getLeft()" is null
 
 crux.CompilerStageTests.ast  Time elapsed: 0.001 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ast.Expression.accept(crux.ast.traversal.NodeVisitor)" because "e" is null
 	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException
-
-crux.CompilerStageTests.ast  Time elapsed: 0.002 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException
-	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException
-
-crux.CompilerStageTests.ast  Time elapsed: 0.001 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException
-	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ast.Expression.accept(crux.ast.traversal.NodeVisitor)" because "e" is null
 
 crux.CompilerStageTests.ast  Time elapsed: 0.001 s  <<< ERROR!
 java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ast.Expression.accept(crux.ast.traversal.NodeVisitor)" because the return value of "crux.ast.OpExpr.getLeft()" is null
@@ -105,32 +80,12 @@ main() {
 	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:131)
 
 crux.CompilerStageTests.ast  Time elapsed: 0 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ast.Expression.accept(crux.ast.traversal.NodeVisitor)" because "e" is null
 	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException
-
-crux.CompilerStageTests.ast  Time elapsed: 0 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException
-	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException
-
-crux.CompilerStageTests.ast  Time elapsed: 0.001 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException
-	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException
-
-crux.CompilerStageTests.ast  Time elapsed: 0.001 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException
-	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ast.Expression.accept(crux.ast.traversal.NodeVisitor)" because "e" is null
 
 crux.CompilerStageTests.ast  Time elapsed: 0.002 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ast.Expression.accept(crux.ast.traversal.NodeVisitor)" because the return value of "crux.ast.Assignment.getValue()" is null
 	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException
-
-crux.CompilerStageTests.ast  Time elapsed: 0.002 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException
-	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ast.Expression.accept(crux.ast.traversal.NodeVisitor)" because the return value of "crux.ast.Assignment.getValue()" is null
 

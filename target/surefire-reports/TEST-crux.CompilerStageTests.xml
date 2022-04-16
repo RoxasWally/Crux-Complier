@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="crux.CompilerStageTests" time="0.195" tests="50" errors="19" skipped="0" failures="1">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="crux.CompilerStageTests" time="0.247" tests="50" errors="10" skipped="0" failures="1">
   <properties>
     <property name="java.specification.version" value="18"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="C:\Users\youse\.jdks\openjdk-18\bin"/>
-    <property name="sun.java.command" value="C:\Users\youse\AppData\Local\Temp\surefire16738994524741522906\surefirebooter6413023200612837049.jar C:\Users\youse\AppData\Local\Temp\surefire16738994524741522906 2022-04-16T15-47-08_425-jvmRun1 surefire6093757631981865300tmp surefire_017511311284341291375tmp"/>
+    <property name="sun.java.command" value="C:\Users\youse\AppData\Local\Temp\surefire7091787039004942725\surefirebooter9179032251827599918.jar C:\Users\youse\AppData\Local\Temp\surefire7091787039004942725 2022-04-16T16-21-42_913-jvmRun1 surefire12011674402769586869tmp surefire_07270613069016926157tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\youse\IdeaProjects\crux\target\test-classes;C:\Users\youse\IdeaProjects\crux\target\classes;C:\Users\youse\.m2\repository\org\antlr\antlr4-runtime\4.7.2\antlr4-runtime-4.7.2.jar;C:\Users\youse\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.5.2\junit-jupiter-api-5.5.2.jar;C:\Users\youse\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\Users\youse\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\youse\.m2\repository\org\junit\platform\junit-platform-commons\1.5.2\junit-platform-commons-1.5.2.jar;C:\Users\youse\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.5.2\junit-jupiter-engine-5.5.2.jar;C:\Users\youse\.m2\repository\org\junit\platform\junit-platform-engine\1.5.2\junit-platform-engine-1.5.2.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\youse\AppData\Local\Temp\surefire16738994524741522906\surefirebooter6413023200612837049.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\youse\AppData\Local\Temp\surefire7091787039004942725\surefirebooter9179032251827599918.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="18+36-2087"/>
@@ -57,16 +57,16 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="62.0"/>
   </properties>
-  <testcase name="ast" classname="crux.CompilerStageTests" time="0.076"/>
-  <testcase name="ast" classname="crux.CompilerStageTests" time="0.005"/>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0.099"/>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0.006"/>
   <testcase name="ast" classname="crux.CompilerStageTests" time="0.002"/>
   <testcase name="ast" classname="crux.CompilerStageTests" time="0.002"/>
   <testcase name="ast" classname="crux.CompilerStageTests" time="0.005"/>
   <testcase name="ast" classname="crux.CompilerStageTests" time="0.003"/>
   <testcase name="ast" classname="crux.CompilerStageTests" time="0.001"/>
   <testcase name="ast" classname="crux.CompilerStageTests" time="0.001"/>
-  <testcase name="ast" classname="crux.CompilerStageTests" time="0.001"/>
   <testcase name="ast" classname="crux.CompilerStageTests" time="0.002"/>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0.003"/>
   <testcase name="ast" classname="crux.CompilerStageTests" time="0.001"/>
   <testcase name="ast" classname="crux.CompilerStageTests" time="0.003"/>
   <testcase name="ast" classname="crux.CompilerStageTests" time="0.002">
@@ -75,7 +75,7 @@
 Caused by: java.lang.NullPointerException: Cannot invoke "crux.ast.Expression.accept(crux.ast.traversal.NodeVisitor)" because "e" is null
 ]]></error>
   </testcase>
-  <testcase name="ast" classname="crux.CompilerStageTests" time="0.001">
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0.002">
     <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ast.Expression.accept(crux.ast.traversal.NodeVisitor)" because the return value of "crux.ast.Assignment.getValue()" is null
 	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
 Caused by: java.lang.NullPointerException: Cannot invoke "crux.ast.Expression.accept(crux.ast.traversal.NodeVisitor)" because the return value of "crux.ast.Assignment.getValue()" is null
@@ -83,31 +83,16 @@ Caused by: java.lang.NullPointerException: Cannot invoke "crux.ast.Expression.ac
   </testcase>
   <testcase name="ast" classname="crux.CompilerStageTests" time="0.001"/>
   <testcase name="ast" classname="crux.CompilerStageTests" time="0.001"/>
-  <testcase name="ast" classname="crux.CompilerStageTests" time="0.002">
-    <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.NullPointerException
-	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException
-]]></error>
-  </testcase>
-  <testcase name="ast" classname="crux.CompilerStageTests" time="0.001">
-    <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.NullPointerException
-	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException
-]]></error>
-  </testcase>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0.008"/>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0.003"/>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0.001"/>
   <testcase name="ast" classname="crux.CompilerStageTests" time="0.002"/>
   <testcase name="ast" classname="crux.CompilerStageTests" time="0.001"/>
   <testcase name="ast" classname="crux.CompilerStageTests" time="0.001"/>
   <testcase name="ast" classname="crux.CompilerStageTests" time="0.001"/>
   <testcase name="ast" classname="crux.CompilerStageTests" time="0.001"/>
   <testcase name="ast" classname="crux.CompilerStageTests" time="0.001"/>
-  <testcase name="ast" classname="crux.CompilerStageTests" time="0.001"/>
-  <testcase name="ast" classname="crux.CompilerStageTests" time="0.001">
-    <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.NullPointerException
-	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException
-]]></error>
-  </testcase>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0.003"/>
   <testcase name="ast" classname="crux.CompilerStageTests" time="0.001">
     <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ast.Expression.accept(crux.ast.traversal.NodeVisitor)" because the return value of "crux.ast.OpExpr.getLeft()" is null
 	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
@@ -138,25 +123,15 @@ Caused by: java.lang.NullPointerException: Cannot invoke "crux.ast.Expression.ac
   <testcase name="ast" classname="crux.CompilerStageTests" time="0.001"/>
   <testcase name="ast" classname="crux.CompilerStageTests" time="0.001"/>
   <testcase name="ast" classname="crux.CompilerStageTests" time="0.001">
-    <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.NullPointerException
+    <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ast.Expression.accept(crux.ast.traversal.NodeVisitor)" because "e" is null
 	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ast.Expression.accept(crux.ast.traversal.NodeVisitor)" because "e" is null
 ]]></error>
   </testcase>
-  <testcase name="ast" classname="crux.CompilerStageTests" time="0.001"/>
   <testcase name="ast" classname="crux.CompilerStageTests" time="0.002"/>
-  <testcase name="ast" classname="crux.CompilerStageTests" time="0.002">
-    <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.NullPointerException
-	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException
-]]></error>
-  </testcase>
-  <testcase name="ast" classname="crux.CompilerStageTests" time="0.001">
-    <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.NullPointerException
-	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException
-]]></error>
-  </testcase>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0.002"/>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0.004"/>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0.003"/>
   <testcase name="ast" classname="crux.CompilerStageTests" time="0.001">
     <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ast.Expression.accept(crux.ast.traversal.NodeVisitor)" because the return value of "crux.ast.OpExpr.getLeft()" is null
 	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
@@ -202,41 +177,21 @@ main() {
 ]]></failure>
   </testcase>
   <testcase name="ast" classname="crux.CompilerStageTests" time="0">
-    <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.NullPointerException
+    <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ast.Expression.accept(crux.ast.traversal.NodeVisitor)" because "e" is null
 	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ast.Expression.accept(crux.ast.traversal.NodeVisitor)" because "e" is null
 ]]></error>
   </testcase>
-  <testcase name="ast" classname="crux.CompilerStageTests" time="0">
-    <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.NullPointerException
-	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException
-]]></error>
-  </testcase>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0.003"/>
   <testcase name="ast" classname="crux.CompilerStageTests" time="0.001"/>
-  <testcase name="ast" classname="crux.CompilerStageTests" time="0.001">
-    <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.NullPointerException
-	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException
-]]></error>
-  </testcase>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0.003"/>
   <testcase name="ast" classname="crux.CompilerStageTests" time="0.001"/>
-  <testcase name="ast" classname="crux.CompilerStageTests" time="0.001">
-    <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.NullPointerException
-	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException
-]]></error>
-  </testcase>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0.003"/>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0.003"/>
   <testcase name="ast" classname="crux.CompilerStageTests" time="0.002">
-    <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.NullPointerException
+    <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ast.Expression.accept(crux.ast.traversal.NodeVisitor)" because the return value of "crux.ast.Assignment.getValue()" is null
 	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException
-]]></error>
-  </testcase>
-  <testcase name="ast" classname="crux.CompilerStageTests" time="0.002">
-    <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.NullPointerException
-	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ast.Expression.accept(crux.ast.traversal.NodeVisitor)" because the return value of "crux.ast.Assignment.getValue()" is null
 ]]></error>
   </testcase>
 </testsuite>

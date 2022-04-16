@@ -282,8 +282,9 @@ public final class ParseTreeLower {
         Position position = makePosition(ctx);
         Expression condition = ctx.expression0().accept(expressionVisitor);
         StatementList body = lower(ctx.statementBlock());
-        return new For(position,condition,body);
-
+        Assignment init = new Assignment(position, ctx.assignmentStatement().designator().accept(expressionVisitor),ctx.assignmentStatement().expression0().accept(expressionVisitor));
+        Assignment incr = new Assignment(position, ctx.assignmentStatementNoSemi().designator().accept(expressionVisitor),ctx.assignmentStatementNoSemi().expression0().accept(expressionVisitor));
+        return new For(position,init,condition,incr,body);
       }
 
 
