@@ -106,7 +106,8 @@ public final class ParseTreeLower {
      public VariableDeclaration visitVariableDeclaration(CruxParser.VariableDeclarationContext ctx) {
        Position position = makePosition(ctx);
        String text = ctx.type().getText();
-       Type type = null;
+       //can't be null, they either return bool or an int
+       Type type = new BoolType();
        if (text.equals("int")) {
          type = new IntType();
        }
@@ -125,7 +126,8 @@ public final class ParseTreeLower {
       public Declaration visitArrayDeclaration(CruxParser.ArrayDeclarationContext ctx) {
         Position position = makePosition(ctx);
         String text = ctx.type().getText();
-        Type type = null;
+        //can't be null, they either return bool or an int
+        Type type = new BoolType();
         long elements = Long.parseLong(ctx.Integer().getText());
         if (text.equals("int")) {
           type = new IntType();
@@ -141,10 +143,46 @@ public final class ParseTreeLower {
      * @return an AST {@link FunctionDefinition}
      */
 
-    /*
-     * @Override
-     * public Declaration visitFunctionDefinition(CruxParser.FunctionDefinitionContext ctx) { }
-     */
+
+      @Override
+      public Declaration visitFunctionDefinition(CruxParser.FunctionDefinitionContext ctx) {
+        Position position = makePosition(ctx);
+        String text = ctx.type().getText();
+        //can't be null, functions can be void, int or bool  (returning wise)
+        Type type = new IntType();
+        if (text.equals("void")) {
+          type = new VoidType();
+        }
+        if (text.equals("bool")) {
+          type = new BoolType();
+        }
+        //Outer scope then inner scope
+        TypeList listType = new TypeList();
+        for(CruxParser.ParameterContext content : ctx.parameterList().parameter()){
+          String funcText = content.type().getText();
+          Type inner = new IntType();
+          if (funcText.equals("bool")){
+            type = new BoolType();
+          }
+          listType.append(inner);
+        }
+        Symbol funcSym = symTab.add(position,ctx.Identifier().getText(), new FuncType(listType, type));
+        List<Symbol> listSym = new ArrayList<>();
+        symTab.enter();
+
+        for(CruxParser.ParameterContext contentInner : ctx.parameterList().parameter()){
+        String innerContent = contentInner.type().getText();
+        Type innerType = new IntType();
+          if (innerContent.equals("int")) {
+            innerType = new IntType();
+          }
+        Symbol innerSym = symTab.add(position, contentInner.Identifier().getText(), innerType);
+          listSym.add(innerSym);
+        }
+        StatementList func = lower(ctx.statementBlock());
+
+        return new FunctionDefinition(position, funcSym,listSym,func);
+
   }
 
 
