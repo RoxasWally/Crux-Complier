@@ -396,10 +396,37 @@ public final class ParseTreeLower {
      * grammer
      */
 
-    /*
-     * @Override
-     * public Expression visitExpression2(CruxParser.Expression2Context ctx) { }
-     */
+     @Override
+     public Expression visitExpression2(CruxParser.Expression2Context ctx) {
+       if(ctx.op2() == null){
+         return ctx.expression3().accept(expressionVisitor);
+       }
+       else{
+         CruxParser.Op2Context opera2 = ctx.op2();
+         Operation operation;
+         Position position = makePosition(ctx);
+         String text = opera2.getText();
+         Expression rhs = ctx.expression3().accept(expressionVisitor);
+         Expression lhs = ctx.expression2().accept(expressionVisitor);
+         switch (text){
+           case "*":
+             operation = Operation.MULT;
+             break;
+           case "/":
+             operation = Operation.DIV;
+             break;
+           case "&&":
+             operation = Operation.LOGIC_AND;
+             break;
+           default:
+             operation = null;
+             break;
+         }
+         return new OpExpr(position,operation,lhs,rhs);
+       }
+     }
+
+
 
     /**
      * Parse Expression3 to OpExpr Node Parsing the expression should be exactly as described in the
