@@ -16,7 +16,6 @@ crux\ir\insts\CopyInst.class
 crux\printing\IRValueFormatter.class
 crux\ir\insts\AddressAt.class
 crux\ir\Program.class
-crux\ir\insts\ReturnInst.class
 crux\ir\Constant.class
 crux\ast\traversal\NodeVisitor.class
 crux\ast\traversal\NullNodeVisitor.class
@@ -28,7 +27,6 @@ crux\pt\CruxParser$IfStatementContext.class
 crux\ast\Return.class
 crux\ast\StatementList.class
 crux\pt\CruxParser$ProgramContext.class
-crux\ir\AddressVar.class
 crux\ir\BooleanConstant.class
 crux\pt\CruxParser$CallExpressionContext.class
 crux\ast\Node.class

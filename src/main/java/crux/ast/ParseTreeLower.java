@@ -49,12 +49,10 @@ public final class ParseTreeLower {
    */
 
   public DeclarationList lower(CruxParser.ProgramContext program) {
-  Position position = makePosition(program);
-  ArrayList<Declaration> tempList = new ArrayList<>();
+  Position position = makePosition(program.declarationList());
+  List<Declaration> tempList = new ArrayList<Declaration>();
 
-  for (CruxParser.DeclarationContext ctx: program.declarationList().declaration()){
-    tempList.add(ctx.accept(declarationVisitor));
-  }
+  for (CruxParser.DeclarationContext ctx: program.declarationList().declaration()) tempList.add(ctx.accept(declarationVisitor));
 
   return new DeclarationList(position, tempList);
   }
@@ -68,9 +66,7 @@ public final class ParseTreeLower {
    private StatementList lower(CruxParser.StatementListContext statementList) {
      Position position = makePosition(statementList);
      List<Statement> s = new ArrayList<>();
-     for(CruxParser.StatementContext content: statementList.statement()) {
-       s.add(content.accept(statementVisitor));
-     }
+     for(CruxParser.StatementContext content: statementList.statement()) s.add(content.accept(statementVisitor));
      return new StatementList(position,s);
    }
 
@@ -82,10 +78,12 @@ public final class ParseTreeLower {
    */
 
    private StatementList lower(CruxParser.StatementBlockContext statementBlock) {
+     Position position = makePosition(statementBlock.statementList());
+     List<Statement> statements = new ArrayList<>();
      symTab.enter();
-     StatementList listLower = lower(statementBlock.statementList());
+     for(CruxParser.StatementContext sta : statementBlock.statementList().statement()) statements.add(sta.accept(statementVisitor));
      symTab.exit();
-     return  listLower;
+     return new StatementList(position,statements);
    }
 
 
@@ -279,14 +277,14 @@ public final class ParseTreeLower {
      */
 
 
-//      @Override
-//     public Statement visitForStatement(CruxParser.ForStatementContext ctx) {
-//        Position position = makePosition(ctx);
-//        Expression condition = ctx.expression0().accept(expressionVisitor);
-//        StatementList body = lower(ctx.statementBlock());
-//        return new For(position,condition,body);
-//
-//      }
+      @Override
+     public Statement visitForStatement(CruxParser.ForStatementContext ctx) {
+        Position position = makePosition(ctx);
+        Expression condition = ctx.expression0().accept(expressionVisitor);
+        StatementList body = lower(ctx.statementBlock());
+        return new For(position,condition,body);
+
+      }
 
 
     /**
@@ -334,20 +332,45 @@ public final class ParseTreeLower {
 //        }
 //        return new OpExpr(position, operation, leftExpression, rightExpression);
 //      }
+
+      List<CruxParser.Expression1Context> exp1 = ctx.expression1();
       Position position = makePosition(ctx);
-     if(ctx.expression1(1) != null || (ctx.op0()) != null){
-       OpExpr.Operation operation = null;
-       for (OpExpr.Operation op : OpExpr.Operation.values()){
-         if(ctx.op0().getText().equals(op.toString())){
-           operation = op;
-         }
-       }
-       Expression leftExpression = expressionVisitor.visitExpression1(ctx.expression1(0));
-       Expression rightExpression = expressionVisitor.visitExpression1(ctx.expression1(1));
-       return new OpExpr(position,operation,leftExpression,rightExpression);
-     }else {
-       return expressionVisitor.visitExpression1(ctx.expression1(0));
-     }
+
+      if(exp1.size() == 1 ) {
+        return exp1.get(0).accept(expressionVisitor);
+      }else{
+        switch (ctx.op0().getText()){
+          case ">=":
+            return new OpExpr(position,Operation.GE, exp1.get(0).accept(expressionVisitor), exp1.get(1).accept(expressionVisitor));
+          case "<=":
+            return new OpExpr(position,Operation.LE, exp1.get(0).accept(expressionVisitor), exp1.get(1).accept(expressionVisitor));
+          case "!=":
+            return new OpExpr(position,Operation.NE, exp1.get(0).accept(expressionVisitor), exp1.get(1).accept(expressionVisitor));
+          case "==":
+            return new OpExpr(position,Operation.EQ, exp1.get(0).accept(expressionVisitor), exp1.get(1).accept(expressionVisitor));
+          case ">":
+            return new OpExpr(position,Operation.GT, exp1.get(0).accept(expressionVisitor), exp1.get(1).accept(expressionVisitor));
+          case "<":
+            return new OpExpr(position,Operation.LT, exp1.get(0).accept(expressionVisitor), exp1.get(1).accept(expressionVisitor));
+        }
+      }
+      return new OpExpr(position,Operation.EQ, exp1.get(0).accept(expressionVisitor), exp1.get(1).accept(expressionVisitor));
+
+
+//      Position position = makePosition(ctx);
+//     if(ctx.expression1(1) != null || (ctx.op0()) != null){
+//       OpExpr.Operation operation = null;
+//       for (OpExpr.Operation op : OpExpr.Operation.values()){
+//         if(ctx.op0().getText().equals(op.toString())){
+//           operation = op;
+//         }
+//       }
+//       Expression leftExpression = expressionVisitor.visitExpression1(ctx.expression1(0));
+//       Expression rightExpression = expressionVisitor.visitExpression1(ctx.expression1(1));
+//       return new OpExpr(position,operation,leftExpression,rightExpression);
+//     }else {
+//       return expressionVisitor.visitExpression1(ctx.expression1(0));
+//     }
     }
 
 
@@ -365,7 +388,6 @@ public final class ParseTreeLower {
        else{
          CruxParser.Op1Context opera1 = ctx.op1();
          Operation operation;
-         Position position = makePosition(ctx);
          String text = opera1.getText();
          Expression rhs = ctx.expression2().accept(expressionVisitor);
          Expression lhs = ctx.expression1().accept(expressionVisitor);
@@ -383,6 +405,8 @@ public final class ParseTreeLower {
              operation = null;
              break;
          }
+         Position position = makePosition(ctx);
+
          return new OpExpr(position,operation,lhs,rhs);
        }
      }
