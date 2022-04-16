@@ -273,7 +273,7 @@ public final class ParseTreeLower {
      * techniques as {@link #visitIfStatement(CruxParser.IfStatementContext)} to decompose this
      * construction.
      * 
-     * @return an AST {@link Loop}
+     * @return an AST {@link For}
      */
 
 
