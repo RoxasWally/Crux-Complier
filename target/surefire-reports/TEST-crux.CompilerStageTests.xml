@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="crux.CompilerStageTests" time="0.247" tests="50" errors="10" skipped="0" failures="1">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="crux.CompilerStageTests" time="0.224" tests="50" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="18"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="C:\Users\youse\.jdks\openjdk-18\bin"/>
-    <property name="sun.java.command" value="C:\Users\youse\AppData\Local\Temp\surefire7091787039004942725\surefirebooter9179032251827599918.jar C:\Users\youse\AppData\Local\Temp\surefire7091787039004942725 2022-04-16T16-21-42_913-jvmRun1 surefire12011674402769586869tmp surefire_07270613069016926157tmp"/>
+    <property name="sun.java.command" value="C:\Users\youse\AppData\Local\Temp\surefire15092948908340147137\surefirebooter3003752786016514079.jar C:\Users\youse\AppData\Local\Temp\surefire15092948908340147137 2022-04-16T18-40-02_838-jvmRun1 surefire1762156947364540429tmp surefire_010955944400541469740tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\youse\IdeaProjects\crux\target\test-classes;C:\Users\youse\IdeaProjects\crux\target\classes;C:\Users\youse\.m2\repository\org\antlr\antlr4-runtime\4.7.2\antlr4-runtime-4.7.2.jar;C:\Users\youse\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.5.2\junit-jupiter-api-5.5.2.jar;C:\Users\youse\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\Users\youse\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\youse\.m2\repository\org\junit\platform\junit-platform-commons\1.5.2\junit-platform-commons-1.5.2.jar;C:\Users\youse\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.5.2\junit-jupiter-engine-5.5.2.jar;C:\Users\youse\.m2\repository\org\junit\platform\junit-platform-engine\1.5.2\junit-platform-engine-1.5.2.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\youse\AppData\Local\Temp\surefire7091787039004942725\surefirebooter9179032251827599918.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\youse\AppData\Local\Temp\surefire15092948908340147137\surefirebooter3003752786016514079.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="18+36-2087"/>
@@ -57,141 +57,54 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="62.0"/>
   </properties>
-  <testcase name="ast" classname="crux.CompilerStageTests" time="0.099"/>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0.078"/>
   <testcase name="ast" classname="crux.CompilerStageTests" time="0.006"/>
-  <testcase name="ast" classname="crux.CompilerStageTests" time="0.002"/>
-  <testcase name="ast" classname="crux.CompilerStageTests" time="0.002"/>
-  <testcase name="ast" classname="crux.CompilerStageTests" time="0.005"/>
-  <testcase name="ast" classname="crux.CompilerStageTests" time="0.003"/>
-  <testcase name="ast" classname="crux.CompilerStageTests" time="0.001"/>
-  <testcase name="ast" classname="crux.CompilerStageTests" time="0.001"/>
-  <testcase name="ast" classname="crux.CompilerStageTests" time="0.002"/>
-  <testcase name="ast" classname="crux.CompilerStageTests" time="0.003"/>
-  <testcase name="ast" classname="crux.CompilerStageTests" time="0.001"/>
-  <testcase name="ast" classname="crux.CompilerStageTests" time="0.003"/>
-  <testcase name="ast" classname="crux.CompilerStageTests" time="0.002">
-    <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ast.Expression.accept(crux.ast.traversal.NodeVisitor)" because "e" is null
-	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.ast.Expression.accept(crux.ast.traversal.NodeVisitor)" because "e" is null
-]]></error>
-  </testcase>
-  <testcase name="ast" classname="crux.CompilerStageTests" time="0.002">
-    <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ast.Expression.accept(crux.ast.traversal.NodeVisitor)" because the return value of "crux.ast.Assignment.getValue()" is null
-	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.ast.Expression.accept(crux.ast.traversal.NodeVisitor)" because the return value of "crux.ast.Assignment.getValue()" is null
-]]></error>
-  </testcase>
-  <testcase name="ast" classname="crux.CompilerStageTests" time="0.001"/>
-  <testcase name="ast" classname="crux.CompilerStageTests" time="0.001"/>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0"/>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0"/>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0.013"/>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0"/>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0"/>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0"/>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0"/>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0"/>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0"/>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0"/>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0.016"/>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0"/>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0"/>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0"/>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0"/>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0"/>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0.015"/>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0"/>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0"/>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0"/>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0"/>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0"/>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0"/>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0"/>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0"/>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0"/>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0.016"/>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0"/>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0"/>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0"/>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0.01"/>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0"/>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0.006"/>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0"/>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0"/>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0"/>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0"/>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0"/>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0"/>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0"/>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0.016"/>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0"/>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0"/>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0"/>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0"/>
   <testcase name="ast" classname="crux.CompilerStageTests" time="0.008"/>
-  <testcase name="ast" classname="crux.CompilerStageTests" time="0.003"/>
-  <testcase name="ast" classname="crux.CompilerStageTests" time="0.001"/>
-  <testcase name="ast" classname="crux.CompilerStageTests" time="0.002"/>
-  <testcase name="ast" classname="crux.CompilerStageTests" time="0.001"/>
-  <testcase name="ast" classname="crux.CompilerStageTests" time="0.001"/>
-  <testcase name="ast" classname="crux.CompilerStageTests" time="0.001"/>
-  <testcase name="ast" classname="crux.CompilerStageTests" time="0.001"/>
-  <testcase name="ast" classname="crux.CompilerStageTests" time="0.001"/>
-  <testcase name="ast" classname="crux.CompilerStageTests" time="0.003"/>
-  <testcase name="ast" classname="crux.CompilerStageTests" time="0.001">
-    <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ast.Expression.accept(crux.ast.traversal.NodeVisitor)" because the return value of "crux.ast.OpExpr.getLeft()" is null
-	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.ast.Expression.accept(crux.ast.traversal.NodeVisitor)" because the return value of "crux.ast.OpExpr.getLeft()" is null
-]]></error>
-  </testcase>
-  <testcase name="ast" classname="crux.CompilerStageTests" time="0.001"/>
-  <testcase name="ast" classname="crux.CompilerStageTests" time="0.001">
-    <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ast.Expression.accept(crux.ast.traversal.NodeVisitor)" because "e" is null
-	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.ast.Expression.accept(crux.ast.traversal.NodeVisitor)" because "e" is null
-]]></error>
-  </testcase>
-  <testcase name="ast" classname="crux.CompilerStageTests" time="0.001"/>
-  <testcase name="ast" classname="crux.CompilerStageTests" time="0.001"/>
-  <testcase name="ast" classname="crux.CompilerStageTests" time="0.001">
-    <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ast.Expression.accept(crux.ast.traversal.NodeVisitor)" because the return value of "crux.ast.OpExpr.getLeft()" is null
-	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.ast.Expression.accept(crux.ast.traversal.NodeVisitor)" because the return value of "crux.ast.OpExpr.getLeft()" is null
-]]></error>
-  </testcase>
-  <testcase name="ast" classname="crux.CompilerStageTests" time="0.001">
-    <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ast.Expression.accept(crux.ast.traversal.NodeVisitor)" because the return value of "crux.ast.OpExpr.getLeft()" is null
-	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.ast.Expression.accept(crux.ast.traversal.NodeVisitor)" because the return value of "crux.ast.OpExpr.getLeft()" is null
-]]></error>
-  </testcase>
-  <testcase name="ast" classname="crux.CompilerStageTests" time="0.001"/>
-  <testcase name="ast" classname="crux.CompilerStageTests" time="0.001"/>
-  <testcase name="ast" classname="crux.CompilerStageTests" time="0.001">
-    <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ast.Expression.accept(crux.ast.traversal.NodeVisitor)" because "e" is null
-	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.ast.Expression.accept(crux.ast.traversal.NodeVisitor)" because "e" is null
-]]></error>
-  </testcase>
-  <testcase name="ast" classname="crux.CompilerStageTests" time="0.002"/>
-  <testcase name="ast" classname="crux.CompilerStageTests" time="0.002"/>
-  <testcase name="ast" classname="crux.CompilerStageTests" time="0.004"/>
-  <testcase name="ast" classname="crux.CompilerStageTests" time="0.003"/>
-  <testcase name="ast" classname="crux.CompilerStageTests" time="0.001">
-    <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ast.Expression.accept(crux.ast.traversal.NodeVisitor)" because the return value of "crux.ast.OpExpr.getLeft()" is null
-	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.ast.Expression.accept(crux.ast.traversal.NodeVisitor)" because the return value of "crux.ast.OpExpr.getLeft()" is null
-]]></error>
-  </testcase>
-  <testcase name="ast" classname="crux.CompilerStageTests" time="0.001">
-    <failure type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: 
-AST for program crux/stages/ast/test42.crx differs from expected output. ==> expected: <a;
-test() {
-  a[1] = 0;
-  return 2;
-}
-main() {
-  a[0] = 1;
-  a[1] = 2;
-  a[2] = 3;
-  a[a[1]] = (a[1] + test());
-  printInt(a[0]);
-  println();
-  printInt(a[1]);
-  println();
-  printInt(a[2]);
-  println();
-}> but was: <a;
-test() {
-  a[1] = 0;
-  return 2;
-}
-main() {
-  a[0] = 1;
-  a[1] = 2;
-  a[2] = 3;
-  a[a[1]] = (+a[1]);
-  printInt(a[0]);
-  println();
-  printInt(a[1]);
-  println();
-  printInt(a[2]);
-  println();
-}>
-	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:131)
-]]></failure>
-  </testcase>
-  <testcase name="ast" classname="crux.CompilerStageTests" time="0">
-    <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ast.Expression.accept(crux.ast.traversal.NodeVisitor)" because "e" is null
-	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.ast.Expression.accept(crux.ast.traversal.NodeVisitor)" because "e" is null
-]]></error>
-  </testcase>
-  <testcase name="ast" classname="crux.CompilerStageTests" time="0.003"/>
-  <testcase name="ast" classname="crux.CompilerStageTests" time="0.001"/>
-  <testcase name="ast" classname="crux.CompilerStageTests" time="0.003"/>
-  <testcase name="ast" classname="crux.CompilerStageTests" time="0.001"/>
-  <testcase name="ast" classname="crux.CompilerStageTests" time="0.003"/>
-  <testcase name="ast" classname="crux.CompilerStageTests" time="0.003"/>
-  <testcase name="ast" classname="crux.CompilerStageTests" time="0.002">
-    <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ast.Expression.accept(crux.ast.traversal.NodeVisitor)" because the return value of "crux.ast.Assignment.getValue()" is null
-	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:124)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.ast.Expression.accept(crux.ast.traversal.NodeVisitor)" because the return value of "crux.ast.Assignment.getValue()" is null
-]]></error>
-  </testcase>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0"/>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0.008"/>
 </testsuite>

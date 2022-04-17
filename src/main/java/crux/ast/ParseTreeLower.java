@@ -32,7 +32,6 @@ public final class ParseTreeLower {
     var start = ctx.start;
     return new Position(start.getLine());
   }
-
   /**
    *
    * @return True if any errors
@@ -49,10 +48,11 @@ public final class ParseTreeLower {
    */
 
   public DeclarationList lower(CruxParser.ProgramContext program) {
-  Position position = makePosition(program.declarationList());
-  List<Declaration> tempList = new ArrayList<Declaration>();
+  Position position = makePosition(program);
+  List<Declaration> tempList = new ArrayList<>();
 
-  for (CruxParser.DeclarationContext ctx: program.declarationList().declaration()) tempList.add(ctx.accept(declarationVisitor));
+  for (CruxParser.DeclarationContext ctx:
+          program.declarationList().declaration()) tempList.add(ctx.accept(declarationVisitor));
 
   return new DeclarationList(position, tempList);
   }
@@ -120,6 +120,7 @@ public final class ParseTreeLower {
 
     @Override
     public Declaration visitArrayDeclaration(CruxParser.ArrayDeclarationContext ctx) {
+
       Position position = makePosition(ctx);
       String text = ctx.type().getText();
       //can't be null, they either return bool or an int
@@ -325,54 +326,37 @@ public final class ParseTreeLower {
 
     @Override
     public Expression visitExpression0(CruxParser.Expression0Context ctx) {
-//      Position position = makePosition(ctx);
-//
-//          case ">=":
-//            operation = Operation.GE;
-//            break;
-//        }
-//        return new OpExpr(position, operation, leftExpression, rightExpression);
-//      }
-
-      List<CruxParser.Expression1Context> exp1 = ctx.expression1();
-      Position position = makePosition(ctx);
-
-      if(exp1.size() == 1 ) {
-        return exp1.get(0).accept(expressionVisitor);
-      }else{
-        switch (ctx.op0().getText()){
-          case ">=":
-            return new OpExpr(position,Operation.GE, exp1.get(0).accept(expressionVisitor), exp1.get(1).accept(expressionVisitor));
-          case "<=":
-            return new OpExpr(position,Operation.LE, exp1.get(0).accept(expressionVisitor), exp1.get(1).accept(expressionVisitor));
-          case "!=":
-            return new OpExpr(position,Operation.NE, exp1.get(0).accept(expressionVisitor), exp1.get(1).accept(expressionVisitor));
-          case "==":
-            return new OpExpr(position,Operation.EQ, exp1.get(0).accept(expressionVisitor), exp1.get(1).accept(expressionVisitor));
-          case ">":
-            return new OpExpr(position,Operation.GT, exp1.get(0).accept(expressionVisitor), exp1.get(1).accept(expressionVisitor));
-          case "<":
-            return new OpExpr(position,Operation.LT, exp1.get(0).accept(expressionVisitor), exp1.get(1).accept(expressionVisitor));
-        }
+      CruxParser.Expression1Context lhsCtx = ctx.expression1(0);
+      CruxParser.Op0Context op = ctx.op0();
+      CruxParser.Expression1Context rhsCtx = ctx.expression1(1);
+      Expression lhsExpression = lhsCtx.accept(expressionVisitor);
+      if (op == null)
+      {
+        return lhsExpression;
       }
-      return new OpExpr(position,Operation.EQ, exp1.get(0).accept(expressionVisitor), exp1.get(1).accept(expressionVisitor));
-
-
-//      Position position = makePosition(ctx);
-//     if(ctx.expression1(1) != null || (ctx.op0()) != null){
-//       OpExpr.Operation operation = null;
-//       for (OpExpr.Operation op : OpExpr.Operation.values()){
-//         if(ctx.op0().getText().equals(op.toString())){
-//           operation = op;
-//         }
-//       }
-//       Expression leftExpression = expressionVisitor.visitExpression1(ctx.expression1(0));
-//       Expression rightExpression = expressionVisitor.visitExpression1(ctx.expression1(1));
-//       return new OpExpr(position,operation,leftExpression,rightExpression);
-//     }else {
-//       return expressionVisitor.visitExpression1(ctx.expression1(0));
-//     }
+      else {
+        Expression rhsExpression = rhsCtx.accept(expressionVisitor);
+        String text = op.getText();
+        Operation operation;
+        if (text.equals(">=")) {
+          operation = Operation.GE;
+        } else if (text.equals("<=")) {
+          operation = Operation.LE;
+        } else if (text.equals("!=")) {
+          operation = Operation.NE;
+        } else if (text.equals("==")) {
+          operation = Operation.EQ;
+        } else if (text.equals(">")) {
+          operation = Operation.GT;
+        } else
+          operation = Operation.LT;
+        Position position = makePosition(ctx);
+        return new OpExpr(position, operation, lhsExpression, rhsExpression);
+      }
     }
+
+
+    /**
 
 
     /**
@@ -392,22 +376,14 @@ public final class ParseTreeLower {
          String text = opera1.getText();
          Expression rhs = ctx.expression2().accept(expressionVisitor);
          Expression lhs = ctx.expression1().accept(expressionVisitor);
-         switch (text){
-           case "+":
-             operation = Operation.ADD;
-             break;
-           case "-":
-             operation = Operation.SUB;
-             break;
-           case "||":
-             operation = Operation.LOGIC_OR;
-             break;
-           default:
-             operation = null;
-             break;
+         if (text.equals("+")) {
+           operation = Operation.ADD;
+         } else if (text.equals("-") ){
+           operation = Operation.SUB;}
+         else{
+           operation = Operation.LOGIC_OR;
          }
          Position position = makePosition(ctx);
-
          return new OpExpr(position,operation,lhs,rhs);
        }
      }
@@ -429,19 +405,12 @@ public final class ParseTreeLower {
          String text = opera2.getText();
          Expression rhs = ctx.expression3().accept(expressionVisitor);
          Expression lhs = ctx.expression2().accept(expressionVisitor);
-         switch (text){
-           case "*":
-             operation = Operation.MULT;
-             break;
-           case "/":
-             operation = Operation.DIV;
-             break;
-           case "&&":
-             operation = Operation.LOGIC_AND;
-             break;
-           default:
-             operation = null;
-             break;
+         if (text.equals("*")) {
+           operation = Operation.MULT;
+         } else if (text.equals("/") ){
+           operation = Operation.DIV;}
+         else{
+           operation = Operation.LOGIC_AND;
          }
          return new OpExpr(position,operation,lhs,rhs);
        }
@@ -457,43 +426,37 @@ public final class ParseTreeLower {
 
      @Override
      public Expression visitExpression3(CruxParser.Expression3Context ctx) {
-       if(ctx.expression3() != null){
+       if (ctx.expression3() != null)
+       {
          Position position = makePosition(ctx);
          Expression lhs = ctx.expression3().accept(expressionVisitor);
-         return new OpExpr(position, Operation.LOGIC_NOT,lhs,null);
-       }else if (ctx.expression0() != null){
+         return new OpExpr(position,Operation.LOGIC_NOT,lhs,null);
+       }
+       else if (ctx.expression0() != null)
+       {
          return ctx.expression0().accept(expressionVisitor);
-       }else if (ctx.designator() != null){
+       }
+       else if (ctx.designator() != null)
+       {
          return ctx.designator().accept(expressionVisitor);
-       }else if (ctx.callExpression() != null){
-         ctx.callExpression().accept(expressionVisitor);
-       }else{
+       }
+       else if (ctx.callExpression() != null)
+       {
+         return ctx.callExpression().accept(expressionVisitor);
+       }
+       else
+       {
          return ctx.literal().accept(expressionVisitor);
        }
-       return null;
      }
 
     /**
-     * Create an Call Node
+     * Create a Call Node
      */
 
     @Override
     public Call visitCallExpression(CruxParser.CallExpressionContext ctx) {
       Position position = makePosition(ctx);
-//      FuncType call = new FuncType(new TypeList(), new VoidType());
-//      Symbol sym;
-//      sym = new Symbol(ctx.Identifier().getText(), call);
-//      int size = 0;
-//      ArrayList<crux.ast.Expression> tempList = new ArrayList<>();
-//      while(ctx.expressionList().expression0(size ) != null){
-//        tempList.add(ctx.expressionList().expression0(size).accept(expressionVisitor));
-//        ++size;
-//      }
-//      symTab.add(position,ctx.Identifier().getText(),call);
-//      return new Call(position,sym,tempList);
-
-      //different approach
-      //use lookup then add to a list
 
       Symbol callFunc = symTab.lookup(position, ctx.Identifier().getText());
       List<Expression> expList = new ArrayList<>();
@@ -530,10 +493,10 @@ public final class ParseTreeLower {
       if (ctx.Integer() != null) {
         return new LiteralInt(position, Long.parseLong(ctx.Integer().toString()));
       }
-      if (ctx.True() == null) {
-        return new LiteralBool(position, Boolean.parseBoolean(ctx.False().toString()));
-      } else {
+      if (ctx.True() != null) {
         return new LiteralBool(position, Boolean.parseBoolean(ctx.True().toString()));
+      } else {
+        return new LiteralBool(position, Boolean.parseBoolean(ctx.False().toString()));
       }
     }
   }

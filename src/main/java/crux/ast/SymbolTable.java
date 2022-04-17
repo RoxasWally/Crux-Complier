@@ -83,13 +83,6 @@ public final class SymbolTable {
 
   SymbolTable(PrintStream err) {
     this.err = err;
-//    enter();
-//    add(null,"readInt", new FuncType(new TypeList(), new IntType()));
-//    add(null,"readChar", new FuncType(new TypeList(), new IntType()));
-//    add(null,"printBool",new FuncType(new TypeList(List.of(new BoolType())), new VoidType()));
-//    add(null,"printInt",new FuncType(new TypeList(List.of(new IntType())), new VoidType()));
-//    add(null,"printChar",new FuncType(new TypeList(List.of(new IntType())), new VoidType()));
-//    add(null,"println",new FuncType(new TypeList(), new VoidType()));
     //placing them in a list of does not work
     //retry by declaring each scope from global all the way to local using hashmap
     symbolScopes.add(new HashMap<>());
