@@ -70,6 +70,14 @@ public final class TypeChecker {
 
     @Override
     public Void visit(Assignment assignment) {
+      //get value and location, get the type then set the node
+      Expression rha = assignment.getValue();
+      Expression lha = assignment.getLocation();
+      rha.accept(this);
+      lha.accept(this);
+      Type lh = getType(lha);
+      Type rh = getType(rha);
+      setNodeType(assignment,lh.assign(rh));
       return null;
     }
 
