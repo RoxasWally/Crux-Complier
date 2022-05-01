@@ -58,6 +58,8 @@ public final class TypeChecker {
   private final class TypeInferenceVisitor extends NullNodeVisitor<Void> {
     @Override
     public Void visit(VarAccess vaccess) {
+      //set the node type, should still return null
+      setNodeType(vaccess,vaccess.getSymbol().getType());
       return null;
     }
 
