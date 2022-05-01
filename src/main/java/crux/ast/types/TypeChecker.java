@@ -56,6 +56,8 @@ public final class TypeChecker {
    * symbolTable.
    */
   private final class TypeInferenceVisitor extends NullNodeVisitor<Void> {
+    private boolean lastStatementReturns;
+    private boolean hasBreak;
     @Override
     public Void visit(VarAccess vaccess) {
       //set the node type, should still return null
@@ -83,6 +85,8 @@ public final class TypeChecker {
 
     @Override
     public Void visit(Break brk) {
+      hasBreak = true;
+      lastStatementReturns = false;
       return null;
     }
 
@@ -93,6 +97,9 @@ public final class TypeChecker {
 
     @Override
     public Void visit(DeclarationList declarationList) {
+      for (var decleration : declarationList.getChildren()){
+        decleration.accept(this);
+    }
       return null;
     }
 
