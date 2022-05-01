@@ -37,6 +37,8 @@ public abstract class Type {
     return new ErrorType("cannot compare " + this + " with " + that);
   }
 
+  public abstract boolean equivalent(Type that);
+
   Type index(Type that) {
     return new ErrorType("cannot index " + this + " with " + that);
   }

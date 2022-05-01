@@ -58,6 +58,7 @@ public final class TypeChecker {
   private final class TypeInferenceVisitor extends NullNodeVisitor<Void> {
     private boolean lastStatementReturns;
     private boolean hasBreak;
+
     @Override
     public Void visit(VarAccess vaccess) {
       //set the node type, should still return null
