@@ -37,8 +37,6 @@ public abstract class Type {
     return new ErrorType("cannot compare " + this + " with " + that);
   }
 
-  public abstract boolean equivalent(Type that);
-
   Type index(Type that) {
     return new ErrorType("cannot index " + this + " with " + that);
   }
@@ -51,5 +49,5 @@ public abstract class Type {
     return new ErrorType("cannot assign " + source + " to " + this);
   }
 
-  //  public abstract boolean equivalent(Type that);
+   public boolean equivalent(Type that){ throw new Error(this.getClass() + "should override the equivalent method");}
 }
