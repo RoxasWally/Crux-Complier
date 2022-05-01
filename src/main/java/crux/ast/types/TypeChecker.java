@@ -68,6 +68,12 @@ public final class TypeChecker {
 
     @Override
     public Void visit(ArrayDeclaration arrayDeclaration) {
+      ArrayType array = (ArrayType) arrayDeclaration.getSymbol().getType();
+      if(array.getBase().getClass() == IntType.class || array.getBase().getClass() == BoolType.class) {
+        setNodeType(arrayDeclaration, array);
+      }else{
+        setNodeType(arrayDeclaration, new ErrorType(String.format("Array %s has invalid base type %s", arrayDeclaration.getSymbol().getName(),array.getBase().toString())));
+      }
       return null;
     }
 
@@ -98,8 +104,8 @@ public final class TypeChecker {
 
     @Override
     public Void visit(DeclarationList declarationList) {
-      for (var decleration : declarationList.getChildren()){
-        decleration.accept(this);
+      for (var declaration : declarationList.getChildren()){
+        declaration.accept(this);
     }
       return null;
     }

@@ -36,7 +36,7 @@ public final class ArrayType extends Type implements java.io.Serializable {
     if (!this.base.equals(getBase())) {
       return false;
     }
-    if (!this.extent != getExtent()) {
+    if (this.extent != getExtent()) {
       return false;
     }
     return true;
