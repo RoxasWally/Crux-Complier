@@ -58,6 +58,7 @@ public final class TypeChecker {
   private final class TypeInferenceVisitor extends NullNodeVisitor<Void> {
     private boolean lastStatementReturns;
     private boolean hasBreak;
+    private Type currentFunctionReturnType;
 
     @Override
     public Void visit(VarAccess vaccess) {
@@ -134,11 +135,13 @@ public final class TypeChecker {
 
     @Override
     public Void visit(LiteralBool literalBool) {
+      setNodeType(literalBool, new BoolType());
       return null;
     }
 
     @Override
     public Void visit(LiteralInt literalInt) {
+      setNodeType(literalInt, new IntType());
       return null;
     }
 
@@ -154,11 +157,16 @@ public final class TypeChecker {
 
     @Override
     public Void visit(Return ret) {
+      ret.getValue().accept(this);
+      currentFunctionReturnType = getType(ret.getValue());
+      lastStatementReturns = true;
       return null;
     }
 
     @Override
     public Void visit(StatementList statementList) {
+      for(Node statement: statementList.getChildren())
+        statement.accept(this);
       return null;
     }
 
