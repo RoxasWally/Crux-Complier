@@ -99,6 +99,13 @@ public final class TypeChecker {
 
     @Override
     public Void visit(Call call) {
+      TypeList list = new TypeList();
+      for(Expression exp : call.getArguments()){
+        exp.accept(this);
+        list.append(getType(exp));
+      }
+      Type callee = call.getCallee().getType();
+      setNodeType(call,callee.call(list));
       return null;
     }
 
