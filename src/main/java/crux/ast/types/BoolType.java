@@ -40,11 +40,11 @@ public final class BoolType extends Type implements java.io.Serializable {
   }
 
   @Override
-  public Type assign(Type source){
-    if(!equivalent(source)){
+  Type assign(Type source) {
+    if (source.getClass() == BoolType.class) {
+      return new BoolType();
+    } else {
       return super.assign(source);
-    }else{
-      return this;
     }
   }
 }

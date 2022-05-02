@@ -76,7 +76,7 @@ public final class TypeChecker {
       if(array.getBase().getClass() == IntType.class || array.getBase().getClass() == BoolType.class) {
         setNodeType(arrayDeclaration, array);
       }else{
-        setNodeType(arrayDeclaration, new ErrorType(String.format("Array %s has invalid base type %s", arrayDeclaration.getSymbol().getName(),array.getBase().toString())));
+        setNodeType(arrayDeclaration, new ErrorType(String.format("Array %s has invalid base type %s", arrayDeclaration.getSymbol().getName(),array.getBase())));
       }
       return null;
     }
@@ -195,7 +195,16 @@ public final class TypeChecker {
 
     @Override
     public Void visit(For forloop) {
+      forloop.getCond().accept(this);
+      if (getType(forloop.getCond()).getClass() == BoolType.class) {
+        forloop.getInit().accept(this);
+        forloop.getBody().accept(this);
+        forloop.getIncrement().accept(this);
+      }else {
+        setNodeType(forloop, new ErrorType(String.format("For loop requires bool condition", getType(forloop.getCond()).toString())));
+      }
       return null;
+
     }
 
     @Override

@@ -30,27 +30,19 @@ public final class FuncType extends Type implements java.io.Serializable {
   }
 
   @Override
-  public boolean equivalent(Type that) {
-    if (that == null) {
-      return false;
-    }
-    if (!(that instanceof FuncType)) {
-      return false;
-    } else {
-      FuncType function = (FuncType) that;
-      return this.ret.equivalent(function.getRet()) && this.args.equivalent(function.getArgs());
-    }
+  public boolean equivalent(Type that)
+  {
+    return that != null;
   }
 
-  @Override
-  public Type call(Type args){
-    TypeList argsType = (TypeList) args;
-    if (this.args == null && argsType.isEmpty()){
-      return this.ret;
+  @Override public Type call(Type args)
+  {
+    if (equivalent(args))
+    {
+      return getRet();
     }
-    if(!(args instanceof TypeList) || !(this.args.equivalent(args))){
-      return super.call(args);
-    }
-    return this.ret;
+    return super.call(null);
   }
+
 }
+
