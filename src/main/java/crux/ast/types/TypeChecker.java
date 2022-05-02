@@ -3,9 +3,11 @@ package crux.ast.types;
 import crux.ast.SymbolTable.Symbol;
 import crux.ast.*;
 import crux.ast.traversal.NullNodeVisitor;
+import crux.ir.insts.BinaryOperator;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -56,9 +58,10 @@ public final class TypeChecker {
    * symbolTable.
    */
   private final class TypeInferenceVisitor extends NullNodeVisitor<Void> {
-    private boolean lastStatementReturns;
+    private boolean lastStatementReturns ;
     private boolean hasBreak;
     private Type currentFunctionReturnType;
+    private Symbol currentFunctionSymbol;
 
     @Override
     public Void visit(VarAccess vaccess) {
@@ -88,6 +91,7 @@ public final class TypeChecker {
       Type lh = getType(lha);
       Type rh = getType(rha);
       setNodeType(assignment,lh.assign(rh));
+      lastStatementReturns = false;
       return null;
     }
 
@@ -120,20 +124,50 @@ public final class TypeChecker {
 
     @Override
     public Void visit(FunctionDefinition functionDefinition) {
+      currentFunctionSymbol = functionDefinition.getSymbol();
+      currentFunctionReturnType = ((FuncType) functionDefinition.getSymbol().getType()).getRet();
+      for (Symbol paramSym : functionDefinition.getParameters()) {
+        if ( !(paramSym.getType().getClass() == IntType.class ||paramSym.getType().getClass() == BoolType.class )) {
+          addTypeError(functionDefinition, String.format("Function not supported" , currentFunctionSymbol.getName(), paramSym.getName(), paramSym.getType()));
+        }
+      }
+
+      visit(functionDefinition.getStatements());
+
+      if (currentFunctionSymbol.getName().equals("main")) {
+        if (currentFunctionReturnType.getClass() != VoidType.class) {
+          addTypeError(functionDefinition, String.format("main should not return void",
+                  currentFunctionReturnType));
+        }
+        if ( !(functionDefinition.getParameters().isEmpty())) {
+          addTypeError(functionDefinition, String.format("main must not have parameters "));
+        }
+      }
       return null;
+
     }
 
     @Override
     public Void visit(IfElseBranch ifElseBranch) {
       ifElseBranch.getCondition().accept(this);
-      if(getType(ifElseBranch.getCondition()).getClass() == BoolType.class){
-        ifElseBranch.getThenBlock().accept(this);
-        if(ifElseBranch.getElseBlock().getChildren().size() > 0){
-          ifElseBranch.accept(this);
-        }
-      } else{
-        setNodeType(ifElseBranch, new ErrorType("if else branch needs a a bool condition comparison"));
+      Type conditionType = getType(ifElseBranch.getCondition());
+      if (conditionType.getClass() != BoolType.class) {
+        addTypeError(ifElseBranch, String.format(" if branch should have bool type",
+                conditionType));
       }
+      visit(ifElseBranch.getThenBlock());
+      boolean thenBreak = hasBreak;
+      boolean thenReturn = lastStatementReturns;
+      hasBreak = false;
+      lastStatementReturns = false;
+      visit(ifElseBranch.getElseBlock());
+      boolean elseBreak = hasBreak;
+      boolean elseReturn = lastStatementReturns;
+
+      hasBreak = thenBreak && elseBreak;
+
+      lastStatementReturns = thenReturn && elseReturn;
+
       return null;
     }
 
@@ -168,8 +202,46 @@ public final class TypeChecker {
     public Void visit(OpExpr op) {
       Type result;
       if(op.getRight() != null){
-
+        Expression rhs = op.getRight();
+        Expression lhs = op.getLeft();
+        lhs.accept(this);
+        rhs.accept(this);
+        Type rightType = getType(rhs);
+        Type leftType = getType(lhs);
+        if(op.getOp() == OpExpr.Operation.ADD){
+          result = leftType.add(rightType);
+        }else if (op.getOp() == OpExpr.Operation.SUB){
+          result = leftType.sub(rightType);
+        }else if (op.getOp() == OpExpr.Operation.MULT){
+          result = leftType.mul(rightType);
+        }else if (op.getOp() == OpExpr.Operation.DIV){
+          result = leftType.div(rightType);
+        }else if(op.getOp() == OpExpr.Operation.GT){
+          result = leftType.compare(rightType);
+        }else if(op.getOp() == OpExpr.Operation.LT){
+          result = leftType.compare(rightType);
+        }else if(op.getOp() == OpExpr.Operation.GE){
+          result = leftType.compare(rightType);
+        }else if(op.getOp() == OpExpr.Operation.LE){
+          result = leftType.compare(rightType);
+        }else if(op.getOp() == OpExpr.Operation.NE){
+          result = leftType.compare(rightType);
+        }else if(op.getOp() == OpExpr.Operation.EQ){
+          result = leftType.compare(rightType);
+        }else if(op.getOp() == OpExpr.Operation.LOGIC_OR){
+          result = leftType.or(rightType);
+        }else if(op.getOp() == OpExpr.Operation.LOGIC_AND){
+          result = leftType.and(rightType);
+        } else {
+          result =leftType.assign(rightType);
+        }
+      }else{
+        Expression lhs = op.getLeft();
+        lhs.accept(this);
+        Type leftType = getType(lhs);
+        result = leftType.not();
       }
+      setNodeType(op, result);
       return null;
     }
 
