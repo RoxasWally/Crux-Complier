@@ -128,8 +128,13 @@ public final class TypeChecker {
       return null;
     }
 
+    //unsure
     @Override
     public Void visit(ArrayAccess access) {
+      Expression ind= access.getIndex();
+      ind.accept(this);
+      Type indType = getType(ind);
+      setNodeType(access, indType);
       return null;
     }
 
@@ -172,6 +177,12 @@ public final class TypeChecker {
 
     @Override
     public Void visit(VariableDeclaration variableDeclaration) {
+      Type vartype = variableDeclaration.getSymbol().getType();
+      if(vartype.equivalent(new VoidType())){
+        setNodeType(variableDeclaration, new ErrorType("variable" + variableDeclaration.getSymbol().getName() + " has an invalid type"));
+      }else{
+        setNodeType(variableDeclaration, vartype);
+      }
       return null;
     }
   }
