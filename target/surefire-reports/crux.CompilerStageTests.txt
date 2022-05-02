@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: crux.CompilerStageTests
 -------------------------------------------------------------------------------
-Tests run: 50, Failures: 47, Errors: 0, Skipped: 0, Time elapsed: 0.248 s <<< FAILURE! - in crux.CompilerStageTests
-crux.CompilerStageTests.typeCheck  Time elapsed: 0.006 s  <<< FAILURE!
+Tests run: 50, Failures: 37, Errors: 11, Skipped: 0, Time elapsed: 0.511 s <<< FAILURE! - in crux.CompilerStageTests
+crux.CompilerStageTests.typeCheck  Time elapsed: 0.013 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: 
 Type check for program crux/stages/type-check/test02.crx differs from expected output. ==> expected: <Crux Program has no type errors.
 
@@ -15,7 +15,7 @@ main() {
 }>
 	at crux.CompilerStageTests.lambda$typeCheck$5(CompilerStageTests.java:179)
 
-crux.CompilerStageTests.typeCheck  Time elapsed: 0.005 s  <<< FAILURE!
+crux.CompilerStageTests.typeCheck  Time elapsed: 0.006 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: 
 Type check for program crux/stages/type-check/test03.crx differs from expected output. ==> expected: <Crux Program has no type errors.
 
@@ -30,7 +30,7 @@ main() {
 }>
 	at crux.CompilerStageTests.lambda$typeCheck$5(CompilerStageTests.java:179)
 
-crux.CompilerStageTests.typeCheck  Time elapsed: 0.006 s  <<< FAILURE!
+crux.CompilerStageTests.typeCheck  Time elapsed: 0.013 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: 
 Type check for program crux/stages/type-check/test04.crx differs from expected output. ==> expected: <Crux Program has no type errors.
 
@@ -43,24 +43,17 @@ main() {
 }>
 	at crux.CompilerStageTests.lambda$typeCheck$5(CompilerStageTests.java:179)
 
+crux.CompilerStageTests.typeCheck  Time elapsed: 0.006 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.Error: class crux.ast.types.IntTypeshould override the equivalent method
+	at crux.CompilerStageTests.lambda$typeCheck$5(CompilerStageTests.java:172)
+Caused by: java.lang.Error: class crux.ast.types.IntTypeshould override the equivalent method
+
+crux.CompilerStageTests.typeCheck  Time elapsed: 0.008 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.Error: class crux.ast.types.IntTypeshould override the equivalent method
+	at crux.CompilerStageTests.lambda$typeCheck$5(CompilerStageTests.java:172)
+Caused by: java.lang.Error: class crux.ast.types.IntTypeshould override the equivalent method
+
 crux.CompilerStageTests.typeCheck  Time elapsed: 0.004 s  <<< FAILURE!
-org.opentest4j.AssertionFailedError: 
-Type check for program crux/stages/type-check/test06.crx differs from expected output. ==> expected: <Crux Program has no type errors.
-
-int i;
-main() {
-  /*int*/ i = /*int*/ 10;
-  printInt(/*int*/ i);
-}> but was: <Crux Program has no type errors.
-
-int i;
-main() {
-  i = 10;
-  printInt(i);
-}>
-	at crux.CompilerStageTests.lambda$typeCheck$5(CompilerStageTests.java:179)
-
-crux.CompilerStageTests.typeCheck  Time elapsed: 0.001 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: 
 Type check for program crux/stages/type-check/test07.crx differs from expected output. ==> expected: <Crux Program has no type errors.
 
@@ -77,7 +70,7 @@ main() {
 }>
 	at crux.CompilerStageTests.lambda$typeCheck$5(CompilerStageTests.java:179)
 
-crux.CompilerStageTests.typeCheck  Time elapsed: 0.002 s  <<< FAILURE!
+crux.CompilerStageTests.typeCheck  Time elapsed: 0.005 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: 
 Type check for program crux/stages/type-check/test08.crx differs from expected output. ==> expected: <Crux Program has no type errors.
 
@@ -96,7 +89,7 @@ main() {
 }>
 	at crux.CompilerStageTests.lambda$typeCheck$5(CompilerStageTests.java:179)
 
-crux.CompilerStageTests.typeCheck  Time elapsed: 0.001 s  <<< FAILURE!
+crux.CompilerStageTests.typeCheck  Time elapsed: 0.004 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: 
 Type check for program crux/stages/type-check/test09.crx differs from expected output. ==> expected: <Crux Program has no type errors.
 
@@ -115,7 +108,7 @@ main() {
 }>
 	at crux.CompilerStageTests.lambda$typeCheck$5(CompilerStageTests.java:179)
 
-crux.CompilerStageTests.typeCheck  Time elapsed: 0.003 s  <<< FAILURE!
+crux.CompilerStageTests.typeCheck  Time elapsed: 0.007 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: 
 Type check for program crux/stages/type-check/test10.crx differs from expected output. ==> expected: <Crux Program has no type errors.
 
@@ -132,7 +125,7 @@ main() {
 }>
 	at crux.CompilerStageTests.lambda$typeCheck$5(CompilerStageTests.java:179)
 
-crux.CompilerStageTests.typeCheck  Time elapsed: 0.001 s  <<< FAILURE!
+crux.CompilerStageTests.typeCheck  Time elapsed: 0.004 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: 
 Type check for program crux/stages/type-check/test11.crx differs from expected output. ==> expected: <Crux Program has no type errors.
 
@@ -151,7 +144,7 @@ main() {
 }>
 	at crux.CompilerStageTests.lambda$typeCheck$5(CompilerStageTests.java:179)
 
-crux.CompilerStageTests.typeCheck  Time elapsed: 0.003 s  <<< FAILURE!
+crux.CompilerStageTests.typeCheck  Time elapsed: 0.008 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: 
 Type check for program crux/stages/type-check/test12.crx differs from expected output. ==> expected: <Crux Program has no type errors.
 
@@ -172,24 +165,12 @@ main() {
 }>
 	at crux.CompilerStageTests.lambda$typeCheck$5(CompilerStageTests.java:179)
 
-crux.CompilerStageTests.typeCheck  Time elapsed: 0.001 s  <<< FAILURE!
-org.opentest4j.AssertionFailedError: 
-Type check for program crux/stages/type-check/test14.crx differs from expected output. ==> expected: <Crux Program has no type errors.
+crux.CompilerStageTests.typeCheck  Time elapsed: 0.003 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.Error: class crux.ast.types.IntTypeshould override the equivalent method
+	at crux.CompilerStageTests.lambda$typeCheck$5(CompilerStageTests.java:172)
+Caused by: java.lang.Error: class crux.ast.types.IntTypeshould override the equivalent method
 
-int addi;
-main() {
-  /*int*/ addi = readInt();
-  printInt(/*int*/ addi);
-}> but was: <Crux Program has no type errors.
-
-int addi;
-main() {
-  addi = readInt();
-  printInt(addi);
-}>
-	at crux.CompilerStageTests.lambda$typeCheck$5(CompilerStageTests.java:179)
-
-crux.CompilerStageTests.typeCheck  Time elapsed: 0.001 s  <<< FAILURE!
+crux.CompilerStageTests.typeCheck  Time elapsed: 0.004 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: 
 Type check for program crux/stages/type-check/test15.crx differs from expected output. ==> expected: <Crux Program has no type errors.
 
@@ -210,61 +191,17 @@ main() {
 }>
 	at crux.CompilerStageTests.lambda$typeCheck$5(CompilerStageTests.java:179)
 
-crux.CompilerStageTests.typeCheck  Time elapsed: 0 s  <<< FAILURE!
-org.opentest4j.AssertionFailedError: 
-Type check for program crux/stages/type-check/test16.crx differs from expected output. ==> expected: <Crux Program has no type errors.
+crux.CompilerStageTests.typeCheck  Time elapsed: 0.003 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.Error: class crux.ast.types.IntTypeshould override the equivalent method
+	at crux.CompilerStageTests.lambda$typeCheck$5(CompilerStageTests.java:172)
+Caused by: java.lang.Error: class crux.ast.types.IntTypeshould override the equivalent method
 
-int a;
-main() {
-  /*int*/ a = /*int*/ 1;
-  int a;
-  /*int*/ a = /*int*/ 2;
-  printInt(/*int*/ a);
-}> but was: <Crux Program has no type errors.
+crux.CompilerStageTests.typeCheck  Time elapsed: 0.007 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.Error: class crux.ast.types.IntTypeshould override the equivalent method
+	at crux.CompilerStageTests.lambda$typeCheck$5(CompilerStageTests.java:172)
+Caused by: java.lang.Error: class crux.ast.types.IntTypeshould override the equivalent method
 
-int a;
-main() {
-  a = 1;
-  int a;
-  a = 2;
-  printInt(a);
-}>
-	at crux.CompilerStageTests.lambda$typeCheck$5(CompilerStageTests.java:179)
-
-crux.CompilerStageTests.typeCheck  Time elapsed: 0.005 s  <<< FAILURE!
-org.opentest4j.AssertionFailedError: 
-Type check for program crux/stages/type-check/test17.crx differs from expected output. ==> expected: <Crux Program has no type errors.
-
-int a;
-main() {
-  for(/*int*/ a = /*int*/ 20;/*bool*/ (/*int*/ a > /*int*/ 5);/*int*/ a = /*int*/ (/*int*/ a - /*int*/ 4)) {
-    if (/*bool*/ (/*int*/ a > /*int*/ 10)) {
-      if (/*bool*/ (/*int*/ a < /*int*/ 5)) {
-        break;
-      } else {
-      }
-      /*int*/ a = /*int*/ (/*int*/ a / /*int*/ 2);
-    } else {
-    }
-  }
-}> but was: <Crux Program has no type errors.
-
-int a;
-main() {
-  for(a = 20;(a > 5);a = (a - 4)) {
-    if ((a > 10)) {
-      if ((a < 5)) {
-        break;
-      } else {
-      }
-      a = (a / 2);
-    } else {
-    }
-  }
-}>
-	at crux.CompilerStageTests.lambda$typeCheck$5(CompilerStageTests.java:179)
-
-crux.CompilerStageTests.typeCheck  Time elapsed: 0.001 s  <<< FAILURE!
+crux.CompilerStageTests.typeCheck  Time elapsed: 0.007 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: 
 Type check for program crux/stages/type-check/test18.crx differs from expected output. ==> expected: <Crux Program has no type errors.
 
@@ -285,7 +222,7 @@ main() {
 }>
 	at crux.CompilerStageTests.lambda$typeCheck$5(CompilerStageTests.java:179)
 
-crux.CompilerStageTests.typeCheck  Time elapsed: 0.001 s  <<< FAILURE!
+crux.CompilerStageTests.typeCheck  Time elapsed: 0.004 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: 
 Type check for program crux/stages/type-check/test19.crx differs from expected output. ==> expected: <Crux Program has no type errors.
 
@@ -314,7 +251,7 @@ main() {
 }>
 	at crux.CompilerStageTests.lambda$typeCheck$5(CompilerStageTests.java:179)
 
-crux.CompilerStageTests.typeCheck  Time elapsed: 0.001 s  <<< FAILURE!
+crux.CompilerStageTests.typeCheck  Time elapsed: 0.005 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: 
 Type check for program crux/stages/type-check/test20.crx differs from expected output. ==> expected: <Crux Program has no type errors.
 
@@ -337,7 +274,7 @@ main() {
 }>
 	at crux.CompilerStageTests.lambda$typeCheck$5(CompilerStageTests.java:179)
 
-crux.CompilerStageTests.typeCheck  Time elapsed: 0.001 s  <<< FAILURE!
+crux.CompilerStageTests.typeCheck  Time elapsed: 0.004 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: 
 Type check for program crux/stages/type-check/test21.crx differs from expected output. ==> expected: <Crux Program has no type errors.
 
@@ -360,7 +297,7 @@ main() {
 }>
 	at crux.CompilerStageTests.lambda$typeCheck$5(CompilerStageTests.java:179)
 
-crux.CompilerStageTests.typeCheck  Time elapsed: 0.001 s  <<< FAILURE!
+crux.CompilerStageTests.typeCheck  Time elapsed: 0.005 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: 
 Type check for program crux/stages/type-check/test22.crx differs from expected output. ==> expected: <Crux Program has no type errors.
 
@@ -381,30 +318,12 @@ main() {
 }>
 	at crux.CompilerStageTests.lambda$typeCheck$5(CompilerStageTests.java:179)
 
-crux.CompilerStageTests.typeCheck  Time elapsed: 0.001 s  <<< FAILURE!
-org.opentest4j.AssertionFailedError: 
-Type check for program crux/stages/type-check/test23.crx differs from expected output. ==> expected: <Crux Program has no type errors.
+crux.CompilerStageTests.typeCheck  Time elapsed: 0.002 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.Error: class crux.ast.types.IntTypeshould override the equivalent method
+	at crux.CompilerStageTests.lambda$typeCheck$5(CompilerStageTests.java:172)
+Caused by: java.lang.Error: class crux.ast.types.IntTypeshould override the equivalent method
 
-int a;
-bool b;
-array[1,int] c;
-main() {
-  /*int*/ a = /*int*/ 0;
-  /*bool*/ b = /*bool*/ false;
-  /*int*/ (/*array[1,int]*/ c)[/*int*/ 0] = /*int*/ 0;
-}> but was: <Crux Program has no type errors.
-
-int a;
-bool b;
-array[1,int] c;
-main() {
-  a = 0;
-  b = false;
-  (/*array[1,int]*/ c)[0] = 0;
-}>
-	at crux.CompilerStageTests.lambda$typeCheck$5(CompilerStageTests.java:179)
-
-crux.CompilerStageTests.typeCheck  Time elapsed: 0.002 s  <<< FAILURE!
+crux.CompilerStageTests.typeCheck  Time elapsed: 0.005 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: 
 Type check for program crux/stages/type-check/test24.crx differs from expected output. ==> expected: <Crux Program has no type errors.
 
@@ -425,7 +344,7 @@ main() {
 }>
 	at crux.CompilerStageTests.lambda$typeCheck$5(CompilerStageTests.java:179)
 
-crux.CompilerStageTests.typeCheck  Time elapsed: 0.001 s  <<< FAILURE!
+crux.CompilerStageTests.typeCheck  Time elapsed: 0.004 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: 
 Type check for program crux/stages/type-check/test25.crx differs from expected output. ==> expected: <Crux Program has no type errors.
 
@@ -448,32 +367,12 @@ main() {
 }>
 	at crux.CompilerStageTests.lambda$typeCheck$5(CompilerStageTests.java:179)
 
-crux.CompilerStageTests.typeCheck  Time elapsed: 0.001 s  <<< FAILURE!
-org.opentest4j.AssertionFailedError: 
-Type check for program crux/stages/type-check/test26.crx differs from expected output. ==> expected: <Crux Program has no type errors.
+crux.CompilerStageTests.typeCheck  Time elapsed: 0.002 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.Error: class crux.ast.types.IntTypeshould override the equivalent method
+	at crux.CompilerStageTests.lambda$typeCheck$5(CompilerStageTests.java:172)
+Caused by: java.lang.Error: class crux.ast.types.IntTypeshould override the equivalent method
 
-int a;
-main() {
-  for(/*int*/ a = /*int*/ 9;/*bool*/ (/*int*/ a > /*int*/ 0);/*int*/ a = /*int*/ (/*int*/ a - /*int*/ 1)) {
-    printInt(/*int*/ a);
-    println();
-  }
-  printInt(/*int*/ (/*int*/ 0 - /*int*/ 5));
-  printInt(/*int*/ a);
-}> but was: <Crux Program has no type errors.
-
-int a;
-main() {
-  for(a = 9;(a > 0);a = (a - 1)) {
-    printInt(a);
-    println();
-  }
-  printInt((0 - 5));
-  printInt(a);
-}>
-	at crux.CompilerStageTests.lambda$typeCheck$5(CompilerStageTests.java:179)
-
-crux.CompilerStageTests.typeCheck  Time elapsed: 0.001 s  <<< FAILURE!
+crux.CompilerStageTests.typeCheck  Time elapsed: 0.005 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: 
 Type check for program crux/stages/type-check/test27.crx differs from expected output. ==> expected: <Crux Program has no type errors.
 
@@ -500,7 +399,7 @@ main() {
 }>
 	at crux.CompilerStageTests.lambda$typeCheck$5(CompilerStageTests.java:179)
 
-crux.CompilerStageTests.typeCheck  Time elapsed: 0.001 s  <<< FAILURE!
+crux.CompilerStageTests.typeCheck  Time elapsed: 0.005 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: 
 Type check for program crux/stages/type-check/test28.crx differs from expected output. ==> expected: <Crux Program has no type errors.
 
@@ -531,7 +430,7 @@ main() {
 }>
 	at crux.CompilerStageTests.lambda$typeCheck$5(CompilerStageTests.java:179)
 
-crux.CompilerStageTests.typeCheck  Time elapsed: 0.001 s  <<< FAILURE!
+crux.CompilerStageTests.typeCheck  Time elapsed: 0.005 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: 
 Type check for program crux/stages/type-check/test29.crx differs from expected output. ==> expected: <Crux Program has no type errors.
 
@@ -558,97 +457,17 @@ main() {
 }>
 	at crux.CompilerStageTests.lambda$typeCheck$5(CompilerStageTests.java:179)
 
-crux.CompilerStageTests.typeCheck  Time elapsed: 0.001 s  <<< FAILURE!
-org.opentest4j.AssertionFailedError: 
-Type check for program crux/stages/type-check/test30.crx differs from expected output. ==> expected: <Crux Program has no type errors.
+crux.CompilerStageTests.typeCheck  Time elapsed: 0.003 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.Error: class crux.ast.types.IntTypeshould override the equivalent method
+	at crux.CompilerStageTests.lambda$typeCheck$5(CompilerStageTests.java:172)
+Caused by: java.lang.Error: class crux.ast.types.IntTypeshould override the equivalent method
 
-int canary_begin;
-array[3,int] x;
-int canary_end;
-main() {
-  /*int*/ canary_begin = /*int*/ 0;
-  /*int*/ canary_end = /*int*/ 0;
-  /*int*/ (/*array[3,int]*/ x)[/*int*/ 0] = /*int*/ 222;
-  /*int*/ (/*array[3,int]*/ x)[/*int*/ 1] = /*int*/ 333;
-  /*int*/ (/*array[3,int]*/ x)[/*int*/ 2] = /*int*/ 444;
-  printInt(/*int*/ canary_begin);
-  printInt(/*int*/ (/*array[3,int]*/ x)[/*int*/ 0]);
-  printInt(/*int*/ (/*array[3,int]*/ x)[/*int*/ 1]);
-  printInt(/*int*/ (/*array[3,int]*/ x)[/*int*/ 2]);
-  printInt(/*int*/ canary_end);
-}> but was: <Crux Program has no type errors.
+crux.CompilerStageTests.typeCheck  Time elapsed: 0.002 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.Error: class crux.ast.types.IntTypeshould override the equivalent method
+	at crux.CompilerStageTests.lambda$typeCheck$5(CompilerStageTests.java:172)
+Caused by: java.lang.Error: class crux.ast.types.IntTypeshould override the equivalent method
 
-int canary_begin;
-array[3,int] x;
-int canary_end;
-main() {
-  canary_begin = 0;
-  canary_end = 0;
-  (/*array[3,int]*/ x)[0] = 222;
-  (/*array[3,int]*/ x)[1] = 333;
-  (/*array[3,int]*/ x)[2] = 444;
-  printInt(canary_begin);
-  printInt((/*array[3,int]*/ x)[0]);
-  printInt((/*array[3,int]*/ x)[1]);
-  printInt((/*array[3,int]*/ x)[2]);
-  printInt(canary_end);
-}>
-	at crux.CompilerStageTests.lambda$typeCheck$5(CompilerStageTests.java:179)
-
-crux.CompilerStageTests.typeCheck  Time elapsed: 0.001 s  <<< FAILURE!
-org.opentest4j.AssertionFailedError: 
-Type check for program crux/stages/type-check/test31.crx differs from expected output. ==> expected: <Crux Program has no type errors.
-
-int a;
-shadowWithParam(int a) {
-  /*int*/ a = /*int*/ 7;
-  printInt(/*int*/ a);
-  println();
-}
-shadowWithLocal() {
-  int a;
-  /*int*/ a = /*int*/ 9;
-  printInt(/*int*/ a);
-  println();
-}
-main() {
-  /*int*/ a = /*int*/ 5;
-  printInt(/*int*/ a);
-  println();
-  shadowWithParam(/*int*/ 8);
-  printInt(/*int*/ a);
-  println();
-  shadowWithLocal();
-  printInt(/*int*/ a);
-  println();
-}> but was: <Crux Program has no type errors.
-
-int a;
-shadowWithParam(int a) {
-  a = 7;
-  printInt(a);
-  println();
-}
-shadowWithLocal() {
-  int a;
-  a = 9;
-  printInt(a);
-  println();
-}
-main() {
-  a = 5;
-  printInt(a);
-  println();
-  shadowWithParam(8);
-  printInt(a);
-  println();
-  shadowWithLocal();
-  printInt(a);
-  println();
-}>
-	at crux.CompilerStageTests.lambda$typeCheck$5(CompilerStageTests.java:179)
-
-crux.CompilerStageTests.typeCheck  Time elapsed: 0.001 s  <<< FAILURE!
+crux.CompilerStageTests.typeCheck  Time elapsed: 0.007 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: 
 Type check for program crux/stages/type-check/test32.crx differs from expected output. ==> expected: <Crux Program has no type errors.
 
@@ -695,7 +514,7 @@ main() {
 }>
 	at crux.CompilerStageTests.lambda$typeCheck$5(CompilerStageTests.java:179)
 
-crux.CompilerStageTests.typeCheck  Time elapsed: 0.002 s  <<< FAILURE!
+crux.CompilerStageTests.typeCheck  Time elapsed: 0.005 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: 
 Type check for program crux/stages/type-check/test33.crx differs from expected output. ==> expected: <Crux Program has no type errors.
 
@@ -742,7 +561,7 @@ main() {
 }>
 	at crux.CompilerStageTests.lambda$typeCheck$5(CompilerStageTests.java:179)
 
-crux.CompilerStageTests.typeCheck  Time elapsed: 0.001 s  <<< FAILURE!
+crux.CompilerStageTests.typeCheck  Time elapsed: 0.005 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: 
 Type check for program crux/stages/type-check/test34.crx differs from expected output. ==> expected: <Crux Program has no type errors.
 
@@ -797,7 +616,7 @@ main() {
 }>
 	at crux.CompilerStageTests.lambda$typeCheck$5(CompilerStageTests.java:179)
 
-crux.CompilerStageTests.typeCheck  Time elapsed: 0.001 s  <<< FAILURE!
+crux.CompilerStageTests.typeCheck  Time elapsed: 0.004 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: 
 Type check for program crux/stages/type-check/test35.crx differs from expected output. ==> expected: <Crux Program has no type errors.
 
@@ -854,7 +673,7 @@ main() {
 }>
 	at crux.CompilerStageTests.lambda$typeCheck$5(CompilerStageTests.java:179)
 
-crux.CompilerStageTests.typeCheck  Time elapsed: 0.001 s  <<< FAILURE!
+crux.CompilerStageTests.typeCheck  Time elapsed: 0.004 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: 
 Type check for program crux/stages/type-check/test36.crx differs from expected output. ==> expected: <Crux Program has no type errors.
 
@@ -873,7 +692,7 @@ main() {
 }>
 	at crux.CompilerStageTests.lambda$typeCheck$5(CompilerStageTests.java:179)
 
-crux.CompilerStageTests.typeCheck  Time elapsed: 0.002 s  <<< FAILURE!
+crux.CompilerStageTests.typeCheck  Time elapsed: 0.005 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: 
 Type check for program crux/stages/type-check/test37.crx differs from expected output. ==> expected: <Crux Program has no type errors.
 
@@ -910,7 +729,7 @@ main() {
 }>
 	at crux.CompilerStageTests.lambda$typeCheck$5(CompilerStageTests.java:179)
 
-crux.CompilerStageTests.typeCheck  Time elapsed: 0.002 s  <<< FAILURE!
+crux.CompilerStageTests.typeCheck  Time elapsed: 0.005 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: 
 Type check for program crux/stages/type-check/test38.crx differs from expected output. ==> expected: <Crux Program has no type errors.
 
@@ -997,7 +816,7 @@ main() {
 }>
 	at crux.CompilerStageTests.lambda$typeCheck$5(CompilerStageTests.java:179)
 
-crux.CompilerStageTests.typeCheck  Time elapsed: 0.002 s  <<< FAILURE!
+crux.CompilerStageTests.typeCheck  Time elapsed: 0.005 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: 
 Type check for program crux/stages/type-check/test39.crx differs from expected output. ==> expected: <Crux Program has no type errors.
 
@@ -1050,7 +869,7 @@ main() {
 }>
 	at crux.CompilerStageTests.lambda$typeCheck$5(CompilerStageTests.java:179)
 
-crux.CompilerStageTests.typeCheck  Time elapsed: 0.001 s  <<< FAILURE!
+crux.CompilerStageTests.typeCheck  Time elapsed: 0.005 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: 
 Type check for program crux/stages/type-check/test40.crx differs from expected output. ==> expected: <Crux Program has no type errors.
 
@@ -1103,42 +922,12 @@ main() {
 }>
 	at crux.CompilerStageTests.lambda$typeCheck$5(CompilerStageTests.java:179)
 
-crux.CompilerStageTests.typeCheck  Time elapsed: 0.002 s  <<< FAILURE!
-org.opentest4j.AssertionFailedError: 
-Type check for program crux/stages/type-check/test41.crx differs from expected output. ==> expected: <Crux Program has no type errors.
+crux.CompilerStageTests.typeCheck  Time elapsed: 0.003 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.Error: class crux.ast.types.IntTypeshould override the equivalent method
+	at crux.CompilerStageTests.lambda$typeCheck$5(CompilerStageTests.java:172)
+Caused by: java.lang.Error: class crux.ast.types.IntTypeshould override the equivalent method
 
-int a;
-array[1,int] b;
-foo() {
-  return /*bool*/ false;
-}
-main() {
-  /*int*/ a = /*int*/ 0;
-  /*int*/ (/*array[1,int]*/ b)[/*int*/ 0] = /*int*/ 1;
-  bool c;
-  if (/*bool*/ true) {
-    /*bool*/ c = /*bool*/ (/*bool*/ (/*int*/ 1 > /*int*/ (/*int*/ (/*array[1,int]*/ b)[/*int*/ 0] - /*int*/ a)) || /*bool*/ (foo() || /*bool*/ true));
-  } else {
-  }
-}> but was: <Crux Program has no type errors.
-
-int a;
-array[1,int] b;
-foo() {
-  return false;
-}
-main() {
-  a = 0;
-  (/*array[1,int]*/ b)[0] = 1;
-  bool c;
-  if (true) {
-    c = ((1 > ((/*array[1,int]*/ b)[0] - a)) || (foo() || true));
-  } else {
-  }
-}>
-	at crux.CompilerStageTests.lambda$typeCheck$5(CompilerStageTests.java:179)
-
-crux.CompilerStageTests.typeCheck  Time elapsed: 0.002 s  <<< FAILURE!
+crux.CompilerStageTests.typeCheck  Time elapsed: 0.007 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: 
 Type check for program crux/stages/type-check/test42.crx differs from expected output. ==> expected: <Crux Program has no type errors.
 
@@ -1179,7 +968,7 @@ main() {
 }>
 	at crux.CompilerStageTests.lambda$typeCheck$5(CompilerStageTests.java:179)
 
-crux.CompilerStageTests.typeCheck  Time elapsed: 0.001 s  <<< FAILURE!
+crux.CompilerStageTests.typeCheck  Time elapsed: 0.005 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: 
 Type check for program crux/stages/type-check/test43.crx differs from expected output. ==> expected: <Crux Program has no type errors.
 
@@ -1224,7 +1013,7 @@ main() {
 }>
 	at crux.CompilerStageTests.lambda$typeCheck$5(CompilerStageTests.java:179)
 
-crux.CompilerStageTests.typeCheck  Time elapsed: 0.001 s  <<< FAILURE!
+crux.CompilerStageTests.typeCheck  Time elapsed: 0.004 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: 
 Type check for program crux/stages/type-check/test44.crx differs from expected output. ==> expected: <Crux Program has no type errors.
 
@@ -1267,7 +1056,7 @@ main() {
 }>
 	at crux.CompilerStageTests.lambda$typeCheck$5(CompilerStageTests.java:179)
 
-crux.CompilerStageTests.typeCheck  Time elapsed: 0.002 s  <<< FAILURE!
+crux.CompilerStageTests.typeCheck  Time elapsed: 0.005 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: 
 Type check for program crux/stages/type-check/test45.crx differs from expected output. ==> expected: <Crux Program has no type errors.
 
@@ -1320,7 +1109,7 @@ main() {
 }>
 	at crux.CompilerStageTests.lambda$typeCheck$5(CompilerStageTests.java:179)
 
-crux.CompilerStageTests.typeCheck  Time elapsed: 0.001 s  <<< FAILURE!
+crux.CompilerStageTests.typeCheck  Time elapsed: 0.005 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: 
 Type check for program crux/stages/type-check/test46.crx differs from expected output. ==> expected: <Crux Program has no type errors.
 
@@ -1371,70 +1160,12 @@ main() {
 }>
 	at crux.CompilerStageTests.lambda$typeCheck$5(CompilerStageTests.java:179)
 
-crux.CompilerStageTests.typeCheck  Time elapsed: 0.001 s  <<< FAILURE!
-org.opentest4j.AssertionFailedError: 
-Type check for program crux/stages/type-check/test47.crx differs from expected output. ==> expected: <Crux Program has no type errors.
+crux.CompilerStageTests.typeCheck  Time elapsed: 0.002 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.Error: class crux.ast.types.IntTypeshould override the equivalent method
+	at crux.CompilerStageTests.lambda$typeCheck$5(CompilerStageTests.java:172)
+Caused by: java.lang.Error: class crux.ast.types.IntTypeshould override the equivalent method
 
-int a;
-main() {
-  /*int*/ a = /*int*/ 1;
-  if (/*bool*/ true) {
-    int a;
-    /*int*/ a = /*int*/ 2;
-    if (/*bool*/ true) {
-      /*int*/ a = /*int*/ (/*int*/ a * /*int*/ 10);
-      int a;
-      /*int*/ a = /*int*/ 3;
-      if (/*bool*/ true) {
-        bool a;
-        /*bool*/ a = /*bool*/ true;
-        printBool(/*bool*/ a);
-        println();
-      } else {
-      }
-      printInt(/*int*/ a);
-      println();
-    } else {
-    }
-    printInt(/*int*/ a);
-    println();
-  } else {
-  }
-  printInt(/*int*/ a);
-  println();
-}> but was: <Crux Program has no type errors.
-
-int a;
-main() {
-  a = 1;
-  if (true) {
-    int a;
-    a = 2;
-    if (true) {
-      a = (a * 10);
-      int a;
-      a = 3;
-      if (true) {
-        bool a;
-        a = true;
-        printBool(a);
-        println();
-      } else {
-      }
-      printInt(a);
-      println();
-    } else {
-    }
-    printInt(a);
-    println();
-  } else {
-  }
-  printInt(a);
-  println();
-}>
-	at crux.CompilerStageTests.lambda$typeCheck$5(CompilerStageTests.java:179)
-
-crux.CompilerStageTests.typeCheck  Time elapsed: 0.001 s  <<< FAILURE!
+crux.CompilerStageTests.typeCheck  Time elapsed: 0.004 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: 
 Type check for program crux/stages/type-check/test48.crx differs from expected output. ==> expected: <Crux Program has no type errors.
 
@@ -1471,7 +1202,7 @@ main() {
 }>
 	at crux.CompilerStageTests.lambda$typeCheck$5(CompilerStageTests.java:179)
 
-crux.CompilerStageTests.typeCheck  Time elapsed: 0.001 s  <<< FAILURE!
+crux.CompilerStageTests.typeCheck  Time elapsed: 0.005 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: 
 Type check for program crux/stages/type-check/test49.crx differs from expected output. ==> expected: <Crux Program has no type errors.
 
@@ -1536,7 +1267,7 @@ main() {
 }>
 	at crux.CompilerStageTests.lambda$typeCheck$5(CompilerStageTests.java:179)
 
-crux.CompilerStageTests.typeCheck  Time elapsed: 0.002 s  <<< FAILURE!
+crux.CompilerStageTests.typeCheck  Time elapsed: 0.005 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: 
 Type check for program crux/stages/type-check/test50.crx differs from expected output. ==> expected: <Crux Program has no type errors.
 

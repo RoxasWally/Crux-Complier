@@ -125,6 +125,15 @@ public final class TypeChecker {
 
     @Override
     public Void visit(IfElseBranch ifElseBranch) {
+      ifElseBranch.getCondition().accept(this);
+      if(getType(ifElseBranch.getCondition()).getClass() == BoolType.class){
+        ifElseBranch.getThenBlock().accept(this);
+        if(ifElseBranch.getElseBlock().getChildren().size() > 0){
+          ifElseBranch.accept(this);
+        }
+      } else{
+        setNodeType(ifElseBranch, new ErrorType("if else branch needs a a bool condition comparison"));
+      }
       return null;
     }
 
@@ -157,6 +166,10 @@ public final class TypeChecker {
 
     @Override
     public Void visit(OpExpr op) {
+      Type result;
+      if(op.getRight() != null){
+
+      }
       return null;
     }
 
