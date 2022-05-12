@@ -167,7 +167,11 @@ public final class ASTLower implements NodeVisitor<InstPair> {
    */
   @Override
   public InstPair visit(Return ret) {
-    return null;
+    InstPair pairRet = ret.getValue().accept(this);
+    var returned = new ReturnInst((LocalVar) pairRet.getValue());
+    pairRet.getEnd().setNext(0, returned);
+    var start = pairRet.getStart();
+    return new InstPair(start, returned, null);
   }
 
   /**
