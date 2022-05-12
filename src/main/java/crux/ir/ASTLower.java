@@ -45,7 +45,11 @@ class InstPair {
 public final class ASTLower implements NodeVisitor<InstPair> {
   //stores a list of global declecaration and functions
   private Program mCurrentProgram = null;
+  private TypeChecker checker;
   private Function mCurrentFunction = null;
+  private Instruction head = new NopInst();
+  private Instruction tail = new NopInst();
+
 
 
   private Map<Symbol, LocalVar> mCurrentLocalVarMap = null;
@@ -179,7 +183,8 @@ public final class ASTLower implements NodeVisitor<InstPair> {
    */
   @Override
   public InstPair visit(Break brk) {
-    return null;
+
+    return new InstPair(head, new NopInst(),null);
   }
 
   /**
