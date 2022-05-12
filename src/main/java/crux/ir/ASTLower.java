@@ -15,6 +15,22 @@ import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
 class InstPair {
+  // should have a start and end instruction
+  //need getters and setters
+  //get the value
+  Instruction start, end;
+  Variable value;
+
+  public Instruction getStart(){
+    return start;
+  }
+  public Instruction getEnd(){
+    return end;
+  }
+  public Variable getValue(){
+    return value;
+  }
+
 }
 
 
