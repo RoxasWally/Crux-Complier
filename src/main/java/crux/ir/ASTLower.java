@@ -79,6 +79,15 @@ public final class ASTLower implements NodeVisitor<InstPair> {
    */
   @Override
   public InstPair visit(FunctionDefinition functionDefinition) {
+    TypeList functionType = new TypeList();
+    for (Symbol sym : functionDefinition.getParameters())
+      functionType.append(sym.getType());
+    var myFunction = functionDefinition.getSymbol();
+    var fucType = (FuncType) myFunction.getType();
+    mCurrentFunction = new Function(myFunction.getName(), fucType);
+
+    mCurrentLocalVarMap = new HashMap<>();
+    List<LocalVar> myList = new ArrayList<>();
     return null;
   }
 
