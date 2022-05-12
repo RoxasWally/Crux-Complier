@@ -1,4 +1,254 @@
 -------------------------------------------------------------------------------
 Test set: crux.CompilerStageTests
 -------------------------------------------------------------------------------
-Tests run: 50, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.169 s - in crux.CompilerStageTests
+Tests run: 50, Failures: 0, Errors: 50, Skipped: 0, Time elapsed: 0.431 s <<< FAILURE! - in crux.CompilerStageTests
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.095 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.02 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+
+crux.CompilerStageTests.emulateIR  Time elapsed: 0 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.01 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.02 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.01 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+
+crux.CompilerStageTests.emulateIR  Time elapsed: 0 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+
+crux.CompilerStageTests.emulateIR  Time elapsed: 0 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.009 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+
+crux.CompilerStageTests.emulateIR  Time elapsed: 0 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+
+crux.CompilerStageTests.emulateIR  Time elapsed: 0 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.011 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.01 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+
+crux.CompilerStageTests.emulateIR  Time elapsed: 0 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.009 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+
+crux.CompilerStageTests.emulateIR  Time elapsed: 0 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.01 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.01 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+
+crux.CompilerStageTests.emulateIR  Time elapsed: 0 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.01 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+
+crux.CompilerStageTests.emulateIR  Time elapsed: 0 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.01 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.006 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.004 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+
+crux.CompilerStageTests.emulateIR  Time elapsed: 0 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.012 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+
+crux.CompilerStageTests.emulateIR  Time elapsed: 0 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.008 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+
+crux.CompilerStageTests.emulateIR  Time elapsed: 0 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.011 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+
+crux.CompilerStageTests.emulateIR  Time elapsed: 0 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.009 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+
+crux.CompilerStageTests.emulateIR  Time elapsed: 0 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.01 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+
+crux.CompilerStageTests.emulateIR  Time elapsed: 0 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.01 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+
+crux.CompilerStageTests.emulateIR  Time elapsed: 0 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.01 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+
+crux.CompilerStageTests.emulateIR  Time elapsed: 0 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+
+crux.CompilerStageTests.emulateIR  Time elapsed: 0 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+
+crux.CompilerStageTests.emulateIR  Time elapsed: 0 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.005 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.005 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.006 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.006 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+
+crux.CompilerStageTests.emulateIR  Time elapsed: 0 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.008 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.01 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+
+crux.CompilerStageTests.emulateIR  Time elapsed: 0 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.011 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.Function.getStart()" because "f" is null
+

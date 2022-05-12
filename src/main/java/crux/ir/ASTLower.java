@@ -21,6 +21,11 @@ class InstPair {
   Instruction start, end;
   Variable value;
 
+  InstPair(Instruction start, Instruction end, Variable value){
+    this.start = start;
+    this.end = end;
+    this.value = value;
+  }
   public Instruction getStart(){
     return start;
   }
@@ -38,8 +43,10 @@ class InstPair {
  * Convert AST to IR and build the CFG
  */
 public final class ASTLower implements NodeVisitor<InstPair> {
+  //stores a list of global declecaration and functions
   private Program mCurrentProgram = null;
   private Function mCurrentFunction = null;
+
 
   private Map<Symbol, LocalVar> mCurrentLocalVarMap = null;
 
@@ -55,6 +62,10 @@ public final class ASTLower implements NodeVisitor<InstPair> {
 
   @Override
   public InstPair visit(DeclarationList declarationList) {
+    mCurrentProgram = new Program();
+    //similar to stg2
+    for(Node dec : declarationList.getChildren())
+      dec.accept(this);
     return null;
   }
 
