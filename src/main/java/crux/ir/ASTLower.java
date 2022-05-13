@@ -49,6 +49,14 @@ public final class ASTLower implements NodeVisitor<InstPair> {
   private Function mCurrentFunction = null;
   private Instruction head = new NopInst();
   private Instruction tail = new NopInst();
+  //helper function to check if source is null
+  private void addEdge(Instruction source, Instruction destination){
+    if (source == null ){
+      mCurrentFunction.setStart(destination);
+    }else{
+      source.setNext(0, destination);
+    }
+  }
 
 
 
@@ -183,6 +191,10 @@ public final class ASTLower implements NodeVisitor<InstPair> {
    */
   @Override
   public InstPair visit(LiteralInt literalInt) {
+    var intVal = IntegerConstant.get(mCurrentProgram,literalInt.getValue());
+    var locationVar = mCurrentFunction.getTempVar(new IntType());
+    var temp = new CopyInst(locationVar, intVal);
+
     return null;
   }
 
