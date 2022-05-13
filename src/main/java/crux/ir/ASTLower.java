@@ -88,6 +88,17 @@ public final class ASTLower implements NodeVisitor<InstPair> {
 
     mCurrentLocalVarMap = new HashMap<>();
     List<LocalVar> myList = new ArrayList<>();
+    for(Symbol symParam : functionDefinition.getParameters()){
+      LocalVar tempVariable = mCurrentFunction.getTempVar(symParam.getType());
+      myList.add(tempVariable);
+      mCurrentLocalVarMap.put(symParam, tempVariable);
+    }
+    mCurrentFunction.setArguments(myList);
+    mCurrentProgram.addFunction(mCurrentFunction);
+    InstPair result = functionDefinition.getStatements().accept(this);
+    mCurrentFunction.setStart(result.getStart());
+    mCurrentLocalVarMap = null;
+    mCurrentFunction = null;
     return null;
   }
 
