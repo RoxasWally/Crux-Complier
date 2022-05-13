@@ -21,11 +21,22 @@ class InstPair {
   Instruction start, end;
   Variable value;
 
-  InstPair(Instruction start, Instruction end, Variable value){
+  public InstPair(Instruction start, Instruction end, Variable value){
     this.start = start;
     this.end = end;
     this.value = value;
   }
+  public InstPair(Instruction Start, Variable Value){
+    start = Start;
+    end = Start;
+    value = Value;
+  }
+  public InstPair(Instruction Start, Instruction End){
+    start = Start;
+    end = End;
+    value = null;
+  }
+
   public Instruction getStart(){
     return start;
   }
@@ -191,11 +202,12 @@ public final class ASTLower implements NodeVisitor<InstPair> {
    */
   @Override
   public InstPair visit(LiteralInt literalInt) {
+    // wrong
     var intVal = IntegerConstant.get(mCurrentProgram,literalInt.getValue());
     var locationVar = mCurrentFunction.getTempVar(new IntType());
-    var temp = new CopyInst(locationVar, intVal);
+    var temp = new CopyInst(locationVar, IntegerConstant.get(mCurrentProgram, literalInt.getValue()));
 
-    return null;
+    return new InstPair(temp, locationVar);
   }
 
   /**
