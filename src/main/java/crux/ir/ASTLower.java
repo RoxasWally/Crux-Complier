@@ -123,8 +123,25 @@ public final class ASTLower implements NodeVisitor<InstPair> {
 
   @Override
   public InstPair visit(StatementList statementList) {
-    return null;
-  }
+    InstPair sym = null;
+    Instruction firstIns = null;
+    Instruction lastIns = null;
+    for (Node statement : statementList.getChildren()) {
+      sym = statement.accept(this);
+      if (firstIns == null) {
+        firstIns = sym.getStart();
+      } else {
+        addEdge(lastIns, sym.getStart());
+      }
+      lastIns = sym.getEnd();
+    }
+      if (sym != null) {
+        return new InstPair(firstIns, lastIns, sym.getValue());
+      } else {
+        NopInst lastNop = new NopInst();
+        return new InstPair(lastNop, lastNop, null);
+      }
+    }
 
   /**
    * Declarations, could be either local or Global
