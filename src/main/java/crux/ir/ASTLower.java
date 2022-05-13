@@ -214,7 +214,51 @@ public final class ASTLower implements NodeVisitor<InstPair> {
    */
   @Override
   public InstPair visit(Call call) {
-    return null;
+    /*
+    Similar to StatementList, visit each argument and connect them
+    Depending on the return value, use different CallInst constructor
+    If return value exists, returning InstPair’s val is same as destVar in constructor
+
+     */
+    Instruction first = null;
+    Instruction last = null;
+    List<LocalVar> argVal = new ArrayList<LocalVar>();
+    for (Expression arg : call.getArguments()){
+      InstPair result = arg.accept(this);
+      if(first == null){
+        first = result.getStart();
+        last = result.getEnd();
+      }else{
+        last.setNext(0, result.getStart());
+        last = result.getEnd();
+      }
+      LocalVar temp = mCurrentFunction.getTempVar(result.getValue().getType());
+      if(result.getValue().getClass().equals(AddressVar.class)){
+        var loadInst = new LoadInst(temp,(AddressVar)result.getValue());
+        last.setNext(0,loadInst);
+        last = loadInst;
+      } else {
+        temp = (LocalVar) result.getValue();
+      }
+      argVal.add(temp);
+    }
+    FuncType funcType = (FuncType) call.getCallee().getType();
+    if(funcType.getRet().getClass().equals(VoidType.class)){
+      var callinst = new CallInst(call.getCallee(), argVal);
+      if(first == null){
+        return new InstPair(callinst, callinst, null);
+      }
+      last.setNext(0, callinst);
+      return new InstPair(first,callinst,null);
+    }else {
+      LocalVar tempVar = mCurrentFunction.getTempVar(funcType.getRet());
+      var callinst = new CallInst(tempVar, call.getCallee(), argVal);
+      if(first == null){
+        return new InstPair(callinst,callinst,null);
+      }
+      last.setNext(0, callinst);
+      return new InstPair(first,callinst,tempVar);
+    }
   }
 
   /**
