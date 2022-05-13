@@ -36,6 +36,11 @@ class InstPair {
     end = End;
     value = null;
   }
+  public InstPair(Instruction Start){
+    start = Start;
+    end = Start;
+    value = null;
+  }
 
   public Instruction getStart(){
     return start;
@@ -148,7 +153,15 @@ public final class ASTLower implements NodeVisitor<InstPair> {
    */
   @Override
   public InstPair visit(VariableDeclaration variableDeclaration) {
-    return null;
+    Symbol mySym = variableDeclaration.getSymbol();
+    if (mCurrentFunction == null){
+      var global = new GlobalDecl(mySym, IntegerConstant.get(mCurrentProgram, 1));
+      mCurrentProgram.addGlobalVar(global);
+    }else{
+      LocalVar local = mCurrentFunction.getTempVar(variableDeclaration.getType());
+      mCurrentLocalVarMap.put(mySym, local);
+    }
+    return new InstPair(new NopInst());
   }
 
   /**
