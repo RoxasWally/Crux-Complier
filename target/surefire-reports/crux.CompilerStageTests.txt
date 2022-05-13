@@ -1,23 +1,73 @@
 -------------------------------------------------------------------------------
 Test set: crux.CompilerStageTests
 -------------------------------------------------------------------------------
-Tests run: 50, Failures: 0, Errors: 48, Skipped: 0, Time elapsed: 0.198 s <<< FAILURE! - in crux.CompilerStageTests
-crux.CompilerStageTests.emulateIR  Time elapsed: 0.016 s  <<< ERROR!
+Tests run: 50, Failures: 0, Errors: 48, Skipped: 0, Time elapsed: 0.448 s <<< FAILURE! - in crux.CompilerStageTests
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.014 s  <<< ERROR!
 java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
 	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
 Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
 
-crux.CompilerStageTests.emulateIR  Time elapsed: 0 s  <<< ERROR!
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.008 s  <<< ERROR!
 java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
 	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
 Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
 
-crux.CompilerStageTests.emulateIR  Time elapsed: 0 s  <<< ERROR!
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.01 s  <<< ERROR!
 java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
 	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
 Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
 
-crux.CompilerStageTests.emulateIR  Time elapsed: 0.016 s  <<< ERROR!
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.01 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
+	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
+
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.011 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
+	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
+
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.006 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
+	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
+
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.005 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
+	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
+
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.007 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
+	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
+
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.005 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
+	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
+
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.008 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
+	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
+
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.008 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getValue()" because "pairRet" is null
+	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getValue()" because "pairRet" is null
+
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.005 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
+	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
+
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.005 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
+	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
+
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.005 s  <<< ERROR!
 java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
 	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
 Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
@@ -27,217 +77,167 @@ java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot 
 	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
 Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
 
-crux.CompilerStageTests.emulateIR  Time elapsed: 0 s  <<< ERROR!
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.005 s  <<< ERROR!
 java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
 	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
 Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
 
-crux.CompilerStageTests.emulateIR  Time elapsed: 0 s  <<< ERROR!
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.005 s  <<< ERROR!
 java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
 	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
 Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
 
-crux.CompilerStageTests.emulateIR  Time elapsed: 0 s  <<< ERROR!
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.004 s  <<< ERROR!
 java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
 	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
 Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
 
-crux.CompilerStageTests.emulateIR  Time elapsed: 0 s  <<< ERROR!
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.004 s  <<< ERROR!
 java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
 	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
 Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
 
-crux.CompilerStageTests.emulateIR  Time elapsed: 0 s  <<< ERROR!
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.005 s  <<< ERROR!
 java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
 	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
 Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
 
-crux.CompilerStageTests.emulateIR  Time elapsed: 0 s  <<< ERROR!
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.004 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
+	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
+
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.004 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
+	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
+
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.004 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
+	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
+
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.005 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
+	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
+
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.004 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
+	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
+
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.004 s  <<< ERROR!
+java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
+	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
+
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.004 s  <<< ERROR!
 java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getValue()" because "pairRet" is null
 	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
 Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getValue()" because "pairRet" is null
 
-crux.CompilerStageTests.emulateIR  Time elapsed: 0.016 s  <<< ERROR!
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.005 s  <<< ERROR!
 java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
 	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
 Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
 
-crux.CompilerStageTests.emulateIR  Time elapsed: 0 s  <<< ERROR!
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.004 s  <<< ERROR!
 java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
 	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
 Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
 
-crux.CompilerStageTests.emulateIR  Time elapsed: 0 s  <<< ERROR!
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.004 s  <<< ERROR!
 java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
 	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
 Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
 
-crux.CompilerStageTests.emulateIR  Time elapsed: 0 s  <<< ERROR!
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.004 s  <<< ERROR!
 java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
 	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
 Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
 
-crux.CompilerStageTests.emulateIR  Time elapsed: 0 s  <<< ERROR!
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.006 s  <<< ERROR!
 java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
 	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
 Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
 
-crux.CompilerStageTests.emulateIR  Time elapsed: 0 s  <<< ERROR!
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.004 s  <<< ERROR!
 java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
 	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
 Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
 
-crux.CompilerStageTests.emulateIR  Time elapsed: 0 s  <<< ERROR!
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.005 s  <<< ERROR!
 java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
 	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
 Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
 
-crux.CompilerStageTests.emulateIR  Time elapsed: 0 s  <<< ERROR!
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.003 s  <<< ERROR!
 java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
 	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
 Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
 
-crux.CompilerStageTests.emulateIR  Time elapsed: 0.015 s  <<< ERROR!
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.004 s  <<< ERROR!
 java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
 	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
 Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
 
-crux.CompilerStageTests.emulateIR  Time elapsed: 0 s  <<< ERROR!
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.004 s  <<< ERROR!
 java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
 	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
 Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
 
-crux.CompilerStageTests.emulateIR  Time elapsed: 0 s  <<< ERROR!
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.004 s  <<< ERROR!
 java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
 	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
 Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
 
-crux.CompilerStageTests.emulateIR  Time elapsed: 0 s  <<< ERROR!
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.005 s  <<< ERROR!
 java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
 	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
 Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
 
-crux.CompilerStageTests.emulateIR  Time elapsed: 0 s  <<< ERROR!
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.004 s  <<< ERROR!
 java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
 	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
 Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
 
-crux.CompilerStageTests.emulateIR  Time elapsed: 0 s  <<< ERROR!
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.005 s  <<< ERROR!
 java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
 	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
 Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
 
-crux.CompilerStageTests.emulateIR  Time elapsed: 0 s  <<< ERROR!
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.004 s  <<< ERROR!
 java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
 	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
 Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
 
-crux.CompilerStageTests.emulateIR  Time elapsed: 0 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getValue()" because "pairRet" is null
-	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getValue()" because "pairRet" is null
-
-crux.CompilerStageTests.emulateIR  Time elapsed: 0 s  <<< ERROR!
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.005 s  <<< ERROR!
 java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
 	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
 Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
 
-crux.CompilerStageTests.emulateIR  Time elapsed: 0 s  <<< ERROR!
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.005 s  <<< ERROR!
 java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
 	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
 Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
 
-crux.CompilerStageTests.emulateIR  Time elapsed: 0 s  <<< ERROR!
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.005 s  <<< ERROR!
 java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
 	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
 Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
 
-crux.CompilerStageTests.emulateIR  Time elapsed: 0 s  <<< ERROR!
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.005 s  <<< ERROR!
 java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
 	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
 Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
 
-crux.CompilerStageTests.emulateIR  Time elapsed: 0.016 s  <<< ERROR!
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.005 s  <<< ERROR!
 java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
 	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
 Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
 
-crux.CompilerStageTests.emulateIR  Time elapsed: 0.001 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
-	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
-
-crux.CompilerStageTests.emulateIR  Time elapsed: 0 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
-	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
-
-crux.CompilerStageTests.emulateIR  Time elapsed: 0 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
-	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
-
-crux.CompilerStageTests.emulateIR  Time elapsed: 0 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
-	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
-
-crux.CompilerStageTests.emulateIR  Time elapsed: 0 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
-	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
-
-crux.CompilerStageTests.emulateIR  Time elapsed: 0 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
-	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
-
-crux.CompilerStageTests.emulateIR  Time elapsed: 0 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
-	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
-
-crux.CompilerStageTests.emulateIR  Time elapsed: 0 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
-	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
-
-crux.CompilerStageTests.emulateIR  Time elapsed: 0 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
-	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
-
-crux.CompilerStageTests.emulateIR  Time elapsed: 0 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
-	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
-
-crux.CompilerStageTests.emulateIR  Time elapsed: 0 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
-	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
-
-crux.CompilerStageTests.emulateIR  Time elapsed: 0 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
-	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
-
-crux.CompilerStageTests.emulateIR  Time elapsed: 0.015 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
-	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
-
-crux.CompilerStageTests.emulateIR  Time elapsed: 0 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
-	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
-
-crux.CompilerStageTests.emulateIR  Time elapsed: 0 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
-	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
-
-crux.CompilerStageTests.emulateIR  Time elapsed: 0 s  <<< ERROR!
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.007 s  <<< ERROR!
 java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null
 	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:222)
 Caused by: java.lang.NullPointerException: Cannot invoke "crux.ir.InstPair.getStart()" because "sym" is null

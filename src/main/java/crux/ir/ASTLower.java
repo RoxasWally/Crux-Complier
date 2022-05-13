@@ -204,6 +204,7 @@ public final class ASTLower implements NodeVisitor<InstPair> {
      Instead, check if it is an ArrayAccess or global VarAccess.
      If yes, use AddressAt and StoreInst (similar to visiting them but using Store instead of Load).
      Otherwise, use CopyInst (into LocalVar).
+     finish array access first
     */
     return null;
   }
@@ -234,7 +235,17 @@ public final class ASTLower implements NodeVisitor<InstPair> {
    */
   @Override
   public InstPair visit(ArrayAccess access) {
-    return null;
+    /*Check if it is local or global by checking mCurrentLocalVarMap
+    If local: return empty InstPair with LocalVar as value
+    If global:  use AddressAt and LoadInst
+    For all cases, InstPair val is LocalVar
+    */
+    InstPair inde = access.getIndex().accept(this);
+    Symbol mySym = access.getBase();
+    AddressVar address = mCurrentFunction.getTempAddressVar(((ArrayType)access.getBase().getType()).getBase());
+    AddressAt addressLocation = new AddressAt(address,mySym);
+
+    return new InstPair(addressLocation, address);
   }
 
   /**
