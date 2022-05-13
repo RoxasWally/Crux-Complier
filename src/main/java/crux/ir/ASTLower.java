@@ -194,7 +194,9 @@ public final class ASTLower implements NodeVisitor<InstPair> {
    */
   @Override
   public InstPair visit(LiteralBool literalBool) {
-    return null;
+    var locationVar = mCurrentFunction.getTempVar(new BoolType());
+    var temp = new CopyInst(locationVar, BooleanConstant.get(mCurrentProgram, literalBool.getValue()));
+    return new InstPair(temp, locationVar);
   }
 
   /**
