@@ -178,6 +178,12 @@ public final class ASTLower implements NodeVisitor<InstPair> {
    */
   @Override
   public InstPair visit(VarAccess name) {
+    /*Check if it is local or global by checking mCurrentLocalVarMap
+    If local: return empty InstPair with LocalVar as value
+    If global:  use AddressAt and LoadInst
+    For all cases, InstPair val is LocalVar
+
+     */
     return null;
   }
 
