@@ -200,6 +200,11 @@ public final class ASTLower implements NodeVisitor<InstPair> {
    */
   @Override
   public InstPair visit(Assignment assignment) {
+    /*Do not visit the location.
+     Instead, check if it is an ArrayAccess or global VarAccess.
+     If yes, use AddressAt and StoreInst (similar to visiting them but using Store instead of Load).
+     Otherwise, use CopyInst (into LocalVar).
+    */
     return null;
   }
 
