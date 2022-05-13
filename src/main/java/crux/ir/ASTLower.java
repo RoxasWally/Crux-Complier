@@ -182,9 +182,16 @@ public final class ASTLower implements NodeVisitor<InstPair> {
     If local: return empty InstPair with LocalVar as value
     If global:  use AddressAt and LoadInst
     For all cases, InstPair val is LocalVar
-
-     */
-    return null;
+    */
+    Symbol mySym = name.getSymbol();
+    if(mCurrentLocalVarMap.containsKey(mySym)){
+      Variable temp = mCurrentLocalVarMap.get(mySym);
+      return new InstPair(new NopInst(), temp);
+    }else{
+      AddressVar address = mCurrentFunction.getTempAddressVar(mySym.getType());
+      AddressAt addressLocation = new AddressAt(address, mySym);
+      return new InstPair(addressLocation,address);
+    }
   }
 
   /**
