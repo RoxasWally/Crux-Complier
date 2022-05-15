@@ -206,8 +206,8 @@ public final class ASTLower implements NodeVisitor<InstPair> {
      Otherwise, use CopyInst (into LocalVar).
      finish array access first
     */
-    Expression lhs = assignment.getValue();
-    Expression rhs = assignment.getLocation();
+    Expression lhs = assignment.getLocation();
+    Expression rhs = assignment.getValue();
     InstPair lhsResult = lhs.accept(this);
     InstPair rhsResult = rhs.accept(this);
     lhsResult.getEnd().setNext(0,rhsResult.getStart());
