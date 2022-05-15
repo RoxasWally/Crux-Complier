@@ -65,6 +65,8 @@ public final class ASTLower implements NodeVisitor<InstPair> {
   private Function mCurrentFunction = null;
   private Instruction head = new NopInst();
   private Instruction tail = new NopInst();
+
+  private Instruction lastInstruction = null;
   //helper function to check if source is null
   private void addEdge(Instruction source, Instruction destination){
     if (source == null ){
@@ -282,14 +284,12 @@ public final class ASTLower implements NodeVisitor<InstPair> {
    */
   @Override
   public InstPair visit(OpExpr operation) {
-    Expression lhs = operation.getLeft();
-    Expression rhs = operation.getRight();
-    String operationKind = operation.getOp().toString();
-
+    //confused about implementation, gonna go for other easier functions and leave this for the last.
     return null;
   }
 
   private InstPair visit(Expression expression) {
+    expression.accept(this);
     return null;
   }
 
