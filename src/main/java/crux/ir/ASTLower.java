@@ -206,6 +206,22 @@ public final class ASTLower implements NodeVisitor<InstPair> {
      Otherwise, use CopyInst (into LocalVar).
      finish array access first
     */
+    Expression lhs = assignment.getValue();
+    Expression rhs = assignment.getLocation();
+    InstPair lhsResult = lhs.accept(this);
+    InstPair rhsResult = rhs.accept(this);
+    lhsResult.getEnd().setNext(0,rhsResult.getStart());
+    if(rhsResult.getValue().getClass().equals(LocalVar.class) && lhsResult.getValue().getClass().equals(LocalVar.class)){
+      CopyInst copy = new CopyInst((LocalVar) lhsResult.getValue(),rhsResult.getValue());
+      rhsResult.getEnd().setNext(0, copy);
+      return new InstPair(lhsResult.getStart(), copy);
+    }
+    if(rhsResult.getValue().getClass().equals(LocalVar.class) && lhsResult.getValue().getClass().equals(AddressVar.class)){
+      StoreInst store = new StoreInst((LocalVar) rhsResult.getValue(),(AddressVar) lhsResult.getValue());
+      rhsResult.getEnd().setNext(0, store);
+      return new InstPair(lhsResult.getStart(), store);
+    }
+    //still needs to return null if those conditions aren't met but lhs and rhs will still be accepted
     return null;
   }
 
@@ -218,7 +234,6 @@ public final class ASTLower implements NodeVisitor<InstPair> {
     Similar to StatementList, visit each argument and connect them
     Depending on the return value, use different CallInst constructor
     If return value exists, returning InstPair’s val is same as destVar in constructor
-
      */
     Instruction first = null;
     Instruction last = null;
