@@ -282,6 +282,10 @@ public final class ASTLower implements NodeVisitor<InstPair> {
    */
   @Override
   public InstPair visit(OpExpr operation) {
+    Expression lhs = operation.getLeft();
+    Expression rhs = operation.getRight();
+    String operationKind = operation.getOp().toString();
+
     return null;
   }
 
