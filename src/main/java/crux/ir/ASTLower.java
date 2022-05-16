@@ -191,14 +191,20 @@ public final class ASTLower implements NodeVisitor<InstPair> {
     If global:  use AddressAt and LoadInst
     For all cases, InstPair val is LocalVar
     */
-    Symbol mySym = name.getSymbol();
-    if(mCurrentLocalVarMap.containsKey(mySym)){
-      Variable temp = mCurrentLocalVarMap.get(mySym);
+    LocalVar temp;
+
+    if (mCurrentLocalVarMap.containsKey(name.getSymbol())) {
+      temp = mCurrentLocalVarMap.get(name.getSymbol());
       return new InstPair(new NopInst(), temp);
-    }else{
-      AddressVar address = mCurrentFunction.getTempAddressVar(mySym.getType());
-      AddressAt addressLocation = new AddressAt(address, mySym);
-      return new InstPair(addressLocation,address);
+    } else {
+      temp = mCurrentFunction.getTempVar(name.getType());
+      AddressVar addressVar = mCurrentFunction.getTempAddressVar(name.getType());
+      AddressAt accessAddress = new AddressAt(addressVar, name.getSymbol());
+      LoadInst load = new LoadInst(temp, accessAddress.getDst());
+
+      accessAddress.setNext(0, load);
+
+      return new InstPair(accessAddress, load, temp);
     }
   }
 
@@ -361,30 +367,41 @@ public final class ASTLower implements NodeVisitor<InstPair> {
 
         }
         case ">=": {
-          var cmpRes = new CompareInst(dst, CompareInst.Predicate.GE, leftVal, rightVal);
           lhsRes.getEnd().setNext(0, rhsRes.getStart());
+          var cmpRes = new CompareInst(dst, CompareInst.Predicate.GE, leftVal, rightVal);
           rhsRes.getEnd().setNext(0,cmpRes);
-
           return new InstPair(lhsRes.getStart(), cmpRes, dst);
         }
         case ">": {
-          var cmpRes = new CompareInst(dst, CompareInst.Predicate.GT, leftVal, rightVal);
           lhsRes.getEnd().setNext(0, rhsRes.getStart());
+          var cmpRes = new CompareInst(dst, CompareInst.Predicate.GT, leftVal, rightVal);
           rhsRes.getEnd().setNext(0,cmpRes);
           return new InstPair(lhsRes.getStart(), cmpRes, dst);
         }
         case "<=": {
+          lhsRes.getEnd().setNext(0, rhsRes.getStart());
+
           var cmpRes = new CompareInst(dst, CompareInst.Predicate.LE, leftVal, rightVal);
           lhsRes.getEnd().setNext(0, rhsRes.getStart());
-          rhsRes.getEnd().setNext(0,cmpRes);        }
+          rhsRes.getEnd().setNext(0,cmpRes);
+          return new InstPair(lhsRes.getStart(), cmpRes, dst);
+
+        }
         case "<": {
+          lhsRes.getEnd().setNext(0, rhsRes.getStart());
+
           var cmpRes = new CompareInst(dst, CompareInst.Predicate.LT, leftVal, rightVal);
           lhsRes.getEnd().setNext(0, rhsRes.getStart());
-          rhsRes.getEnd().setNext(0,cmpRes);        }
+          rhsRes.getEnd().setNext(0,cmpRes);
+          return new InstPair(lhsRes.getStart(), cmpRes, dst);
+
+        }
         case "==": {
           var cmpRes = new CompareInst(dst, CompareInst.Predicate.EQ, leftVal, rightVal);
           lhsRes.getEnd().setNext(0, rhsRes.getStart());
           rhsRes.getEnd().setNext(0,cmpRes);
+          return new InstPair(lhsRes.getStart(), cmpRes, dst);
+
         }
         case "!=": {
           var cmpRes = new CompareInst(dst, CompareInst.Predicate.NE, leftVal, rightVal);
