@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="C:\Users\youse\.jdks\openjdk-18.0.1.1\bin"/>
-    <property name="sun.java.command" value="C:\Users\youse\AppData\Local\Temp\surefire1577284589269190731\surefirebooter5159869270856746841.jar C:\Users\youse\AppData\Local\Temp\surefire1577284589269190731 2022-05-16T14-57-52_718-jvmRun1 surefire13710722115692733672tmp surefire_06225248095024556755tmp"/>
+    <property name="sun.java.command" value="C:\Users\youse\AppData\Local\Temp\surefire4922583661396841087\surefirebooter3853579151772328160.jar C:\Users\youse\AppData\Local\Temp\surefire4922583661396841087 2022-05-16T15-51-46_832-jvmRun1 surefire16866881526333808659tmp surefire_018417899027836505967tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\youse\IdeaProjects\crux\target\test-classes;C:\Users\youse\IdeaProjects\crux\target\classes;C:\Users\youse\.m2\repository\org\antlr\antlr4-runtime\4.7.2\antlr4-runtime-4.7.2.jar;C:\Users\youse\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.5.2\junit-jupiter-api-5.5.2.jar;C:\Users\youse\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\Users\youse\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\youse\.m2\repository\org\junit\platform\junit-platform-commons\1.5.2\junit-platform-commons-1.5.2.jar;C:\Users\youse\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.5.2\junit-jupiter-engine-5.5.2.jar;C:\Users\youse\.m2\repository\org\junit\platform\junit-platform-engine\1.5.2\junit-platform-engine-1.5.2.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\youse\AppData\Local\Temp\surefire1577284589269190731\surefirebooter5159869270856746841.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\youse\AppData\Local\Temp\surefire4922583661396841087\surefirebooter3853579151772328160.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="18.0.1.1+2-6"/>
