@@ -15,8 +15,10 @@ public final class CodeGen extends InstVisitor {
   private final CodePrinter out;
   private String[] regs = { "%rdi", "%rdx",
     "%rsi", "%rcx", "%r8", "%r9"};
-  private int indexVariable = 0;
-  private HashMap<> =
+  private HashMap<Variable, Integer> varIndexMap;
+  private int varIndex;
+  private HashSet<Instruction> discovered = new HashSet<>();
+
 
   public CodeGen(Program p) {
     this.p = p;
@@ -56,6 +58,7 @@ Move arguments from registers and stack to local variable
 Generate code for function body
 Print epilogue
 */
+
   }
 
   public void visit(AddressAt i) {}
