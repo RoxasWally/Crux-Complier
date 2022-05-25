@@ -111,7 +111,27 @@ public final class CodeGen extends InstVisitor {
 
   public void visit(AddressAt i) {}
 
-  public void visit(BinaryOperator i) {}
+  public void visit(BinaryOperator i) {
+    out.printCode("movq " + (-8 * varIndexMap.get(i.getLeftOperand())) + "(%rdi), %r8");
+    switch (i.getOperator()) {
+      case Add:
+        out.printCode("addq " + (-8 * varIndexMap.get(i.getRightOperand())) + "%rdi, %r8");
+        break;
+      case Sub:
+        out.printCode("subq" + (-8 * varIndexMap.get(i.getRightOperand())) + "%rdi, %r8");
+        break;
+      case Mul:
+        out.printCode("mulq" + (-8 * varIndexMap.get(i.getRightOperand())) + "%rdi, %r8");
+        break;
+      case Div:
+        out.printCode("divq" + (-8 * varIndexMap.get(i.getRightOperand())) + "%rdi, %r8");
+        break;
+    }
+//    if (varIndexMap.get(i.getDst()) == null) {
+//      varIndexMap.put(i.getDst(), ++ stackSize);
+//    }
+    out.printCode("movq %r10, " + (-8 * varIndexMap.get(i.getDst())) + "%rdi");
+  }
 
   public void visit(CompareInst i) {}
 
