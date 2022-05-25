@@ -51,14 +51,31 @@ public final class CodeGen extends InstVisitor {
   }
 
   private void genCode(Function f, int[] count) {
-    /*Assign labels to jump targets
-Declare function and label
-Print prologue such that stack is 16 byte aligned
-Move arguments from registers and stack to local variable
-Generate code for function body
-Print epilogue
-*/
+    public HashMap<Instruction, String> assignLabels(int count[]) {
+      HashMap<Instruction, String> labelMap = new HashMap();
+      Stack<Instruction> tovisit = new Stack<>();
+      HashSet<Instruction> discovered = new HashSet<>();
+      if (getStart() != null)
+        tovisit.push(getStart());
+      while (!tovisit.isEmpty()) {
+        Instruction inst = tovisit.pop();
 
+        for (int childIdx = 0; childIdx < inst.numNext(); childIdx++) {
+          Instruction child = inst.getNext(childIdx);
+          if (discovered.contains(child)) {
+            labelMap.put(child, "L" + (++count[0]));
+          }
+        } else {
+          discovered.add(child);
+          tovisit.push(child);
+
+          if (childIdx == 1 && !labelMap.containsKey(child)) {
+            labelMap.put(child, "L" + (++count[0]));
+          }
+        }
+      }
+    }
+    return labelMap;
   }
 
   public void visit(AddressAt i) {}
