@@ -5,6 +5,7 @@ import java.io.*;
 
 public class CodePrinter {
   PrintStream out;
+  StringBuffer stringBuffer = new StringBuffer();
 
   public CodePrinter(String name) {
     try {
@@ -21,6 +22,10 @@ public class CodePrinter {
 
   public void printCode(String s) {
     out.println("    " + s);
+  }
+
+  public void bufferCode(String s){
+    stringBuffer.append("    ").append(s).append("\n");
   }
 
   public void close() {

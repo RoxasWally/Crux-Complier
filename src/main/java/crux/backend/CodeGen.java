@@ -18,7 +18,7 @@ public final class CodeGen extends InstVisitor {
   private HashMap<Variable, Integer> varIndexMap;
   private int varIndex;
   private HashSet<Instruction> discovered = new HashSet<>();
-
+  private HashMap<Instruction, String> currLabelMap;
 
   public CodeGen(Program p) {
     this.p = p;
@@ -51,31 +51,62 @@ public final class CodeGen extends InstVisitor {
   }
 
   private void genCode(Function f, int[] count) {
-    public HashMap<Instruction, String> assignLabels(int count[]) {
-      HashMap<Instruction, String> labelMap = new HashMap();
-      Stack<Instruction> tovisit = new Stack<>();
-      HashSet<Instruction> discovered = new HashSet<>();
-      if (getStart() != null)
-        tovisit.push(getStart());
-      while (!tovisit.isEmpty()) {
-        Instruction inst = tovisit.pop();
+    currLabelMap = f.assignLabels(count);
+    out.printCode(".globl " + f.getName());
+    out.printLabel(f.getName() + ":");
+    int argIndex = 0;
+    for(LocalVar variable : f.getArguments()){
+      varIndex++;
+      argIndex++;
+      varIndexMap.put(variable,-8 * varIndex);
 
-        for (int childIdx = 0; childIdx < inst.numNext(); childIdx++) {
-          Instruction child = inst.getNext(childIdx);
-          if (discovered.contains(child)) {
-            labelMap.put(child, "L" + (++count[0]));
-          }
-        } else {
-          discovered.add(child);
-          tovisit.push(child);
+      if (varIndex <= 6) {
+        out.bufferCode("movq " + regs[varIndex - 1] + ", " + (-8 * argIndex) + "(%rbp)");
+      }else {
+        out.bufferCode("push" + variable.getName());
+      }
+      //transform to CFG
+      //use dfs
+      if(f.getStart() != null){
+        discovered.clear();
+        dfs(f.getStart())
+      }
 
-          if (childIdx == 1 && !labelMap.containsKey(child)) {
-            labelMap.put(child, "L" + (++count[0]));
-          }
+
+
+    }
+
+  }
+
+  private void dfs(Instruction instruction) {
+    if (!discovered.contains(instruction)) {
+      discovered.add(instruction);
+      if (currLabelMap.containsKey(instruction)) {
+        out.bufferCode(currLabelMap.get(instruction) + ":");
+      }
+      instruction.accept(this);
+      if (instruction.numNext() == 0) {
+        //no more insturction after so we leave and return
+        out.bufferCode("leave");
+        out.bufferCode("ret");
+      } else {
+        //we keep iterating the upcoming instructons and calling the function recursively using DFS till
+        // it reaches 0
+        for (int i = 0; i < instruction.numNext(); i++) {
+          dfs(instruction.getNext(i));
         }
       }
+      //otherwise jump
+    } else {
+      out.bufferCode("jmp" + currLabelMap.get(instruction));
     }
-    return labelMap;
+  }
+
+
+
+      }
+
+    }
   }
 
   public void visit(AddressAt i) {}
