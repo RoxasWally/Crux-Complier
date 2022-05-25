@@ -13,6 +13,10 @@ import java.util.*;
 public final class CodeGen extends InstVisitor {
   private final Program p;
   private final CodePrinter out;
+  private String[] regs = { "%rdi", "%rdx",
+    "%rsi", "%rcx", "%r8", "%r9"};
+  private int indexVariable = 0;
+  private HashMap<> =
 
   public CodeGen(Program p) {
     this.p = p;
@@ -27,8 +31,31 @@ public final class CodeGen extends InstVisitor {
    */
   public void genCode() {
     //TODO
+    for(Iterator<GlobalDecl> glob_it = p.getGlobals(); glob_it.hasNext();){
+      GlobalDecl g = glob_it.next();
+      System.out.println(".comm " + g.getSymbol().getName() + ", "
+              + ((IntegerConstant) (g.getNumElement())).getValue() * 8 + ",8");
+      out.printCode(".comm " + g.getSymbol().getName() + ", "
+              + ((IntegerConstant) (g.getNumElement())).getValue() * 8 + ",8");
+
+    }
+    int count [] = new int[1];
+    for(Iterator<Function> func_it = p.getFunctions(); func_it.hasNext();){
+      Function f = func_it.next();
+      genCode(f, count);
+    }
     
     out.close();
+  }
+
+  private void genCode(Function f, int[] count) {
+    /*Assign labels to jump targets
+Declare function and label
+Print prologue such that stack is 16 byte aligned
+Move arguments from registers and stack to local variable
+Generate code for function body
+Print epilogue
+*/
   }
 
   public void visit(AddressAt i) {}
