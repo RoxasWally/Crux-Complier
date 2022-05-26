@@ -47,7 +47,7 @@ public final class CodeGen extends InstVisitor {
       Function f = func_it.next();
       genCode(f, count);
     }
-    
+
     out.close();
   }
 
@@ -146,7 +146,6 @@ public final class CodeGen extends InstVisitor {
   public void visit(CompareInst i) {}
 
   public void visit(CopyInst i) {
-
     if(i.getSrcValue() instanceof  IntegerConstant){
     }
   }
@@ -158,6 +157,9 @@ public final class CodeGen extends InstVisitor {
   }
 
   public void visit(LoadInst i) {
+    out.bufferCode("movq " + varIndexMap.get(i.getSrcAddress()) + "(%rbp), %r10");
+    out.bufferCode("movq 0(%r10), %r11");
+    out.bufferCode("movq %r11, " + varIndexMap.get(i.getDst()) + "(%rbp)");
 
   }
 
@@ -165,7 +167,12 @@ public final class CodeGen extends InstVisitor {
 
   }
 
-  public void visit(StoreInst i) {}
+  public void visit(StoreInst i) {
+    out.bufferCode("movq " + varIndexMap.get(i.getSrcValue()) + "(%rbp), %r10");
+    out.bufferCode("movq " + varIndexMap.get(i.getDestAddress()) + "(%rbp), %r11");
+    out.bufferCode("movq %r10, 0(%r11)");
+
+  }
 
   public void visit(ReturnInst i) {
     out.bufferCode("movq " + varIndexMap.get(i.getReturnValue()) + "(%rbp), %rax");
