@@ -146,10 +146,23 @@ public final class CodeGen extends InstVisitor {
   public void visit(CompareInst i) {}
 
   public void visit(CopyInst i) {
-    if(i.getSrcValue() instanceof  IntegerConstant){
+
+    if (i.getSrcValue() instanceof crux.ir.LocalVar) {
+      if (varIndexMap.containsKey(i.getSrcValue())) {
+        out.bufferCode("movq " + varIndexMap.get(i.getSrcValue()) + "(%rbp), %r11");
+      }
+      out.bufferCode("movq %r11, " + varIndexMap.get(i.getDstVar()) + "(%rbp)");
+    } else if (i.getSrcValue() instanceof crux.ir.IntegerConstant) {
+      out.bufferCode("movq $" + ((IntegerConstant) i.getSrcValue()).getValue() + ", " + varIndexMap.get(i.getDstVar()) + "(%rbp)");
+    } else if (i.getSrcValue() instanceof crux.ir.BooleanConstant) {
+      if (((BooleanConstant) i.getSrcValue()).getValue()) {
+        out.bufferCode("movq $1, " + varIndexMap.get(i.getDstVar()) + "(%rbp)");
+      }
+      if (!((BooleanConstant) i.getSrcValue()).getValue()) {
+        out.bufferCode("movq $0, " + varIndexMap.get(i.getDstVar()) + "(%rbp)");
+      }
     }
   }
-
   public void visit(JumpInst i) {
     out.bufferCode("movq " + (-8 * varIndexMap.get(i.getPredicate())) + "(%rbp), %r10");
     out.bufferCode("cmp $1, %r10");
