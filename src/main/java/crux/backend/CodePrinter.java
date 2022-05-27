@@ -24,10 +24,17 @@ public class CodePrinter {
     out.println("    " + s);
   }
 
+  public void bufferLabel(String s) {
+    stringBuffer.append(s + "\n");
+  }
+
   public void bufferCode(String s){
     stringBuffer.append("    ").append(s).append("\n");
   }
-
+  public void outputBuffer() {
+    out.print(stringBuffer);
+    stringBuffer = new StringBuffer();
+  }
   public void close() {
     out.close();
   }
