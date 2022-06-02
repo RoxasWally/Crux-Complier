@@ -74,6 +74,7 @@ public final class CodeGen extends InstVisitor {
     }
       //transform to CFG
       //use dfs
+      System.out.println("HELLO");
       if(f.getStart() != null){
         dfs(f.getStart());
       }
@@ -86,6 +87,13 @@ public final class CodeGen extends InstVisitor {
 
     }
 
+  private final IRValueFormatter irFormat = new IRValueFormatter();
+  private void printInstructionInfo(Instruction i) {
+    var info = String.format("/* %s */", i.format(irFormat));
+    out.bufferCode(info);
+  }
+
+
   private void dfs(Instruction instruction) {
     if (!discovered.contains(instruction)) {
       discovered.add(instruction);
@@ -93,7 +101,10 @@ public final class CodeGen extends InstVisitor {
       if (currLabelMap.containsKey(instruction)) {
         out.bufferLabel(currLabelMap.get(instruction) + ":");
       }
+
+      printInstructionInfo(instruction);
       instruction.accept(this);
+
       if (instruction.numNext() == 0) {
         //no more insturction after so we leave and return
         out.bufferCode("leave");
