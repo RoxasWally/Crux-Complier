@@ -68,7 +68,7 @@ public final class CodeGen extends InstVisitor {
       if (current <= 6) {
         out.bufferCode("movq " + regs[numslots - 1] + ", " + (-8 * numslots) + "(%rbp)");
       } else {
-        out.bufferCode("movq " + (24 * (current - 5)) + "(%rbp), %r10");
+        out.bufferCode("movq " + (8 * current - 40) + "(%rbp), %r10");
         out.bufferCode("movq %r10, " + (-8 * current ) + "(%rbp)");
       }
     }
@@ -272,16 +272,15 @@ public final class CodeGen extends InstVisitor {
       varIndex++;
       varIndexMap.put(i.getDst(),varIndex*-8);
     }
-    int arguments = 0;
 
-    for(LocalVar param : i.getParams()) {
-
-      arguments++;
-      if (arguments <= 6) {
-        out.bufferCode("movq " + varIndexMap.get(param) + "(%rbp), " + regs[arguments - 1]);
+    for(int j = i.getParams().size() - 1 ; j >= 0 ;j--) {
+      Variable param;
+      if (j < 6) {
+        out.bufferCode("movq " + varIndexMap.get(i.getParams().get(j)) + "(%rbp), " + regs[j]);
       } else {
-        out.bufferCode("movq " + varIndexMap.get(param)+ "(%rbp), %r10");
-        out.bufferCode("movq %r10, " + (24 * (arguments-7)) + "(%rsp)");
+        out.bufferCode("subq $8, %rsp");
+        out.bufferCode("movq " + varIndexMap.get(i.getParams().get(j)) + "(%rbp), %r10");
+        out.bufferCode("movq %r10, 0(%rsp)");
       }
     }
     out.bufferCode("call " + i.getCallee().getName());
