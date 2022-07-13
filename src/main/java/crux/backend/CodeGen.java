@@ -74,7 +74,6 @@ public final class CodeGen extends InstVisitor {
     }
       //transform to CFG
       //use dfs
-      System.out.println("HELLO");
       if(f.getStart() != null){
         dfs(f.getStart());
       }
